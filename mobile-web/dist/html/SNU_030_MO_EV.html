@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/mobile/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/swiper/swiper-bundle.min.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="layout-wrap">
+        <!-- toast-alert -->
+        <div class="ui-toast-alert" id="globalToastAlert"></div>
+        <!-- //toast-alert -->
+
+        <!-- header -->
+        <div class="fix-top-wrap">
+          <header class="header">
+            <div class="header__left">
+              <a href="" class="header__button header__button--back">
+                <span class="for-a11y">뒤로 가기</span>
+              </a>
+            </div>
+            <div class="header__center">
+              <h1 class="header__title">주재원 관리</h1>
+            </div>
+          </header>
+        </div>
+        <!-- //header -->
+
+        <!-- contents -->
+        <article class="contents-wrap">
+          <div class="page-contents">
+            <p class="basic-text color-gray">최대한 신속한 A/S를 위해 고장알림, 긴급상황알림에 대한 SMS 알림 메시지를 수신할 현대자동차 주재원을 등록할 수 있습니다. (최대 5명까지 등록 가능합니다.)</p>
+            <div class="ui-buttons ui-buttons--left">
+              <ul class="ui-buttons__list">
+                <li class="ui-buttons__item">
+                  <a href="" class="ui-basic-button ui-basic-button--regular ui-basic-button--secondary ui-basic-button--icon ui-basic-button--icon-add">
+                    <span class="ui-basic-button__text">주재원 등록하기</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Case : 등록된 주재원 없을 때 -->
+            <div class="card row-contents">
+              <div class="ui-empty ui-empty--search-empty">
+                <p class="ui-empty__text">등록된 주재원이 없습니다</p>
+              </div>
+            </div>
+            <!-- //Case : 등록된 주재원 없을 때 -->
+
+            <!-- list -->
+            <div class="card-list row-contents">
+              <ul class="card-list__list">
+                <li class="card-list__item">
+                  <div class="line-card">
+                    <div class="datas datas--horizontal">
+                      <!-- 2022.09.30 : mod : 카드 우측 정보 .color-light-gray에서 color-gray-emphasis 로 클래스 변경 -->
+                      <dl class="datas__list">
+                        <div class="datas__item">
+                          <dt class="datas__key color-blur-gray">등록일</dt>
+                          <dd class="datas__val">
+                            <div class="regular-text color-gray-emphasis">22.05.10</div>
+                          </dd>
+                        </div>
+                        <div class="datas__item">
+                          <dt class="datas__key color-blur-gray">주재원명</dt>
+                          <dd class="datas__val">
+                            <div class="regular-text color-gray-emphasis">홍길동</div>
+                          </dd>
+                        </div>
+                        <div class="datas__item">
+                          <dt class="datas__key color-blur-gray">권역</dt>
+                          <dd class="datas__val">
+                            <div class="regular-text color-gray-emphasis">서울/경기</div>
+                          </dd>
+                        </div>
+                      </dl>
+                      <!-- //2022.09.30 : mod : 카드 우측 정보 .color-light-gray에서 color-gray-emphasis 로 클래스 변경 -->
+                    </div>
+                    <div class="card-menu">
+                      <ul class="card-menu__list">
+                        <li class="card-menu__item">
+                          <button type="button" class="ui-button card-menu__link">
+                            <span class="card-menu__text">삭제</span>
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="card-list__item">
+                  <div class="line-card">
+                    <div class="datas datas--horizontal">
+                      <!-- 2022.09.30 : mod : 카드 우측 정보 .color-light-gray에서 color-gray-emphasis 로 클래스 변경 -->
+                      <dl class="datas__list">
+                        <div class="datas__item">
+                          <dt class="datas__key color-blur-gray">등록일</dt>
+                          <dd class="datas__val">
+                            <div class="regular-text color-gray-emphasis">22.05.10</div>
+                          </dd>
+                        </div>
+                        <div class="datas__item">
+                          <dt class="datas__key color-blur-gray">주재원명</dt>
+                          <dd class="datas__val">
+                            <div class="regular-text color-gray-emphasis">홍길동</div>
+                          </dd>
+                        </div>
+                        <div class="datas__item">
+                          <dt class="datas__key color-blur-gray">권역</dt>
+                          <dd class="datas__val">
+                            <div class="regular-text color-gray-emphasis">서울/경기</div>
+                          </dd>
+                        </div>
+                      </dl>
+                      <!-- //2022.09.30 : mod : 카드 우측 정보 .color-light-gray에서 color-gray-emphasis 로 클래스 변경 -->
+                    </div>
+                    <div class="card-menu">
+                      <ul class="card-menu__list">
+                        <li class="card-menu__item">
+                          <button type="button" class="ui-button card-menu__link">
+                            <span class="card-menu__text">삭제</span>
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- //list -->
+          </div>
+        </article>
+        <!-- //contents -->
+      </div>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript" src="/mobile/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/mobile/js/ui-script.js"></script>
+    <script type="text/javascript" src="/mobile/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <!-- //script -->
+  </body>
+</html>

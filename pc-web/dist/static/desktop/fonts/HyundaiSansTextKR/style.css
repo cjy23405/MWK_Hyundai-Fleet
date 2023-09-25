@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'HyundaiSansTextKR';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('HyundaiSansTextKRRegular'),
+    url('./eot/HyundaiSansTextKRRegular.eot'),
+    url('./eot/HyundaiSansTextKRRegular.eot?#iefix') format('embedded-opentype'),
+    url('./woff/HyundaiSansTextKRRegular.woff') format('woff'),
+    url('./woff2/HyundaiSansTextKRRegular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'HyundaiSansTextKR';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('HyundaiSansTextKRMedium'),
+    url('./eot/HyundaiSansTextKRMedium.eot'),
+    url('./eot/HyundaiSansTextKRMedium.eot?#iefix') format('embedded-opentype'),
+    url('./woff/HyundaiSansTextKRMedium.woff') format('woff'),
+    url('./woff2/HyundaiSansTextKRMedium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'HyundaiSansTextKR';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('HyundaiSansTextKRBold'),
+    url('./eot/HyundaiSansTextKRBold.eot'),
+    url('./eot/HyundaiSansTextKRBold.eot?#iefix') format('embedded-opentype'),
+    url('./woff/HyundaiSansTextKRBold.woff') format('woff'),
+    url('./woff2/HyundaiSansTextKRBold.woff2') format('woff2');
+}

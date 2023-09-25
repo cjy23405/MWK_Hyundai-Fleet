@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/desktop/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/simplebar/simplebar.min.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="layout-wrap">
+        <!-- skip-nav -->
+        <nav class="skip-nav">
+          <h2 class="for-a11y">Skip navigation</h2>
+          <ul class="skip-nav__list">
+            <li class="skip-nav__item">
+              <a href="#header" class="skip-nav__link">Header</a>
+            </li>
+            <li class="skip-nav__item">
+              <a href="#gnb" class="skip-nav__link">Global navigation bar</a>
+            </li>
+            <li class="skip-nav__item">
+              <a href="#contents" class="skip-nav__link">Contents</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- //skip-nav -->
+
+        <!-- toast-alert -->
+        <div class="ui-toast-alert" id="globalToastAlert"></div>
+        <!-- //toast-alert -->
+
+        <!-- header -->
+        <div class="fix-top-wrap">
+          <header class="header" id="header">
+            <div class="header__left">
+              <h1 class="header__logo">
+                <a href="" class="header__logo-link">
+                  <span class="for-a11y">Bluelink Fleet</span>
+                </a>
+              </h1>
+            </div>
+            <div class="header__right">
+              <!-- 2022.09.30 : mod : 어드민용 헤더 케이스 반영 -->
+              <div class="header__my">
+                <p class="header__my-text"><strong>현대운수</strong>님 안녕하세요.</p>
+              </div>
+              <ul class="header__nav">
+                <li class="header__nav-item">
+                  <a href="" class="header__nav-link">
+                    <span class="header__nav-icon header__nav-icon--logout"></span>
+                    <span class="for-a11y">로그아웃</span>
+                  </a>
+                </li>
+              </ul>
+              <!-- //2022.09.30 : mod : 어드민용 헤더 케이스 반영 -->
+            </div>
+          </header>
+        </div>
+        <!-- //header -->
+
+        <!-- 2022.09.30 : del : 어드민용 헤더 케이스 반영으로 알림, 공지사항 레이어 제거 -->
+
+        <!-- gnb -->
+        <nav class="gnb" id="gnb">
+          <h2 class="for-a11y">Global navigation bar</h2>
+          <div class="gnb__body">
+            <div class="gnb__scroller ui-scroller">
+              <!-- 2022.09.30 : mod : 어드민용 GNB 반영 -->
+              <ul class="gnb__list js-ui-accordion">
+                <!-- DD : 현재 페이지면 is-active 클래스 값 추가 -->
+                <li class="gnb__item js-ui-accordion__item is-active">
+                  <div class="gnb__item-head">
+                    <span class="gnb__link">
+                      <span class="gnb__icon gnb__icon--type-9"></span>
+                      <span class="gnb__link-text">이용현황</span>
+                    </span>
+                    <button type="button" class="ui-button gnb__item-opener js-ui-accordion__opener">
+                      <span class="for-a11y">
+                        하위 메뉴
+                        <span class="open-text">열기</span>
+                        <span class="close-text">닫기</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="gnb__layer js-ui-accordion__layer">
+                    <div class="gnb__depth">
+                      <ul class="gnb__depth-list">
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">가입현황</span>
+                          </a>
+                        </li>
+                        <!-- DD : 현재 페이지면 is-active 클래스 값 추가 -->
+                        <li class="gnb__depth-item is-active">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">블루링크 개통현황</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">화면접속통계</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="gnb__item js-ui-accordion__item">
+                  <div class="gnb__item-head">
+                    <span class="gnb__link">
+                      <span class="gnb__icon gnb__icon--type-10"></span>
+                      <span class="gnb__link-text">차량정보관리</span>
+                    </span>
+                    <button type="button" class="ui-button gnb__item-opener js-ui-accordion__opener">
+                      <span class="for-a11y">
+                        하위 메뉴
+                        <span class="open-text">열기</span>
+                        <span class="close-text">닫기</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="gnb__layer js-ui-accordion__layer">
+                    <div class="gnb__depth">
+                      <ul class="gnb__depth-list">
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">차량모델관리</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">DTC 관리</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">차량 주요 상태 정보 관리</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="gnb__item js-ui-accordion__item">
+                  <div class="gnb__item-head">
+                    <span class="gnb__link">
+                      <span class="gnb__icon gnb__icon--type-11"></span>
+                      <span class="gnb__link-text">서비스관리</span>
+                    </span>
+                    <button type="button" class="ui-button gnb__item-opener js-ui-accordion__opener">
+                      <span class="for-a11y">
+                        하위 메뉴
+                        <span class="open-text">열기</span>
+                        <span class="close-text">닫기</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="gnb__layer js-ui-accordion__layer">
+                    <div class="gnb__depth">
+                      <ul class="gnb__depth-list">
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">주재원/하이테크반 관리</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">공지사항 관리</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="gnb__item js-ui-accordion__item">
+                  <div class="gnb__item-head">
+                    <span class="gnb__link">
+                      <span class="gnb__icon gnb__icon--type-12"></span>
+                      <span class="gnb__link-text">기준정보관리</span>
+                    </span>
+                    <button type="button" class="ui-button gnb__item-opener js-ui-accordion__opener">
+                      <span class="for-a11y">
+                        하위 메뉴
+                        <span class="open-text">열기</span>
+                        <span class="close-text">닫기</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="gnb__layer js-ui-accordion__layer">
+                    <div class="gnb__depth">
+                      <ul class="gnb__depth-list">
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">충전 요금 정보 관리</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">서비스 기준 정보 관리</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">전비등급 기준 정보관리</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">연비등급 기준 정보관리</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">탄소/환경 정보관리</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <!-- //2022.09.30 : mod : 어드민용 GNB 반영 -->
+            </div>
+          </div>
+          <div class="gnb__foot">
+            <button type="button" class="ui-button gnb__opener">
+              <span class="for-a11y">
+                Global navigation bar
+                <span class="open-text">확장</span>
+                <span class="close-text">축소</span>
+              </span>
+            </button>
+          </div>
+        </nav>
+        <!-- //gnb -->
+
+        <!-- contents -->
+        <article class="contents-wrap" id="contents">
+          <div class="page-contents">
+            <div class="page-head">
+              <div class="page-head__left">
+                <h2 class="page-head__title">화면 접속 통계</h2>
+              </div>
+            </div>
+
+            <section class="section">
+              <form action="">
+                <div class="card card--z-high">
+                  <div class="form-flex">
+                    <div class="form-flex-cell form-flex-cell--flexible">
+                      <div class="form-flex">
+                        <!-- radio tab -->
+                        <div class="form-flex-cell">
+                          <div class="radio-tab">
+                            <ul class="radio-tab__list">
+                              <li class="radio-tab__item">
+                                <div class="ui-radio-block">
+                                  <input type="radio" class="ui-radio" name="radioTab1" id="radioTab1_1" data-checkbox-tab="tab_date" checked />
+                                  <label for="radioTab1_1" class="radio-tab__link">
+                                    <span class="radio-tab__link-text">일</span>
+                                  </label>
+                                </div>
+                              </li>
+                              <li class="radio-tab__item">
+                                <div class="ui-radio-block">
+                                  <input type="radio" class="ui-radio" name="radioTab1" id="radioTab1_2" data-checkbox-tab="tab_month" />
+                                  <label for="radioTab1_2" class="radio-tab__link">
+                                    <span class="radio-tab__link-text">월</span>
+                                  </label>
+                                </div>
+                              </li>
+                              <li class="radio-tab__item">
+                                <div class="ui-radio-block">
+                                  <input type="radio" class="ui-radio" name="radioTab1" id="radioTab1_3" data-checkbox-tab="tab_year" />
+                                  <label for="radioTab1_3" class="radio-tab__link">
+                                    <span class="radio-tab__link-text">년</span>
+                                  </label>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <!--// radio tab -->
+
+                        <!-- 일별 -->
+                        <div class="form-flex-cell" data-checkbox-tab-panel="tab_date">
+                          <div class="form-flex">
+                            <div class="form-flex-cell">
+                              <div class="ui-date-picker input-width-date">
+                                <duet-date-picker identifier="date" title="기간 시작 날짜" value="2022-05-24"></duet-date-picker>
+                              </div>
+                            </div>
+                            <div class="form-flex-cell form-flex-cell--small-margin">
+                              <div class="basic-text">-</div>
+                            </div>
+                            <div class="form-flex-cell form-flex-cell--small-margin">
+                              <div class="ui-date-picker input-width-date">
+                                <duet-date-picker identifier="date" title="기간 마지막 날짜" value="2022-06-23"></duet-date-picker>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 월별 -->
+                        <div class="form-flex-cell" data-checkbox-tab-panel="tab_month">
+                          <div class="form-flex">
+                            <!-- 2022.09.30 : mod : 셀렉트 구성 변경 -->
+                            <div class="form-flex-cell form-flex-cell--small-margin">
+                              <div class="ui-select-block input-width-date">
+                                <select class="ui-select" title="기간 시작 월">
+                                  <option value="">2022.01</option>
+                                  <option value="">2022.02</option>
+                                  <option value="">2022.03</option>
+                                  <option value="">2022.04</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-flex-cell form-flex-cell--small-margin">
+                              <div class="basic-text">-</div>
+                            </div>
+                            <div class="form-flex-cell form-flex-cell--small-margin">
+                              <div class="ui-select-block input-width-date">
+                                <select class="ui-select" title="기간 마지막 월">
+                                  <option value="">2022.01</option>
+                                  <option value="">2022.02</option>
+                                  <option value="">2022.03</option>
+                                  <option value="">2022.04</option>
+                                </select>
+                              </div>
+                            </div>
+                            <!-- //2022.09.30 : mod : 셀렉트 구성 변경 -->
+                          </div>
+                        </div>
+
+                        <!-- 년도별 -->
+                        <div class="form-flex-cell" data-checkbox-tab-panel="tab_year">
+                          <div class="form-flex">
+                            <div class="form-flex-cell form-flex-cell--small-margin">
+                              <div class="ui-select-block input-width-date">
+                                <!-- 2022.09.30 : mod : title 값 변경 -->
+                                <select class="ui-select" title="기간 시작 연도">
+                                  <option value="">2022</option>
+                                  <option value="">2021</option>
+                                  <option value="">2020</option>
+                                  <option value="">2019</option>
+                                </select>
+                              </div>
+                            </div>
+                            <!-- 2022.09.30 : mod : .basic-text 추가 -->
+                            <div class="form-flex-cell form-flex-cell--small-margin">
+                              <div class="basic-text">-</div>
+                            </div>
+                            <!-- //2022.09.30 : mod : .basic-text 추가 -->
+                            <div class="form-flex-cell form-flex-cell--small-margin">
+                              <div class="ui-select-block input-width-date">
+                                <!-- 2022.09.30 : mod : title 값 변경 -->
+                                <select class="ui-select" title="기간 마지막 연도">
+                                  <option value="">2022</option>
+                                  <option value="">2021</option>
+                                  <option value="">2020</option>
+                                  <option value="">2019</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-flex-cell">
+                      <button type="submit" class="ui-button ui-basic-button ui-basic-button--secondary ui-basic-button--regular">
+                        <span class="ui-basic-button__text">조회</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </section>
+
+            <section class="section">
+              <!-- Case : 	검색 결과가 없습니다. -->
+              <div class="ui-empty ui-empty--search-empty">
+                <p class="ui-empty__text">검색 결과가 없습니다.</p>
+              </div>
+              <!-- //Case : 검색 결과가 없습니다. -->
+
+              <!-- table -->
+              <div class="board-table">
+                <div class="board-table__body">
+                  <div class="board-table__table-wrap" role="table">
+                    <div class="board-table__thead">
+                      <table role="rowgroup" class="board-table__table">
+                        <colgroup>
+                          <col style="width: 84px" />
+                          <col style="width: 88px" />
+                          <col style="width: 94px" />
+                          <col style="width: 118px" />
+                          <col style="width: 72px" />
+                          <col style="width: 72px" />
+                          <col style="width: 82px" />
+                          <col style="width: 72px" />
+                          <col style="width: 118px" />
+                          <col style="width: 142px" />
+                          <col style="width: 118px" />
+                          <col style="width: 72px" />
+                          <col style="width: 82px" />
+                          <col style="width: 72px" />
+                          <col style="width: 82px" />
+                          <col style="width: 184px" />
+                          <col style="width: 124px" />
+                          <col style="width: 82px" />
+                          <col style="width: 120px" />
+                          <col style="width: 106px" />
+                          <col style="width: 100px" />
+                          <col style="width: 72px" />
+                          <col style="width: 94px" />
+                          <col style="width: 112px" />
+                          <col style="width: 94px" />
+                          <col style="width: 124px" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">일</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">Dashboard</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">차량고장진단</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">차량주요상태정보</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">차량관제</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">충전분석</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">가동률분석</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">안전지수</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">승객안전운행지수</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">제한속도초과운행지수</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">심야운행안전지수</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">전비등급</div>
+                              </div>
+                            </th>
+
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">전력사용량</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">연비등급</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">연료사용량</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">온실가스 배출(KAU)</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">온실가스 감축(KOC)</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">탄소나무숲</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">환경을 지키는 버스</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">정기점검리포트</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">DTG 다운로드</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">차량목록</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">노선정보관리</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">알림 연락처 관리</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">기준정보관리</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">대시보드 카드 설정</div>
+                              </div>
+                            </th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                    <div class="board-table__tbody">
+                      <div class="board-table__tbody-scroller ui-scroller">
+                        <table role="rowgroup" class="board-table__table">
+                          <colgroup>
+                            <col style="width: 84px" />
+                            <col style="width: 88px" />
+                            <col style="width: 94px" />
+                            <col style="width: 118px" />
+                            <col style="width: 72px" />
+                            <col style="width: 72px" />
+                            <col style="width: 82px" />
+                            <col style="width: 72px" />
+                            <col style="width: 118px" />
+                            <col style="width: 142px" />
+                            <col style="width: 118px" />
+                            <col style="width: 72px" />
+                            <col style="width: 82px" />
+                            <col style="width: 72px" />
+                            <col style="width: 82px" />
+                            <col style="width: 184px" />
+                            <col style="width: 124px" />
+                            <col style="width: 82px" />
+                            <col style="width: 120px" />
+                            <col style="width: 106px" />
+                            <col style="width: 100px" />
+                            <col style="width: 72px" />
+                            <col style="width: 94px" />
+                            <col style="width: 112px" />
+                            <col style="width: 94px" />
+                            <col style="width: 124px" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <td>22.06.28</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>22.06.27</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>22.06.26</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>22.06.25</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>22.06.24</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>22.06.23</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>22.06.22</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>22.06.21</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>22.06.20</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>22.06.19</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="board-table__foot">
+                  <div class="board-table__cell-left"></div>
+
+                  <div class="board-table__cell-center">
+                    <nav class="pagination">
+                      <h3 class="for-a11y">Pagination</h3>
+                      <ul class="pagination__list">
+                        <li class="pagination__item">
+                          <!-- 2022.09.05 : mod : button 태그로 변경 -->
+                          <!-- DD : 첫번째 페이지일 경우 disabled 속성 추가 -->
+                          <button type="button" class="ui-button pagination__link pagination__link--prev">
+                            <span class="for-a11y">이전</span>
+                          </button>
+                          <!-- //2022.09.05 : mod : button 태그로 변경 -->
+                        </li>
+                        <li class="pagination__item">
+                          <a href="" class="pagination__link">1</a>
+                        </li>
+                        <li class="pagination__item">
+                          <span class="pagination__ellipsis">...</span>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="" class="pagination__link">7</a>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="" class="pagination__link">8</a>
+                        </li>
+                        <li class="pagination__item">
+                          <!-- DD : 현재 페이지면 is-active 클래스 값 추가 -->
+                          <a href="" class="pagination__link is-active">9</a>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="" class="pagination__link">10</a>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="" class="pagination__link">11</a>
+                        </li>
+                        <li class="pagination__item">
+                          <span class="pagination__ellipsis">...</span>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="" class="pagination__link">999</a>
+                        </li>
+                        <li class="pagination__item">
+                          <!-- 2022.09.05 : mod : button 태그로 변경 -->
+                          <!-- DD : 마지막 페이지일 경우 disabled 속성 추가 -->
+                          <button type="button" class="ui-button pagination__link pagination__link--next">
+                            <span class="for-a11y">다음</span>
+                          </button>
+                          <!-- //2022.09.05 : mod : button 태그로 변경 -->
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+
+                  <div class="board-table__cell-right">
+                    <div class="ui-buttons ui-buttons--right ui-buttons--no-margin">
+                      <ul class="ui-buttons__list">
+                        <li class="ui-buttons__item">
+                          <button type="button" class="ui-button ui-basic-button ui-basic-button--regular ui-basic-button--icon ui-basic-button--icon-excel">
+                            <span class="ui-basic-button__text">Excel 다운로드</span>
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--// table -->
+            </section>
+          </div>
+        </article>
+        <!-- //contents -->
+      </div>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript" src="/desktop/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/simplebar/simplebar.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/sortablejs/sortable.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/desktop/js/ui-script.js"></script>
+    <script type="text/javascript" src="/desktop/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <script>
+      $(function () {
+        // submit 테스트 소스
+        $('form').on('submit', function (e) {
+          alert('submit test');
+
+          e.preventDefault();
+        });
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

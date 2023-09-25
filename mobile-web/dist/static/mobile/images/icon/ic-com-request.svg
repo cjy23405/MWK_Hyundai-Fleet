@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="178.998" height="160" viewBox="0 0 178.998 160">
+    <defs>
+        <linearGradient id="zqnejzdbaa" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#fff"/>
+            <stop offset="1" stop-color="#eceff1"/>
+        </linearGradient>
+        <linearGradient id="fubqdn6u1b" x1="1" y1=".5" x2=".183" y2=".5" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#78909c"/>
+            <stop offset="1" stop-color="#3a4e5b"/>
+        </linearGradient>
+        <linearGradient id="qzwspicljc" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#00bfa5"/>
+            <stop offset="1" stop-color="#80dc84"/>
+        </linearGradient>
+        <linearGradient id="g5xgbzbnke" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#2979ff"/>
+            <stop offset="1" stop-color="#26c6da"/>
+        </linearGradient>
+        <linearGradient id="f6xexn6dlf" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#0069c0"/>
+            <stop offset="1" stop-color="#003b6d"/>
+        </linearGradient>
+        <linearGradient id="d3q0s7lumg" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#fff"/>
+            <stop offset="1" stop-color="#b3d1e9"/>
+        </linearGradient>
+        <filter id="90y4hx0b0d" x="70.999" y="1" width="107.999" height="108" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur stdDeviation="10" result="blur"/>
+            <feFlood flood-opacity=".302"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <path data-name="사각형 7093" style="fill:none" d="M0 0h160v160H0z"/>
+    <path data-name="빼기 203" d="M76 96H0V0h64.444L76 12.164V96z" transform="translate(41.998 32.003)" style="fill:url(#zqnejzdbaa)"/>
+    <path data-name="사각형 35161" transform="translate(54 92)" style="opacity:.3;fill:url(#fubqdn6u1b)" d="M0 0h52v6H0z"/>
+    <path data-name="사각형 35162" transform="translate(54 106)" style="opacity:.3;fill:url(#fubqdn6u1b)" d="M0 0h34v6H0z"/>
+    <g data-name="패스 15598">
+        <path data-name="패스 30261" d="M178.891 172.066h-4.307L164.031 160.7l4.307-4 8.4 9.047 14.986-16.147 4.307 4z" transform="translate(-110.031 -101.604)" style="fill:url(#qzwspicljc)"/>
+    </g>
+    <g data-name="그룹 34720">
+        <g style="filter:url(#90y4hx0b0d)">
+            <path data-name="합치기 560" d="m-2114.024 12122.479.025.022h-21l6.562-5.625a23.952 23.952 0 0 1-8.563-18.376 24 24 0 0 1 24-24 24 24 0 0 1 24 24 24 24 0 0 1-24 24q-.516 0-1.024-.021z" transform="translate(2237.999 -12043.495)" style="opacity:.9;fill:url(#g5xgbzbnke)"/>
+        </g>
+        <path data-name="합치기 606" d="M1.077 31.079V16.568h1.084v-6.259l-3.03-3.628L1.4 0h4.528l2.266 6.681-3.034 3.633v6.255h1.246v14.51z" transform="rotate(45 16.846 182.364)" style="fill:url(#f6xexn6dlf)"/>
+        <path data-name="빼기 221" d="M7.41 29.676H2.465V11.249L0 8.784v-5.7L3.083 0v4.955h3.708V.017l3.256 3.257v5.321L7.41 11.233v18.442z" transform="rotate(-45 113.92 -109.082)" style="fill:url(#d3q0s7lumg)"/>
+    </g>
+</svg>

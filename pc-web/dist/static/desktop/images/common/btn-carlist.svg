@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24.001" viewBox="0 0 24 24.001">
+    <g data-name="그룹 17063">
+        <path data-name="사각형 18344" transform="translate(0 .001)" style="fill:transparent" d="M0 0h24v24H0z"/>
+        <g data-name="합치기 603" style="fill:none">
+            <path d="m-10479.637-9961.5-5.365-5.363v-15.637h5v-2h10v2h5v21z" style="stroke:none" transform="translate(10487.001 9984.501)"/>
+            <path d="M-10466.501-9963v-17.999h-4.999v-2.002h-7v2.002h-5.002v13.515l4.486 4.484h12.515m1.5 1.5h-14.636l-5.365-5.363v-15.636h5.002v-2.002h10v2.002h4.999v20.999z" style="fill:#fff;stroke:none" transform="translate(10487.001 9984.501)"/>
+        </g>
+        <g data-name="사각형 35119" style="stroke:#fff;stroke-width:1.5px;fill:none">
+            <path style="stroke:none" d="M0 0h10v5H0z" transform="translate(6.997 .001)"/>
+            <path style="fill:none" d="M.75.75h8.5v3.5H.75z" transform="translate(6.997 .001)"/>
+        </g>
+        <path data-name="사각형 35140" transform="translate(8.5 15.001)" style="fill:#fff" d="M0 0h7v1.5H0z"/>
+    </g>
+</svg>

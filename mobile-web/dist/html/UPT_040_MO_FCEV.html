@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/mobile/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/swiper/swiper-bundle.min.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="layout-wrap">
+        <!-- toast-alert -->
+        <div class="ui-toast-alert" id="globalToastAlert"></div>
+        <!-- //toast-alert -->
+
+        <!-- header -->
+        <div class="fix-top-wrap">
+          <header class="header">
+            <div class="header__left">
+              <a href="" class="header__button header__button--back">
+                <span class="for-a11y">뒤로 가기</span>
+              </a>
+            </div>
+            <div class="header__center">
+              <h1 class="header__title">가동률분석</h1>
+            </div>
+            <div class="header__right">
+              <a href="" class="header__button header__button--menu">
+                <span class="for-a11y">메뉴</span>
+              </a>
+            </div>
+          </header>
+        </div>
+        <!-- //header -->
+
+        <!-- contents -->
+        <article class="contents-wrap">
+          <div class="page-contents">
+            <div class="row-group">
+              <!-- 2022.10.21 : add : 분석기간 및 셀렉트 박스 추가 -->
+              <p class="basic-text color-gray row-item-group">분석기간 22.05.01 ~ 22.05.14</p>
+              <div class="board-top">
+                <div class="board-top__row">
+                  <div class="ui-dropdown js-ui-dropdown">
+                    <div class="ui-dropdown__head">
+                      <div class="ui-dropdown__text">2022.05</div>
+                      <button type="button" class="ui-button ui-dropdown__opener js-ui-dropdown__opener">
+                        <span class="for-a11y">
+                          분석기간 목록
+                          <span class="open-text">open</span>
+                          <span class="close-text">close</span>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="ui-dropdown__layer js-ui-dropdown__layer">
+                      <div class="ui-dropdown__contents">
+                        <ul class="ui-dropdown__list">
+                          <li class="ui-dropdown__item">
+                            <a href="" class="ui-dropdown__link">2022.05</a>
+                          </li>
+                          <li class="ui-dropdown__item">
+                            <a href="" class="ui-dropdown__link">2022.04</a>
+                          </li>
+                          <li class="ui-dropdown__item">
+                            <a href="" class="ui-dropdown__link">2022.03</a>
+                          </li>
+                          <li class="ui-dropdown__item">
+                            <a href="" class="ui-dropdown__link">2022.02</a>
+                          </li>
+                          <li class="ui-dropdown__item">
+                            <a href="" class="ui-dropdown__link">2022.01</a>
+                          </li>
+                          <li class="ui-dropdown__item">
+                            <a href="" class="ui-dropdown__link">2021.12</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- //2022.10.21 : add : 분석기간 및 셀렉트 박스 추가 -->
+
+              <!-- Case : 집계 데이터 없을 때 -->
+              <div class="card">
+                <div class="ui-empty ui-empty--no-data">
+                  <p class="ui-empty__text">데이터를 집계 중입니다.</p>
+                  <p class="ui-empty__sub-text">(내일부터 데이터를 확인할 수 있습니다.)</p>
+                </div>
+              </div>
+              <!-- //Case : 집계 데이터 없을 때 -->
+
+              <div class="card row-item-group">
+                <div class="count-list">
+                  <dl class="count-list__list">
+                    <div class="count-list__item count-list__item--icon count-list__item--icon-graph">
+                      <dt class="count-list__key">5월 평균</dt>
+                      <dd class="count-list__val">
+                        <div class="value value--medium">
+                          <div class="value__num">98</div>
+                          <div class="value__unit">%</div>
+                        </div>
+                      </dd>
+                    </div>
+                    <div class="count-list__item count-list__item--icon count-list__item--icon-graph">
+                      <dt class="count-list__key">4월 평균</dt>
+                      <dd class="count-list__val">
+                        <div class="value value--medium">
+                          <div class="value__num">98</div>
+                          <div class="value__unit">%</div>
+                        </div>
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <!-- 2022.09.30 : mod : card--none-blur 클래스 값 추가 -->
+              <div class="card card--none-blur row-item-group">
+                <div class="chart-box" id="chart1"></div>
+              </div>
+            </div>
+
+            <div class="board-top">
+              <div class="board-top__row">
+                <form action="">
+                  <div class="ui-search">
+                    <div class="ui-search__form">
+                      <div class="ui-input-block ui-search__input">
+                        <input type="search" class="ui-input js-search-keyword-target" title="차량 검색" placeholder="차량명(차량번호), 차종" autocomplete="off" id="carSearch" />
+                      </div>
+                      <button type="submit" class="ui-button ui-search__submit">
+                        <span class="for-a11y">검색</span>
+                      </button>
+                    </div>
+                    <div class="ui-search__layer">
+                      <div class="ui-search__contents">
+                        <ul class="ui-search__list"></ul>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="board-top__row">
+                <div class="ui-dropdown js-ui-dropdown">
+                  <div class="ui-dropdown__head">
+                    <div class="ui-dropdown__text js-ui-dropdown__watch">가동률 낮은 순</div>
+                    <button type="button" class="ui-button ui-dropdown__opener js-ui-dropdown__opener">
+                      <span class="for-a11y">
+                        정렬 메뉴
+                        <span class="open-text">open</span>
+                        <span class="close-text">close</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="ui-dropdown__layer js-ui-dropdown__layer">
+                    <div class="ui-dropdown__contents">
+                      <ul class="ui-dropdown__list">
+                        <li class="ui-dropdown__item">
+                          <a href="" class="ui-dropdown__link js-ui-dropdown__closer" data-dropdown-option="가동률 낮은 순">가동률 낮은 순</a>
+                        </li>
+                        <li class="ui-dropdown__item">
+                          <a href="" class="ui-dropdown__link js-ui-dropdown__closer" data-dropdown-option="가동률 높은 순">가동률 높은 순</a>
+                        </li>
+                        <li class="ui-dropdown__item">
+                          <a href="" class="ui-dropdown__link js-ui-dropdown__closer" data-dropdown-option="이번월 운행거리 많은 순">이번월 운행거리 많은 순</a>
+                        </li>
+                        <li class="ui-dropdown__item">
+                          <a href="" class="ui-dropdown__link js-ui-dropdown__closer" data-dropdown-option="이번월 운행거리 적은 순">이번월 운행거리 적은 순</a>
+                        </li>
+                        <li class="ui-dropdown__item">
+                          <a href="" class="ui-dropdown__link js-ui-dropdown__closer" data-dropdown-option="현재 배터리 낮은 순">현재 배터리 낮은 순</a>
+                        </li>
+                        <li class="ui-dropdown__item">
+                          <a href="" class="ui-dropdown__link js-ui-dropdown__closer" data-dropdown-option="현재 배터리 높은 순">현재 배터리 높은 순</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Case : 차량 없을 때 -->
+            <div class="card">
+              <div class="ui-empty">
+                <p class="ui-empty__text">차량 등록 전이므로 데이터가 없습니다.</p>
+              </div>
+            </div>
+            <!-- //Case : 차량 없을 때 -->
+
+            <!-- Case : 검색 결과 없을 때 -->
+            <div class="card">
+              <div class="ui-empty ui-empty--search-empty">
+                <p class="ui-empty__text">검색 결과가 없습니다.</p>
+              </div>
+            </div>
+            <!-- //Case : 검색 결과 없을 때 -->
+
+            <!-- Case : 집계 데이터 없을 때 -->
+            <div class="card">
+              <div class="ui-empty ui-empty--no-data">
+                <p class="ui-empty__text">데이터를 집계 중입니다.</p>
+                <p class="ui-empty__sub-text">(내일부터 데이터를 확인할 수 있습니다.)</p>
+              </div>
+            </div>
+            <!-- //Case : 집계 데이터 없을 때 -->
+
+            <!-- list -->
+            <div class="card-list">
+              <ul class="card-list__list">
+                <li class="card-list__item">
+                  <div class="card">
+                    <div class="card-head">
+                      <div class="card-head__left">
+                        <h2 class="card-head__title">06가2345</h2>
+                        <div class="card-head__sub">일렉시티 수소</div>
+                      </div>
+                      <div class="card-head__right">
+                        <span class="tooltip">
+                          <span class="tooltip__block js-ui-dropdown">
+                            <span class="tooltip__head">
+                              <button type="button" class="ui-button tooltip__opener js-ui-dropdown__opener">
+                                <span class="ui-icon ui-icon--route">
+                                  <span class="for-a11y">
+                                    노선 정보
+                                    <span class="open-text">열기</span>
+                                    <span class="close-text">닫기</span>
+                                  </span>
+                                </span>
+                              </button>
+                            </span>
+                            <span class="tooltip__layer js-ui-dropdown__layer">
+                              <span class="tooltip__bubble">
+                                <span class="tooltip__bubble-message">1111번</span>
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="datas datas--info">
+                      <dl class="datas__list">
+                        <div class="datas__item">
+                          <dt class="datas__key datas__key--no-margin">
+                            <div class="regular-text">가동률</div>
+                          </dt>
+                          <dd class="datas__val">
+                            <div class="car-status-info car-status-info--fcev">
+                              <div class="value value--medium-large">
+                                <div class="value__num">85.7</div>
+                                <div class="value__unit">%</div>
+                              </div>
+                            </div>
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+                    <div class="row-contents-group">
+                      <div class="box row-item">
+                        <div class="box__inner">
+                          <div class="datas">
+                            <dl class="datas__list">
+                              <div class="datas__item">
+                                <dt class="datas__key">실 운행일수</dt>
+                                <dd class="datas__val">
+                                  <div class="form-flex">
+                                    <div class="form-flex-cell form-flex-cell--flexible">
+                                      <div class="value value--x-small">
+                                        <div class="value__num color-light-gray">14</div>
+                                        <div class="value__unit color-gray">일</div>
+                                      </div>
+                                    </div>
+                                    <div class="form-flex-cell">
+                                      <div class="basic-text color-gray">평균 운행일수 14일</div>
+                                    </div>
+                                  </div>
+                                </dd>
+                              </div>
+                              <div class="datas__item">
+                                <dt class="datas__key">이번 달 운행거리</dt>
+                                <dd class="datas__val">
+                                  <div class="form-flex">
+                                    <div class="form-flex-cell form-flex-cell--flexible">
+                                      <div class="value value--x-small">
+                                        <div class="value__num color-light-gray">987</div>
+                                        <div class="value__unit color-gray">km</div>
+                                      </div>
+                                    </div>
+                                    <div class="form-flex-cell">
+                                      <div class="basic-text color-gray">지난 달 운행거리 857km</div>
+                                    </div>
+                                  </div>
+                                </dd>
+                              </div>
+                            </dl>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box row-item">
+                        <div class="box__inner">
+                          <div class="datas">
+                            <dl class="datas__list">
+                              <div class="datas__item">
+                                <dt class="datas__key">현재 연료 상태</dt>
+                                <dd class="datas__val">
+                                  <div class="value value--x-small">
+                                    <div class="value__num color-light-gray">74.0</div>
+                                    <div class="value__unit color-gray">%</div>
+                                  </div>
+                                </dd>
+                              </div>
+                            </dl>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="card-list__item">
+                  <div class="card">
+                    <div class="card-head">
+                      <div class="card-head__left">
+                        <h2 class="card-head__title">010가2345</h2>
+                        <div class="card-head__sub">일렉시티</div>
+                      </div>
+                      <div class="card-head__right">
+                        <span class="tooltip">
+                          <span class="tooltip__block js-ui-dropdown">
+                            <span class="tooltip__head">
+                              <button type="button" class="ui-button tooltip__opener js-ui-dropdown__opener">
+                                <span class="ui-icon ui-icon--route">
+                                  <span class="for-a11y">
+                                    노선 정보
+                                    <span class="open-text">열기</span>
+                                    <span class="close-text">닫기</span>
+                                  </span>
+                                </span>
+                              </button>
+                            </span>
+                            <span class="tooltip__layer js-ui-dropdown__layer">
+                              <span class="tooltip__bubble">
+                                <span class="tooltip__bubble-message">1111번</span>
+                              </span>
+                            </span>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="datas datas--info">
+                      <dl class="datas__list">
+                        <div class="datas__item">
+                          <dt class="datas__key datas__key--no-margin">
+                            <div class="regular-text">가동률</div>
+                          </dt>
+                          <dd class="datas__val">
+                            <div class="car-status-info car-status-info--fcev">
+                              <div class="value value--medium-large">
+                                <div class="value__num">85.7</div>
+                                <div class="value__unit">%</div>
+                              </div>
+                            </div>
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+                    <div class="row-contents-group">
+                      <div class="box row-item">
+                        <div class="box__inner">
+                          <div class="datas">
+                            <dl class="datas__list">
+                              <div class="datas__item">
+                                <dt class="datas__key">실 운행일수</dt>
+                                <dd class="datas__val">
+                                  <div class="form-flex">
+                                    <div class="form-flex-cell form-flex-cell--flexible">
+                                      <div class="value value--x-small">
+                                        <div class="value__num color-light-gray">14</div>
+                                        <div class="value__unit color-gray">일</div>
+                                      </div>
+                                    </div>
+                                    <div class="form-flex-cell">
+                                      <div class="basic-text color-gray">평균 운행일수 14일</div>
+                                    </div>
+                                  </div>
+                                </dd>
+                              </div>
+                              <div class="datas__item">
+                                <dt class="datas__key">이번 달 운행거리</dt>
+                                <dd class="datas__val">
+                                  <div class="form-flex">
+                                    <div class="form-flex-cell form-flex-cell--flexible">
+                                      <div class="value value--x-small">
+                                        <div class="value__num color-light-gray">987</div>
+                                        <div class="value__unit color-gray">km</div>
+                                      </div>
+                                    </div>
+                                    <div class="form-flex-cell">
+                                      <div class="basic-text color-gray">지난 달 운행거리 857km</div>
+                                    </div>
+                                  </div>
+                                </dd>
+                              </div>
+                            </dl>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="box row-item">
+                        <div class="box__inner">
+                          <div class="datas">
+                            <dl class="datas__list">
+                              <div class="datas__item">
+                                <dt class="datas__key">현재 배터리 상태</dt>
+                                <dd class="datas__val">
+                                  <div class="value value--x-small">
+                                    <div class="value__num color-light-gray">74.0</div>
+                                    <div class="value__unit color-gray">%</div>
+                                  </div>
+                                </dd>
+                              </div>
+                            </dl>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- //list -->
+          </div>
+        </article>
+        <!-- //contents -->
+      </div>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript" src="/mobile/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/mobile/js/ui-script.js"></script>
+    <script type="text/javascript" src="/mobile/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <script>
+      $(function () {
+        $('form').on('submit', function (e) {
+          alert('submit test');
+
+          e.preventDefault();
+        });
+
+        // 차량 검색 데이터
+        var searchOptions = {
+          html: function (data) {
+            var html = '';
+            html += '<li class="ui-search__item">';
+            html += '<a href="" class="ui-search__link" data-search-keyword="' + data.keyword + '">';
+            html += '<span class="ui-search__text">' + data.name + '</span>';
+            html += '<span class="ui-search__sub">' + data.model + '</span>';
+            html += '</a>';
+            html += '</li>';
+            return html;
+          },
+          datas: [
+            {
+              keyword: '76다4443 일렉시티',
+              name: '76다4443',
+              model: '일렉시티',
+            },
+            {
+              keyword: '11나7473 일렉시티2층',
+              name: '11나7473',
+              model: '일렉시티2층',
+            },
+            {
+              keyword: '32가0095 일렉시티',
+              name: '32가0095',
+              model: '일렉시티',
+            },
+            {
+              keyword: '43가5820 일렉시티 FCEV',
+              name: '43가5820',
+              model: '일렉시티 FCEV',
+            },
+            {
+              keyword: '345다7632 일렉시티',
+              name: '345다7632',
+              model: '일렉시티',
+            },
+            {
+              keyword: '13나7443 엑시언트 수소트럭 (FCEV)',
+              name: '13나7443',
+              model: '엑시언트 수소트럭 (FCEV)',
+            },
+            {
+              keyword: '032가7431 일렉시티',
+              name: '032가7431',
+              model: '일렉시티',
+            },
+            {
+              keyword: '83가5642 일렉시티 FCEV',
+              name: '83가5642',
+              model: '일렉시티 FCEV',
+            },
+          ],
+        };
+        $('#carSearch').data('searchOptions', searchOptions);
+      });
+
+      // 전체 가동률 분석
+      function chart1(el, month, categories, data) {
+        Highcharts.chart(el, {
+          chart: {
+            type: 'column',
+            backgroundColor: '#203039', // 2022.09.30 : add : 옵션 추가
+            scrollablePlotArea: {
+              minWidth: 1500,
+              opacity: 1, // 2022.09.30 : add : 옵션 추가
+            },
+          },
+          xAxis: {
+            categories: categories,
+          },
+          yAxis: {
+            min: 0,
+            gridLineWidth: 0,
+          },
+          tooltip: {
+            shared: false,
+            formatter: function () {
+              var monthText = this.series.name === '이번 달' ? month[1] : month[0];
+              var html = '';
+              html += '<div class="chart-tooltip-title">' + monthText + ' ' + this.key + '<div><dl class="chart-tooltip-list">';
+              html += '<div class="chart-tooltip-item"><dt class="chart-tooltip-key">일 가동률</dt><dd class="chart-tooltip-val">' + this.y + '%</dd></div>';
+              html += '<div class="chart-tooltip-item"><dt class="chart-tooltip-key">운행대수</dt><dd class="chart-tooltip-val">' + this.point.ea + '대</dd></div>';
+              html += '</dl>';
+              return html;
+            },
+          },
+          legend: {
+            symbolWidth: 8,
+            symbolHeight: 8,
+          },
+          colors: [
+            {
+              linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+              stops: [
+                [0, UI_CHART.COLORS.PRIMARY_GRAD_TO],
+                [1, UI_CHART.COLORS.PRIMARY_GRAD_FROM],
+              ],
+            },
+            UI_CHART.COLORS.GRAY_600,
+          ],
+          series: data,
+        });
+      }
+
+      $(window).on('load', function () {
+        // 전체 충전 현황 분포
+        chart1(
+          'chart1',
+          ['4월', '5월'],
+          [
+            '1일',
+            '2일',
+            '3일',
+            '4일',
+            '5일',
+            '6일',
+            '7일',
+            '8일',
+            '9일',
+            '10일',
+            '11일',
+            '12일',
+            '13일',
+            '14일',
+            '15일',
+            '16일',
+            '17일',
+            '18일',
+            '19일',
+            '20일',
+            '21일',
+            '22일',
+            '23일',
+            '24일',
+            '25일',
+            '26일',
+            '27일',
+            '28일',
+            '29일',
+            '30일',
+            '31일',
+          ],
+          [
+            {
+              name: '이번 달',
+              data: [
+                {
+                  y: 62,
+                  ea: 67,
+                },
+                {
+                  y: 66,
+                  ea: 174,
+                },
+                {
+                  y: 88,
+                  ea: 88,
+                },
+                {
+                  y: 59,
+                  ea: 27,
+                },
+                {
+                  y: 53,
+                  ea: 148,
+                },
+                {
+                  y: 58,
+                  ea: 59,
+                },
+                {
+                  y: 70,
+                  ea: 172,
+                },
+                {
+                  y: 88,
+                  ea: 113,
+                },
+                {
+                  y: 92,
+                  ea: 115,
+                },
+                {
+                  y: 75,
+                  ea: 92,
+                },
+                {
+                  y: 83,
+                  ea: 77,
+                },
+                {
+                  y: 52,
+                  ea: 50,
+                },
+                {
+                  y: 74,
+                  ea: 179,
+                },
+                {
+                  y: 58,
+                  ea: 12,
+                },
+                {
+                  y: 84,
+                  ea: 112,
+                },
+                {
+                  y: 84,
+                  ea: 105,
+                },
+                {
+                  y: 92,
+                  ea: 158,
+                },
+                {
+                  y: 62,
+                  ea: 80,
+                },
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+              ],
+            },
+            {
+              name: '지난 달',
+              data: [
+                {
+                  y: 61,
+                  ea: 123,
+                },
+                {
+                  y: 69,
+                  ea: 190,
+                },
+                {
+                  y: 54,
+                  ea: 51,
+                },
+                {
+                  y: 62,
+                  ea: 194,
+                },
+                {
+                  y: 52,
+                  ea: 158,
+                },
+                {
+                  y: 79,
+                  ea: 109,
+                },
+                {
+                  y: 57,
+                  ea: 163,
+                },
+                {
+                  y: 58,
+                  ea: 43,
+                },
+                {
+                  y: 87,
+                  ea: 195,
+                },
+                {
+                  y: 51,
+                  ea: 198,
+                },
+                {
+                  y: 88,
+                  ea: 111,
+                },
+                {
+                  y: 96,
+                  ea: 53,
+                },
+                {
+                  y: 86,
+                  ea: 197,
+                },
+                {
+                  y: 50,
+                  ea: 178,
+                },
+                {
+                  y: 73,
+                  ea: 89,
+                },
+                {
+                  y: 79,
+                  ea: 160,
+                },
+                {
+                  y: 53,
+                  ea: 73,
+                },
+                {
+                  y: 68,
+                  ea: 162,
+                },
+                {
+                  y: 76,
+                  ea: 32,
+                },
+                {
+                  y: 89,
+                  ea: 189,
+                },
+                {
+                  y: 75,
+                  ea: 176,
+                },
+                {
+                  y: 83,
+                  ea: 32,
+                },
+                {
+                  y: 53,
+                  ea: 145,
+                },
+                {
+                  y: 82,
+                  ea: 15,
+                },
+                {
+                  y: 87,
+                  ea: 71,
+                },
+                {
+                  y: 98,
+                  ea: 45,
+                },
+                {
+                  y: 59,
+                  ea: 18,
+                },
+                {
+                  y: 64,
+                  ea: 156,
+                },
+                {
+                  y: 66,
+                  ea: 75,
+                },
+                {
+                  y: 50,
+                  ea: 42,
+                },
+                {
+                  y: 92,
+                  ea: 112,
+                },
+              ],
+            },
+          ]
+        );
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

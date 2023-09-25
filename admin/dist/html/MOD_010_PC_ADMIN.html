@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/desktop/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/simplebar/simplebar.min.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <a href="" class="basic-link" data-layer-open="layer-car-model-modify">차량 모델 수정</a>
+
+    <!-- layer: 차량 모델 수정 -->
+    <div class="layer-wrap" data-layer="layer-car-model-modify">
+      <div class="layer-container">
+        <section class="ui-layer ui-layer--small">
+          <div class="ui-layer__head">
+            <div class="ui-layer-header">
+              <div class="ui-layer-header__left">
+                <h2 class="ui-layer-header__title">차량 모델 수정</h2>
+              </div>
+              <button type="button" class="ui-button ui-layer-header__close" data-role="layerClose">
+                <span class="for-a11y">레이어 닫기</span>
+              </button>
+            </div>
+          </div>
+          <div class="ui-layer__body">
+            <div class="ui-layer__body-scroller ui-scroller">
+              <div class="ui-layer__body-inner">
+                <form action="">
+                  <div class="ui-form">
+                    <dl class="ui-form__list">
+                      <div class="ui-form__item">
+                        <dt class="ui-form__key">판매차종코드<span class="ui-require" aria-label="(필수)"></span></dt>
+                        <dd class="ui-form__val">
+                          <div class="ui-input-block">
+                            <input type="text" class="ui-input" title="판매차종코드 입력" placeholder="판매차종코드를 입력해주세요." />
+                          </div>
+                        </dd>
+                      </div>
+                      <div class="ui-form__item">
+                        <dt class="ui-form__key">생산차종코드<span class="ui-require" aria-label="(필수)"></span></dt>
+                        <dd class="ui-form__val">
+                          <div class="ui-input-block">
+                            <input type="text" class="ui-input" title="생산차종코드 입력" placeholder="생산차종코드를 입력해주세요." />
+                          </div>
+                        </dd>
+                      </div>
+                      <div class="ui-form__item">
+                        <dt class="ui-form__key">연료타입<span class="ui-require" aria-label="(필수)"></span></dt>
+                        <dd class="ui-form__val">
+                          <div class="ui-select-block">
+                            <select class="ui-select js-area-disabled" title="연료타입 선택">
+                              <option value="" data-area-disabled="disabled01">전기</option>
+                              <option value="" data-area-disabled="disabled02">수소</option>
+                              <option value="">디젤</option>
+                            </select>
+                          </div>
+                        </dd>
+                      </div>
+                      <div class="ui-form__item">
+                        <dt class="ui-form__key">차량구분<span class="ui-require" aria-label="(필수)"></span></dt>
+                        <dd class="ui-form__val">
+                          <div class="ui-select-block">
+                            <select class="ui-select" title="차량구분 선택">
+                              <option value="">버스</option>
+                              <option value="">트럭</option>
+                            </select>
+                          </div>
+                        </dd>
+                      </div>
+                      <div class="ui-form__item">
+                        <dt class="ui-form__key">차종명<span class="ui-require" aria-label="(필수)"></span></dt>
+                        <dd class="ui-form__val">
+                          <div class="ui-input-block">
+                            <input type="text" class="ui-input" title="차종명 입력" placeholder="차종명을 입력해주세요." />
+                          </div>
+                        </dd>
+                      </div>
+                      <div class="ui-form__item" data-area-disabled-target="disabled01">
+                        <dt class="ui-form__key">스탠다드 배터리팩<span class="ui-require" aria-label="(필수)"></span></dt>
+                        <dd class="ui-form__val">
+                          <div class="ui-input-block">
+                            <input type="text" class="ui-input" title="스탠다드 배터리팩 입력" placeholder="배터리팩 용량을 입력해주세요." />
+                          </div>
+                        </dd>
+                      </div>
+                      <div class="ui-form__item" data-area-disabled-target="disabled02">
+                        <dt class="ui-form__key">스탠다드 연료탱크<span class="ui-require" aria-label="(필수)"></span></dt>
+                        <dd class="ui-form__val">
+                          <div class="ui-input-block">
+                            <input type="text" class="ui-input" title="스탠다드 연료탱크 입력" placeholder="연료탱크 용량을 입력해주세요." />
+                          </div>
+                        </dd>
+                      </div>
+                      <div class="ui-form__item">
+                        <dt class="ui-form__key">사용여부<span class="ui-require" aria-label="(필수)"></span></dt>
+                        <dd class="ui-form__val">
+                          <div class="ui-select-block">
+                            <select class="ui-select" title="사용여부 선택">
+                              <option value="">사용</option>
+                              <option value="">미사용</option>
+                            </select>
+                          </div>
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+
+                  <div class="ui-buttons ui-buttons--right">
+                    <ul class="ui-buttons__list">
+                      <li class="ui-buttons__item">
+                        <button type="submit" class="ui-button ui-basic-button">
+                          <span class="ui-basic-button__text">저장</span>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- //layer: 차량 모델 수정 -->
+
+    <!-- script -->
+    <script type="text/javascript" src="/desktop/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/simplebar/simplebar.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/sortablejs/sortable.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/desktop/js/ui-script.js"></script>
+    <script type="text/javascript" src="/desktop/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <script>
+      $(function () {
+        uiJSLayer.open('layer-car-model-modify');
+
+        $('form').on('submit', function (e) {
+          alert('submit test');
+
+          e.preventDefault();
+        });
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

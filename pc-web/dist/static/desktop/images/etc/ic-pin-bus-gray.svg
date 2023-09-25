@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="121" height="84" viewBox="0 0 121 84">
+    <g data-name="합치기 511" style="fill:#b0bec5">
+        <path d="M-7756 2937h-59a29.898 29.898 0 0 1-21.213-8.787A29.9 29.9 0 0 1-7845 2907a29.9 29.9 0 0 1 8.787-21.213A29.898 29.898 0 0 1-7815 2877h59a29.898 29.898 0 0 1 21.213 8.787A29.9 29.9 0 0 1-7726 2907a29.9 29.9 0 0 1-8.787 21.213A29.898 29.898 0 0 1-7756 2937z" style="stroke:none" transform="translate(7846 -2876)"/>
+        <path d="M-7815 2878a28.906 28.906 0 0 0-20.506 8.494A28.906 28.906 0 0 0-7844 2907a28.906 28.906 0 0 0 8.494 20.506A28.906 28.906 0 0 0-7815 2936h59a28.906 28.906 0 0 0 20.506-8.494A28.906 28.906 0 0 0-7727 2907a28.906 28.906 0 0 0-8.494-20.506A28.906 28.906 0 0 0-7756 2878h-59m0-2h59c17.12 0 31 13.88 31 31 0 17.12-13.88 31-31 31h-59c-17.12 0-31-13.88-31-31 0-17.12 13.88-31 31-31z" style="fill:#90a4ae;stroke:none" transform="translate(7846 -2876)"/>
+    </g>
+    <g data-name="그룹 20052" transform="translate(-541 -564.982)">
+        <rect data-name="사각형 21988" width="52" height="52" rx="26" transform="translate(546 569.982)" style="fill:#fff"/>
+        <g data-name="그룹 20185" transform="translate(-145.131 460.852)">
+            <path data-name="빼기 111" d="M18.862 18h-6.975a4.5 4.5 0 0 0-8.775 0H0V2a2 2 0 0 1 2-2h28v18h-2.363a4.5 4.5 0 0 0-8.775 0zM3.75 2.573A1.269 1.269 0 0 0 2.5 3.858v7.069h5L10 2.573zm9.374 0-1.25 3.856h15.414V2.573H13.125z" transform="translate(702.131 125.131)" style="fill:#b0bec5"/>
+            <circle data-name="타원 2795" cx="3" cy="3" r="3" transform="translate(706.631 141.131)" style="fill:#b0bec5"/>
+            <circle data-name="타원 2871" cx="3" cy="3" r="3" transform="translate(722.381 141.131)" style="fill:#b0bec5"/>
+        </g>
+    </g>
+    <g data-name="그룹 23330" transform="translate(-364 -410)">
+        <path data-name="사각형 22156" transform="translate(424 470)" style="fill:#90a4ae" d="M0 0h2v20H0z"/>
+        <circle data-name="타원 2901" cx="4" cy="4" r="4" transform="translate(421 486)" style="fill:#90a4ae"/>
+    </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <defs>
+        <linearGradient id="j07quqqroa" x2="1" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#fff" stop-opacity=".616"/>
+            <stop offset="1" stop-color="#c2d5e5" stop-opacity=".235"/>
+        </linearGradient>
+    </defs>
+    <g transform="translate(-1473 -197)">
+        <g data-name="타원 2375" transform="translate(1473 197)" style="stroke:rgba(255,255,255,.65);stroke-width:.5px;fill:url(#j07quqqroa)">
+            <circle cx="24" cy="24" r="24" style="stroke:none"/>
+            <circle cx="24" cy="24" r="23.75" style="fill:none"/>
+        </g>
+        <circle data-name="타원 2269" cx="3.5" cy="3.5" r="3.5" transform="translate(1480.692 217.814)" style="fill:#fff"/>
+        <circle data-name="타원 2270" cx="3.5" cy="3.5" r="3.5" transform="translate(1493.692 217.814)" style="fill:#fff"/>
+        <circle data-name="타원 2271" cx="3.5" cy="3.5" r="3.5" transform="translate(1506.692 217.814)" style="fill:#fff"/>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="80" viewBox="0 0 100 80">
+    <path data-name="사각형 19261" style="fill:none" d="M0 0h100v80H0z"/>
+    <path data-name="빼기 13" d="M48 66H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4h32.013L52 15.988V62a4.005 4.005 0 0 1-4 4z" transform="translate(24 7)" style="fill:#71868f"/>
+    <path data-name="사각형 19254" d="M0 0h20.5A2.5 2.5 0 0 1 23 2.5 2.5 2.5 0 0 1 20.5 5H0V0z" transform="rotate(-90 43.5 7.5)" style="fill:#455a64"/>
+    <path data-name="사각형 19334" d="M0 0h9.5A2.5 2.5 0 0 1 12 2.5 2.5 2.5 0 0 1 9.5 5H0V0z" transform="rotate(-90 49 2)" style="fill:#455a64"/>
+    <path data-name="사각형 19335" d="M0 0h14.5A2.5 2.5 0 0 1 17 2.5 2.5 2.5 0 0 1 14.5 5H0V0z" transform="rotate(-90 54.5 -3.5)" style="fill:#455a64"/>
+    <path data-name="빼기 12" d="M16 16H4a4 4 0 0 1-4-4V0h.012L16 15.989V16z" transform="translate(60 7)" style="fill:#455a64"/>
+    <g data-name="그룹 16962" transform="translate(-935 -541.775)">
+        <circle data-name="타원 2400" cx="14" cy="14" r="14" transform="translate(996 590.775)" style="fill:#455a64"/>
+        <circle data-name="타원 2447" cx="2" cy="2" r="2" transform="translate(1008 602.775)" style="fill:#71868f"/>
+        <circle data-name="타원 2448" cx="2" cy="2" r="2" transform="translate(1015 602.775)" style="fill:#71868f"/>
+        <circle data-name="타원 2449" cx="2" cy="2" r="2" transform="translate(1001 602.775)" style="fill:#71868f"/>
+    </g>
+</svg>

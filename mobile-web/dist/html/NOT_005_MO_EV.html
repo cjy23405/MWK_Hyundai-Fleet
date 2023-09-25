@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/desktop/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/swiper/swiper-bundle.min.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <a href="" class="basic-link" data-layer-open="layer-notice">공지사항</a>
+
+    <!-- layer: 공지사항 -->
+    <div class="layer-wrap layer-wrap--toast" data-layer="layer-notice">
+      <div class="layer-container">
+        <section class="ui-layer ui-layer--toast ui-layer--notice">
+          <div class="ui-layer__body">
+            <div class="ui-layer__body-inner">
+              <!-- Case : 링크 있을 경우 -->
+              <a href="" class="link-block">
+                <img src="/mobile/images/_dummy/notice.png" alt="" class="notice-image" />
+              </a>
+              <!-- //Case : 링크 있을 경우 -->
+
+              <!-- Case : 이미지만 있을 경우 -->
+              <img src="/mobile/images/_dummy/notice.png" alt="" class="notice-image" />
+              <!-- //Case : 이미지만 있을 경우 -->
+            </div>
+          </div>
+          <div class="ui-layer__foot">
+            <div class="form-flex">
+              <div class="form-flex-cell form-flex-cell--flexible">
+                <div class="ui-checkbox-block">
+                  <input type="checkbox" class="ui-checkbox" id="layerNotice" />
+                  <label for="layerNotice" class="ui-label">
+                    <span class="ui-checkbox-object"></span>
+                    <span class="ui-label__text color-gray-emphasis">3일간 보지 않기</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-flex-cell">
+                <button type="button" class="ui-button regular-text color-gray-emphasis" data-role="layerClose">닫기</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- //layer: 공지사항 -->
+
+    <!-- script -->
+    <script type="text/javascript" src="/mobile/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/mobile/js/ui-script.js"></script>
+    <script type="text/javascript" src="/mobile/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <script>
+      $(function () {
+        uiJSLayer.open('layer-notice');
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="127" viewBox="0 0 160 127">
+    <g data-name="합치기 511" style="fill:#fff">
+        <path d="M-7726 2936.5h-80a38.259 38.259 0 0 1-14.985-3.025 38.373 38.373 0 0 1-12.239-8.251 38.375 38.375 0 0 1-8.251-12.239A38.254 38.254 0 0 1-7844.5 2898a38.375 38.375 0 0 1 11.276-27.224 38.373 38.373 0 0 1 12.239-8.251A38.259 38.259 0 0 1-7806 2859.5h80c5.198 0 10.24 1.018 14.985 3.025a38.373 38.373 0 0 1 12.239 8.251 38.375 38.375 0 0 1 8.251 12.239A38.254 38.254 0 0 1-7687.5 2898a38.375 38.375 0 0 1-11.276 27.224 38.373 38.373 0 0 1-12.239 8.251A38.259 38.259 0 0 1-7726 2936.5z" style="stroke:none" transform="translate(7846 -2858)"/>
+        <path d="M-7806 2861a36.875 36.875 0 0 0-26.163 10.837A36.887 36.887 0 0 0-7843 2898a36.887 36.887 0 0 0 10.837 26.163 36.875 36.875 0 0 0 11.762 7.93A36.762 36.762 0 0 0-7806 2935h80a36.875 36.875 0 0 0 26.163-10.837A36.887 36.887 0 0 0-7689 2898a36.887 36.887 0 0 0-10.837-26.163 36.875 36.875 0 0 0-11.762-7.93A36.762 36.762 0 0 0-7726 2861h-80m0-3h80c22.091 0 40 17.909 40 40s-17.909 40-40 40h-80c-22.091 0-40-17.909-40-40s17.909-40 40-40z" style="fill:#90a4ae;stroke:none" transform="translate(7846 -2858)"/>
+    </g>
+    <g data-name="그룹 23330" transform="translate(-345 -390)">
+        <path data-name="사각형 22156" transform="translate(423.5 470)" style="fill:#90a4ae" d="M0 0h3v30H0z"/>
+        <circle data-name="타원 2901" cx="15" cy="15" r="15" transform="translate(410 487)" style="opacity:.3;fill:#90a4ae"/>
+        <circle data-name="타원 2903" cx="6" cy="6" r="6" transform="translate(419 496)" style="fill:#90a4ae"/>
+    </g>
+    <g data-name="그룹 23366">
+        <path data-name="패스 17198" d="M32 0A32 32 0 1 1 0 32 32 32 0 0 1 32 0z" transform="translate(8 8)" style="fill:#b0bec5"/>
+        <g data-name="그룹 20184" transform="translate(20.413 19.863)">
+            <path data-name="사각형 22118" transform="translate(15.587 6.138)" style="fill:#fff" d="M0 0h23v15H0z"/>
+            <path data-name="빼기 122" d="M22.578 17.072h-8.156A5.5 5.5 0 0 0 3.591 17H0V2a3 3 0 0 1 3-3h10v12h25v6.07h-4.578a5.5 5.5 0 0 0-10.844 0z" transform="translate(.587 12.138)" style="fill:#fff"/>
+            <circle data-name="타원 2885" cx="4" cy="4" r="4" transform="translate(5.587 26.138)" style="fill:#fff"/>
+            <circle data-name="타원 2886" cx="4" cy="4" r="4" transform="translate(24.587 26.138)" style="fill:#fff"/>
+        </g>
+    </g>
+</svg>

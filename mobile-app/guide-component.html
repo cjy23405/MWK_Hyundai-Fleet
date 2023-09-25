@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>컴포넌트 가이드</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/app/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/app/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/app/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/app/css/page-style.css" />
+    <style>
+      b {
+        margin-left: 10px;
+      }
+      h1.test-title {
+        font-size: 30px;
+        margin: 50px 50px;
+      }
+      h2.test-title {
+        margin: 0 0 20px;
+        font-size: 22px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #888;
+      }
+      h3.test-title {
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+      .test-section {
+        border-top: 2px solid #ddd;
+        padding: 50px 16px;
+      }
+      .test-section-sub + .test-section-sub {
+        margin-top: 20px;
+        border-top: 1px dashed #ddd;
+        padding-top: 20px;
+      }
+      .test-code {
+        border: 2px solid #ddd;
+        margin: 10px 0;
+        background: #101737;
+        padding: 10px;
+      }
+      .test-code:before {
+        content: 'ex.';
+        display: block;
+        font-size: 12px;
+      }
+      .test-description {
+        margin: 10px 0;
+        padding: 0 12px;
+      }
+      .test-links {
+        margin-left: -20px;
+      }
+      .test-links:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+      .test-links a {
+        display: block;
+        margin: 20px 0 0 20px;
+        float: left;
+        padding: 5px 15px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        background: #333;
+      }
+      .test-links + h2.test-title {
+        margin-top: 20px;
+      }
+    </style>
+    <!-- //style -->
+  </head>
+  <body>
+    <div id="wrap">
+      <div style="display: table"></div>
+
+      <h1 class="test-title">Component</h1>
+
+      <div class="test-section test-section--row-margin">
+        <h2 class="test-title">Row margin</h2>
+        <div class="test-section-sub">
+          <h3 class="test-title">Default</h3>
+          <div class="card row-group">.row-group (32px)</div>
+          <div class="card row-group">.row-group (32px)</div>
+          <div class="card row-contents-group">.row-contents-group (24px)</div>
+          <div class="card row-contents-group">.row-contents-group (24px)</div>
+          <div class="card row-contents">.row-contents (16px)</div>
+          <div class="card row-contents">.row-contents (16px)</div>
+          <div class="card row-item">.row-item-group (12px)</div>
+          <div class="card row-item">.row-item-group (12px)</div>
+          <div class="card row-item">.row-item (8px)</div>
+          <div class="card row-item">.row-item (8px)</div>
+          <div class="card row-item-small">.row-item-small (4px)</div>
+          <div class="card row-item-small">.row-item-small (4px)</div>
+        </div>
+      </div>
+
+      <div class="test-section test-section--section">
+        <h2 class="test-title">Section</h2>
+        <div class="test-section-sub">
+          <h3 class="test-title">Default</h3>
+
+          <section class="section">
+            <div class="section-head">
+              <div class="section-head__left">
+                <h3 class="section-head__title">타이틀</h3>
+              </div>
+              <div class="section-head__right">
+                <p class="basic-text">오른쪽 영역</p>
+              </div>
+            </div>
+
+            <div>//contents</div>
+          </section>
+        </div>
+      </div>
+
+      <div class="test-section test-section--fraction">
+        <h2 class="test-title">Fraction</h2>
+        <div class="test-section-sub">
+          <h3 class="test-title">Default</h3>
+
+          <div class="fraction">
+            <div class="fraction__numerator color-point">49</div>
+            <div class="fraction__denominator">/100 (상위 86.0%)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-section test-section--progress-bar">
+        <h2 class="test-title">Progress bar</h2>
+        <div class="test-section-sub">
+          <h3 class="test-title">Default</h3>
+
+          <div class="progress-bar">
+            <div class="progress-bar__active" style="width: 49%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-section test-section--star-text">
+        <h2 class="test-title">Star text</h2>
+        <div class="test-section-sub">
+          <h3 class="test-title">Default</h3>
+
+          <p class="star-text">오늘의 전국 최고 점수 100</p>
+        </div>
+      </div>
+
+      <div class="test-section test-section--count-data">
+        <style>
+          .test-section--count-data {
+            background-color: rgba(0, 0, 0, 0.05);
+          }
+        </style>
+        <h2 class="test-title">Count data</h2>
+        <div class="test-section-sub">
+          <h3 class="test-title">Default</h3>
+
+          <div class="count-data">
+            <dl class="count-data__list">
+              <div class="count-data__item">
+                <dt class="count-data__key">정속 주행</dt>
+                <dd class="count-data__val">55</dd>
+              </div>
+              <div class="count-data__item">
+                <dt class="count-data__key">공회전</dt>
+                <dd class="count-data__val">87</dd>
+              </div>
+              <div class="count-data__item">
+                <dt class="count-data__key">제동</dt>
+                <dd class="count-data__val">87</dd>
+              </div>
+              <div class="count-data__item">
+                <dt class="count-data__key">언덕 주행</dt>
+                <dd class="count-data__val">0</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-section test-section--etc">
+        <style>
+          .test-section--input .ui-input-block + .ui-input-block {
+            margin-top: 10px;
+          }
+        </style>
+        <h2 class="test-title">ETC</h2>
+        <div class="test-section-sub">
+          <h3 class="test-title">.display-block</h3>
+          <span class="display-block">&lt;span class="display-block"&gt;&lt;/span&gt;</span>
+        </div>
+        <div class="test-section-sub">
+          <h3 class="test-title">.inline-block</h3>
+          <div class="inline-block">&lt;div class="inline-block"&gt;&lt;/div&gt;</div>
+        </div>
+        <div class="test-section-sub">
+          <h3 class="test-title">.mini-text</h3>
+          <p class="mini-text">더미 텍스트 (11px)</p>
+        </div>
+        <div class="test-section-sub">
+          <h3 class="test-title">.small-text</h3>
+          <p class="small-text">더미 텍스트 (12px)</p>
+        </div>
+        <div class="test-section-sub">
+          <h3 class="test-title">.basic-text</h3>
+          <p class="basic-text">더미 텍스트 (14px)</p>
+        </div>
+        <div class="test-section-sub">
+          <h3 class="test-title">.regular-text</h3>
+          <p class="regular-text">더미 텍스트 (16px)</p>
+        </div>
+        <div class="test-section-sub">
+          <h3 class="test-title">.medium-text</h3>
+          <p class="medium-text">더미 텍스트 (18px)</p>
+        </div>
+        <div class="test-section-sub">
+          <h3 class="test-title">.font-family</h3>
+          <p class="font-family-head">.font-family-head</p>
+          <p class="font-family-text">.font-family-text</p>
+        </div>
+        <div class="test-section-sub">
+          <h3 class="test-title">.font-weight</h3>
+          <p class="font-weight-light">.font-weight-light</p>
+          <p class="font-weight-regular">.font-weight-regular</p>
+          <p class="font-weight-medium">.font-weight-medium</p>
+          <p class="font-weight-bold">.font-weight-bold</p>
+        </div>
+        <div class="test-section-sub">
+          <h3 class="test-title">.basic-link</h3>
+          <a href="" class="basic-link">더미 텍스트</a>
+        </div>
+        <div class="test-section-sub">
+          <h3 class="test-title">.none-deco-link</h3>
+          <a href="" class="none-deco-link">더미 텍스트</a>
+        </div>
+        <div class="test-section-sub">
+          <h3 class="test-title">.link-block</h3>
+          <a href="" class="link-block">더미 텍스트</a>
+        </div>
+        <div class="test-section-sub">
+          <h3 class="test-title">.color</h3>
+          <p class="color-point">.color-point</p>
+          <p class="color-gray">.color-gray</p>
+        </div>
+        <div class="test-section-sub">
+          <h3 class="test-title">.align</h3>
+          <p class="align-left">.align-left</p>
+          <p class="align-right">.align-right</p>
+          <p class="align-center">.align-center</p>
+        </div>
+        <div class="test-section-sub">
+          <h3 class="test-title">.ellipsis</h3>
+          <p class="ellipsis" style="width: 300px">.ellipsis 더미 텍스트 더미 텍스트 더미 텍스트 더미 텍스트 더미 텍스트 더미 텍스트 더미 텍스트 더미 텍스트 더미 텍스트</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript" src="/app/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/app/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/app/js/ui-script.js"></script>
+    <script type="text/javascript" src="/app/js/chart-env.js"></script>
+    <!-- //script -->
+  </body>
+</html>

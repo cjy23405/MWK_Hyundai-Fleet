@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <g>
+        <rect data-name="사각형 19028" width="48" height="48" rx="8" style="fill:none"/>
+        <g data-name="그룹 16367">
+            <path data-name="사각형 18449" style="fill:transparent" d="M0 0h48v48H0z"/>
+            <g data-name="그룹 16593">
+                <path data-name="사각형 18389" transform="translate(12 12)" style="fill:transparent" d="M0 0h24v24H0z"/>
+                <path data-name="빼기 21" d="M22309 15996a12 12 0 0 1-1-23.956V15985h12.961a12 12 0 0 1-11.959 11z" transform="translate(-22285 -15960)" style="fill:#fff"/>
+                <path data-name="빼기 22" d="M22309 15996c-.119 0-.24 0-.361-.006h.725q-.182.006-.364.006zm11.959-13H22310v-10.961a12 12 0 0 1 10.961 10.96z" transform="translate(-22285 -15960)" style="fill:#fff"/>
+            </g>
+        </g>
+    </g>
+</svg>

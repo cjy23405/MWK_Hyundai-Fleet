@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <path data-name="사각형 19091" style="fill:transparent" d="M0 0h48v48H0z"/>
+    <g data-name="그룹 7">
+        <g data-name="그룹 15197">
+            <path data-name="사각형 18372" style="fill:transparent" d="M0 0h24v24H0z" transform="translate(12 12)"/>
+            <path data-name="패스 14288" d="M22 0v22H0z" transform="translate(13 13)" style="opacity:.1;fill:none"/>
+            <g data-name="그룹 15176">
+                <g data-name="사각형 64" style="stroke:#fff;stroke-width:1.5px;fill:#fff">
+                    <path style="stroke:none" d="M0 0h9v9H0z" transform="translate(14 14)"/>
+                    <path style="fill:none" d="M.75.75h7.5v7.5H.75z" transform="translate(14 14)"/>
+                </g>
+                <g data-name="사각형 67" style="stroke:#fff;stroke-width:1.5px;fill:#fff">
+                    <path style="stroke:none" d="M0 0h9v9H0z" transform="translate(14 25)"/>
+                    <path style="fill:none" d="M.75.75h7.5v7.5H.75z" transform="translate(14 25)"/>
+                </g>
+                <g data-name="사각형 65" style="stroke:#fff;stroke-width:1.5px;fill:#fff">
+                    <path style="stroke:none" d="M0 0h9v9H0z" transform="translate(25 14)"/>
+                    <path style="fill:none" d="M.75.75h7.5v7.5H.75z" transform="translate(25 14)"/>
+                </g>
+                <g data-name="패스 14320" style="fill:#fff">
+                    <path d="M5.67 8.25H.75V.75h7.5v4.682L5.67 8.25z" style="stroke:none" transform="translate(25 25)"/>
+                    <path d="M1.5 1.5v6h3.84L7.5 5.14V1.5h-6M0 0h9v5.724L6 9H0V0z" style="fill:#fff;stroke:none" transform="translate(25 25)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

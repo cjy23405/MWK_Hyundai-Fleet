@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/desktop/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/simplebar/simplebar.min.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <a href="" class="basic-link" data-layer-open="layer-log-motor-cooling-water">모터 냉각수</a>
+
+    <!-- layer: 모터 냉각수 -->
+    <div class="layer-wrap" data-layer="layer-log-motor-cooling-water">
+      <div class="layer-container">
+        <section class="ui-layer ui-layer--regular">
+          <div class="ui-layer__head">
+            <div class="ui-layer-header">
+              <div class="ui-layer-header__left">
+                <h2 class="ui-layer-header__title">06가23456</h2>
+                <p class="ui-layer-header__sub">일렉시티</p>
+                <div class="ui-layer-header__hr"></div>
+                <!-- 2022.10.21 : mod : PE냉각수 > 구동냉각수 변경 -->
+                <h3 class="ui-layer-header__sub-title">구동 냉각수</h3>
+              </div>
+              <button type="button" class="ui-button ui-layer-header__close" data-role="layerClose">
+                <span class="for-a11y">레이어 닫기</span>
+              </button>
+            </div>
+          </div>
+          <div class="ui-layer__body">
+            <div class="ui-layer__body-scroller ui-scroller">
+              <div class="ui-layer__body-inner">
+                <!-- table -->
+                <div class="board-table board-table--popup">
+                  <div class="board-table__body">
+                    <div class="board-table__table-wrap" role="table">
+                      <div class="board-table__thead">
+                        <table role="rowgroup" class="board-table__table">
+                          <colgroup>
+                            <col style="width: 90px" />
+                            <col />
+                            <col />
+                            <col />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th>
+                                <div class="board-table__colhead">
+                                  <div class="board-table__colhead-text">No</div>
+                                </div>
+                              </th>
+                              <th>
+                                <div class="board-table__colhead">
+                                  <div class="board-table__colhead-text">운행시작시간</div>
+                                </div>
+                              </th>
+                              <th>
+                                <div class="board-table__colhead">
+                                  <div class="board-table__colhead-text">운행종료시간</div>
+                                </div>
+                              </th>
+                              <th>
+                                <div class="board-table__colhead">
+                                  <!-- 2022.10.21 : mod : PE냉각수 > 구동냉각수 변경 -->
+                                  <div class="board-table__colhead-text">구동 냉각수 이상 시간</div>
+                                </div>
+                              </th>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
+                      <div class="board-table__tbody">
+                        <div class="board-table__tbody-scroller ui-scroller">
+                          <table role="rowgroup" class="board-table__table">
+                            <colgroup>
+                              <col style="width: 90px" />
+                              <col />
+                              <col />
+                              <col />
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <td>24</td>
+                                <td>2022-04-12 13:00</td>
+                                <td>2022-04-12 15:00</td>
+                                <td>8분 43초</td>
+                              </tr>
+                              <tr>
+                                <td>24</td>
+                                <td>2022-04-12 13:00</td>
+                                <td>2022-04-12 15:00</td>
+                                <td>8분 43초</td>
+                              </tr>
+                              <tr>
+                                <td>24</td>
+                                <td>2022-04-12 13:00</td>
+                                <td>2022-04-12 15:00</td>
+                                <td>8분 43초</td>
+                              </tr>
+                              <tr>
+                                <td>24</td>
+                                <td>2022-04-12 13:00</td>
+                                <td>2022-04-12 15:00</td>
+                                <td>8분 43초</td>
+                              </tr>
+                              <tr>
+                                <td>24</td>
+                                <td>2022-04-12 13:00</td>
+                                <td>2022-04-12 15:00</td>
+                                <td>8분 43초</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="board-table__foot">
+                    <div class="board-table__cell-center">
+                      <nav class="pagination">
+                        <h3 class="for-a11y">Pagination</h3>
+                        <ul class="pagination__list">
+                          <li class="pagination__item">
+                            <!-- 2022.09.05 : mod : button 태그로 변경 -->
+                            <!-- DD : 첫번째 페이지일 경우 disabled 속성 추가 -->
+                            <button type="button" class="ui-button pagination__link pagination__link--prev">
+                              <span class="for-a11y">이전</span>
+                            </button>
+                            <!-- //2022.09.05 : mod : button 태그로 변경 -->
+                          </li>
+                          <li class="pagination__item">
+                            <a href="" class="pagination__link">1</a>
+                          </li>
+                          <li class="pagination__item">
+                            <span class="pagination__ellipsis">...</span>
+                          </li>
+                          <li class="pagination__item">
+                            <a href="" class="pagination__link">7</a>
+                          </li>
+                          <li class="pagination__item">
+                            <a href="" class="pagination__link">8</a>
+                          </li>
+                          <li class="pagination__item">
+                            <!-- DD : 현재 페이지면 is-active 클래스 값 추가 -->
+                            <a href="" class="pagination__link is-active">9</a>
+                          </li>
+                          <li class="pagination__item">
+                            <a href="" class="pagination__link">10</a>
+                          </li>
+                          <li class="pagination__item">
+                            <a href="" class="pagination__link">11</a>
+                          </li>
+                          <li class="pagination__item">
+                            <span class="pagination__ellipsis">...</span>
+                          </li>
+                          <li class="pagination__item">
+                            <a href="" class="pagination__link">999</a>
+                          </li>
+                          <li class="pagination__item">
+                            <!-- 2022.09.05 : mod : button 태그로 변경 -->
+                            <!-- DD : 마지막 페이지일 경우 disabled 속성 추가 -->
+                            <button type="button" class="ui-button pagination__link pagination__link--next">
+                              <span class="for-a11y">다음</span>
+                            </button>
+                            <!-- //2022.09.05 : mod : button 태그로 변경 -->
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+                <!-- //table -->
+
+                <div class="box">
+                  <div class="box__inner">
+                    <div class="info-list">
+                      <ul class="info-list__list">
+                        <li class="info-list__item">
+                          <div class="info-list__text">
+                            <!-- 2022.10.21 : mod : PE냉각수 > 구동냉각수 변경 -->
+                            구동 냉각수 기준 정보
+                            <p class="small-text color-gray">
+                              <!-- 2022.08.16 : mod : font-weight-medium 클래스 추가 -->
+                              구동 냉각수가 <span class="color-gray-emphasis font-weight-medium">66</span>도 이상일 경우의 시간을 표시하며, 1개 Trip 기준 누적 시간이 10분 이상일 경우 표시합니다.
+                            </p>
+                            <!-- //2022.10.21 : mod : PE냉각수 > 구동냉각수 변경 -->
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- //layer: 모터 냉각수 -->
+
+    <!-- script -->
+    <script type="text/javascript" src="/desktop/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/simplebar/simplebar.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/sortablejs/sortable.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/desktop/js/ui-script.js"></script>
+    <script type="text/javascript" src="/desktop/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <script>
+      $(function () {
+        uiJSLayer.open('layer-log-motor-cooling-water');
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

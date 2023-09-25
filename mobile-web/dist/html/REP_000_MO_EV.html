@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/mobile/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/swiper/swiper-bundle.min.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="layout-wrap">
+        <!-- toast-alert -->
+        <div class="ui-toast-alert" id="globalToastAlert"></div>
+        <!-- //toast-alert -->
+
+        <!-- header -->
+        <div class="fix-top-wrap">
+          <header class="header">
+            <div class="header__left">
+              <a href="" class="header__button header__button--back">
+                <span class="for-a11y">뒤로 가기</span>
+              </a>
+            </div>
+            <div class="header__center">
+              <h1 class="header__title">정기점검리포트</h1>
+            </div>
+          </header>
+        </div>
+        <!-- //header -->
+
+        <!-- contents -->
+        <article class="contents-wrap">
+          <div class="page-contents">
+            <div class="row-group">
+              <p class="basic-text color-gray row-item-group">5월 분석기간 22.05.01 ~ 22.05.14</p>
+
+              <div class="board-top">
+                <div class="board-top__row">
+                  <div class="ui-dropdown js-ui-dropdown">
+                    <div class="ui-dropdown__head">
+                      <div class="ui-dropdown__text">2022.05</div>
+                      <button type="button" class="ui-button ui-dropdown__opener js-ui-dropdown__opener">
+                        <span class="for-a11y">
+                          분석기간 목록
+                          <span class="open-text">open</span>
+                          <span class="close-text">close</span>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="ui-dropdown__layer js-ui-dropdown__layer">
+                      <div class="ui-dropdown__contents">
+                        <ul class="ui-dropdown__list">
+                          <li class="ui-dropdown__item">
+                            <a href="" class="ui-dropdown__link">2022.05</a>
+                          </li>
+                          <li class="ui-dropdown__item">
+                            <a href="" class="ui-dropdown__link">2022.04</a>
+                          </li>
+                          <li class="ui-dropdown__item">
+                            <a href="" class="ui-dropdown__link">2022.03</a>
+                          </li>
+                          <li class="ui-dropdown__item">
+                            <a href="" class="ui-dropdown__link">2022.02</a>
+                          </li>
+                          <li class="ui-dropdown__item">
+                            <a href="" class="ui-dropdown__link">2022.01</a>
+                          </li>
+                          <li class="ui-dropdown__item">
+                            <a href="" class="ui-dropdown__link">2021.12</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="report-head">
+              <p class="report-head__title">
+                현재 운행하고 있는 차량은<br />
+                전체 <strong class="report-head__title-num">32</strong>대입니다.
+              </p>
+              <p class="report-head__text">
+                누적운행거리는 <strong class="font-weight-medium color-gray-emphasis">800,000,000</strong> km 이며,<br />
+                5월 한달 누적 운행거리는 <strong class="font-weight-medium color-gray-emphasis">12,000,000</strong> km 입니다.
+              </p>
+              <div class="report-count">
+                <dl class="report-count__list">
+                  <div class="report-count__item">
+                    <dt class="report-count__key">일렉시티</dt>
+                    <dd class="report-count__val">20</dd>
+                  </div>
+                  <div class="report-count__item">
+                    <dt class="report-count__key">일렉시티 2층</dt>
+                    <dd class="report-count__val">20</dd>
+                  </div>
+                  <div class="report-count__item">
+                    <dt class="report-count__key">일렉시티 FCEV</dt>
+                    <dd class="report-count__val">1</dd>
+                  </div>
+                  <div class="report-count__item">
+                    <dt class="report-count__key">카운티</dt>
+                    <dd class="report-count__val">1</dd>
+                  </div>
+                  <div class="report-count__item">
+                    <dt class="report-count__key">기타</dt>
+                    <dd class="report-count__val">0</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+
+            <!-- 블루링크 서비스 현황 -->
+            <section class="section">
+              <div class="section-head">
+                <div class="section-head__left">
+                  <h2 class="section-head__title section-head__title--medium">01 블루링크 서비스 현황</h2>
+                </div>
+              </div>
+              <div class="ui-table">
+                <div class="ui-table__scroller">
+                  <div class="ui-table__doc">
+                    <div class="ui-table__table">
+                      <div class="ui-table__table-inner">
+                        <table>
+                          <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th>이용기간</th>
+                              <th>차량대수</th>
+                              <th>차량보기</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>무료 이용 기간 4년 이내 차량</td>
+                              <td>000</td>
+                              <td>
+                                <a href="" class="ui-basic-button ui-basic-button--small ui-basic-button--tertiary ui-basic-button--inline-block">
+                                  <span class="ui-basic-button__text">차량보기</span>
+                                </a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>무료 이용 기간 4년 이내 차량</td>
+                              <td>000</td>
+                              <td>
+                                <a href="" class="ui-basic-button ui-basic-button--small ui-basic-button--tertiary ui-basic-button--inline-block">
+                                  <span class="ui-basic-button__text">차량보기</span>
+                                </a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>무료 이용 기간 4년 이내 차량</td>
+                              <td>000</td>
+                              <td>
+                                <a href="" class="ui-basic-button ui-basic-button--small ui-basic-button--tertiary ui-basic-button--inline-block">
+                                  <span class="ui-basic-button__text">차량보기</span>
+                                </a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>무료 이용 기간 4년 이내 차량</td>
+                              <td>000</td>
+                              <td>
+                                <a href="" class="ui-basic-button ui-basic-button--small ui-basic-button--tertiary ui-basic-button--inline-block">
+                                  <span class="ui-basic-button__text">차량보기</span>
+                                </a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- //블루링크 서비스 현황 -->
+
+            <!-- 고장 현황 -->
+            <section class="section">
+              <div class="section-head">
+                <div class="section-head__left">
+                  <h2 class="section-head__title section-head__title--medium">02 고장 현황</h2>
+                </div>
+              </div>
+
+              <div class="form-flex">
+                <div class="form-flex-cell form-flex-cell--flexible form-flex-cell--regular-margin">
+                  <div class="card card--pink-pattern card--z-high">
+                    <div class="count-list count-list--no-margin">
+                      <dl class="count-list__list">
+                        <div class="count-list__item count-list__item--vertical count-list__item--icon count-list__item--icon-exclamation">
+                          <dt class="count-list__key">고장 알림</dt>
+                          <dd class="count-list__val">
+                            <div class="value value--medium">
+                              <div class="value__num">3</div>
+                              <div class="value__unit">대</div>
+                            </div>
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-flex-cell form-flex-cell--flexible form-flex-cell--regular-margin">
+                  <div class="card card--blue-pattern">
+                    <div class="count-list count-list--no-margin">
+                      <dl class="count-list__list">
+                        <div class="count-list__item count-list__item--vertical count-list__item--icon count-list__item--icon-ellipsis">
+                          <dt class="count-list__key">정비 요청중</dt>
+                          <dd class="count-list__val">
+                            <div class="value value--medium">
+                              <div class="value__num">9</div>
+                              <div class="value__unit">회</div>
+                            </div>
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <section class="row-item-group">
+                <h3 class="regular-text font-weight-regular color-gray row-contents"># 정비요청 차량정보</h3>
+
+                <div class="ui-table">
+                  <div class="ui-table__scroller">
+                    <div class="ui-table__doc">
+                      <div class="ui-table__table">
+                        <div class="ui-table__table-inner">
+                          <table>
+                            <colgroup>
+                              <col style="width: 70px" />
+                              <col style="width: 120px" />
+                              <col style="width: 160px" />
+                              <col style="width: 120px" />
+                              <col style="width: 120px" />
+                              <col style="width: 120px" />
+                              <col style="width: 120px" />
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th>No</th>
+                                <th>차량명 (차량번호)</th>
+                                <th>차종</th>
+                                <th>고장발생일시</th>
+                                <th>고장코드</th>
+                                <th>제어기명</th>
+                                <th>정비요청일시</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>01</td>
+                                <td>000가0000</td>
+                                <td>일렉시티 2층</td>
+                                <td>00.00.00 00:00</td>
+                                <td>P1BBA04</td>
+                                <td>000</td>
+                                <td>00.00.00 00:00</td>
+                              </tr>
+                              <tr>
+                                <td>02</td>
+                                <td>000가0000</td>
+                                <td>일렉시티 2층</td>
+                                <td>00.00.00 00:00</td>
+                                <td>P1BBA04</td>
+                                <td>000</td>
+                                <td>00.00.00 00:00</td>
+                              </tr>
+                              <tr>
+                                <td>03</td>
+                                <td>000가0000</td>
+                                <td>일렉시티 2층</td>
+                                <td>00.00.00 00:00</td>
+                                <td>P1BBA04</td>
+                                <td>000</td>
+                                <td>00.00.00 00:00</td>
+                              </tr>
+                              <tr>
+                                <td>04</td>
+                                <td>000가0000</td>
+                                <td>일렉시티 2층</td>
+                                <td>00.00.00 00:00</td>
+                                <td>P1BBA04</td>
+                                <td>000</td>
+                                <td>00.00.00 00:00</td>
+                              </tr>
+                              <tr>
+                                <td>05</td>
+                                <td>000가0000</td>
+                                <td>일렉시티 2층</td>
+                                <td>00.00.00 00:00</td>
+                                <td>P1BBA04</td>
+                                <td>000</td>
+                                <td>00.00.00 00:00</td>
+                              </tr>
+                              <tr>
+                                <td>06</td>
+                                <td>000가0000</td>
+                                <td>일렉시티 2층</td>
+                                <td>00.00.00 00:00</td>
+                                <td>P1BBA04</td>
+                                <td>000</td>
+                                <td>00.00.00 00:00</td>
+                              </tr>
+                              <tr>
+                                <td>07</td>
+                                <td>000가0000</td>
+                                <td>일렉시티 2층</td>
+                                <td>00.00.00 00:00</td>
+                                <td>P1BBA04</td>
+                                <td>000</td>
+                                <td>00.00.00 00:00</td>
+                              </tr>
+                              <tr>
+                                <td>08</td>
+                                <td>000가0000</td>
+                                <td>일렉시티 2층</td>
+                                <td>00.00.00 00:00</td>
+                                <td>P1BBA04</td>
+                                <td>000</td>
+                                <td>00.00.00 00:00</td>
+                              </tr>
+                              <tr>
+                                <td>09</td>
+                                <td>000가0000</td>
+                                <td>일렉시티 2층</td>
+                                <td>00.00.00 00:00</td>
+                                <td>P1BBA04</td>
+                                <td>000</td>
+                                <td>00.00.00 00:00</td>
+                              </tr>
+                              <tr>
+                                <td>10</td>
+                                <td>000가0000</td>
+                                <td>일렉시티 2층</td>
+                                <td>00.00.00 00:00</td>
+                                <td>P1BBA04</td>
+                                <td>000</td>
+                                <td>00.00.00 00:00</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2022.09.05 : mod : 페이지네이션 구성 변경 -->
+                <nav class="pagination">
+                  <h3 class="for-a11y">Pagination</h3>
+                  <ul class="pagination__list">
+                    <li class="pagination__item">
+                      <!-- DD : 첫번째 페이지일 경우 disabled 속성 추가 -->
+                      <button type="button" class="ui-button pagination__link pagination__link--prev">
+                        <span class="for-a11y">이전</span>
+                      </button>
+                    </li>
+                    <li class="pagination__item">
+                      <a href="" class="pagination__link">1</a>
+                    </li>
+                    <li class="pagination__item">
+                      <span class="pagination__ellipsis">...</span>
+                    </li>
+                    <li class="pagination__item">
+                      <a href="" class="pagination__link">22</a>
+                    </li>
+                    <li class="pagination__item">
+                      <!-- DD : 현재 페이지면 is-active 클래스 값 추가 -->
+                      <a href="" class="pagination__link is-active">23</a>
+                    </li>
+                    <li class="pagination__item">
+                      <a href="" class="pagination__link">24</a>
+                    </li>
+                    <li class="pagination__item">
+                      <span class="pagination__ellipsis">...</span>
+                    </li>
+                    <li class="pagination__item">
+                      <a href="" class="pagination__link">999</a>
+                    </li>
+                    <li class="pagination__item">
+                      <!-- DD : 마지막 페이지일 경우 disabled 속성 추가 -->
+                      <button type="button" class="ui-button pagination__link pagination__link--next">
+                        <span class="for-a11y">다음</span>
+                      </button>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- //2022.09.05 : mod : 페이지네이션 구성 변경 -->
+              </section>
+            </section>
+            <!-- //고장 현황 -->
+
+            <!-- 충전현황 -->
+            <section class="section section-slide-wrap">
+              <div class="section-head">
+                <div class="section-head__left">
+                  <h2 class="section-head__title section-head__title--medium">03 충전현황</h2>
+                </div>
+                <div class="section-head__right">
+                  <div class="section-slide-controller"></div>
+                </div>
+              </div>
+              <div class="section-slide">
+                <div class="section-slide__list">
+                  <!-- 충전 현황 -->
+                  <section class="section-slide__item">
+                    <div class="card card--widget">
+                      <div class="card-head card-head--widget">
+                        <div class="card-head__left">
+                          <h3 class="card-head__title">충전 현황</h3>
+                        </div>
+                      </div>
+                      <div class="widget">
+                        <div class="widget__contents">
+                          <div class="value row-item">
+                            <div class="value__num">28</div>
+                            <div class="value__unit">%</div>
+                          </div>
+                          <div class="datas datas--info">
+                            <dl class="datas__list">
+                              <div class="datas__item">
+                                <dt class="datas__key">최대부하 충전량을 경부하 시간에 충전 시</dt>
+                                <dd class="datas__val">이만큼의 충전비용을 절약할 수 있어요!</dd>
+                              </div>
+                            </dl>
+                          </div>
+                          <div class="chart-box chart-box--status row-contents-group" id="chart3_1"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- //충전 현황 -->
+
+                  <!-- 월간최대부하 충전율 -->
+                  <section class="section-slide__item">
+                    <div class="card card--widget">
+                      <div class="card-head card-head--widget">
+                        <div class="card-head__left">
+                          <h3 class="card-head__title">월간최대부하 충전율</h3>
+                        </div>
+                      </div>
+                      <div class="widget">
+                        <div class="widget__contents">
+                          <div class="chart-box chart-box--widget" id="chart3_2"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- //월간최대부하 충전율 -->
+
+                  <!-- 최대부하시간 충전 차량 순위 -->
+                  <section class="section-slide__item">
+                    <div class="card card--widget">
+                      <div class="card-head card-head--widget">
+                        <div class="card-head__left">
+                          <h3 class="card-head__title">최대부하시간 충전 차량 순위</h3>
+                        </div>
+                      </div>
+                      <div class="widget">
+                        <div class="widget__contents">
+                          <ul class="widget-list">
+                            <li class="widget-list__item">
+                              <div class="widget-list__block">
+                                <div class="widget-list__cell">
+                                  <span class="face-status is-danger">
+                                    <span class="face-status__text">개선필요</span>
+                                  </span>
+                                </div>
+                                <div class="widget-list__cell widget-list__cell--flexible">
+                                  <div class="color-light-gray">010가2345</div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="small-text color-gray">충전량</div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="value value--regular">
+                                    <div class="value__num">10,000</div>
+                                    <div class="value__unit color-gray">kWh</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="widget-list__item">
+                              <div class="widget-list__block">
+                                <div class="widget-list__cell">
+                                  <span class="face-status is-danger">
+                                    <span class="face-status__text">개선필요</span>
+                                  </span>
+                                </div>
+                                <div class="widget-list__cell widget-list__cell--flexible">
+                                  <div class="color-light-gray">010가2345</div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="small-text color-gray">충전량</div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="value value--regular">
+                                    <div class="value__num">10,000</div>
+                                    <div class="value__unit color-gray">kWh</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="widget-list__item">
+                              <div class="widget-list__block">
+                                <div class="widget-list__cell">
+                                  <span class="face-status is-danger">
+                                    <span class="face-status__text">개선필요</span>
+                                  </span>
+                                </div>
+                                <div class="widget-list__cell widget-list__cell--flexible">
+                                  <div class="color-light-gray">010가2345</div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="small-text color-gray">충전량</div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="value value--regular">
+                                    <div class="value__num">10,000</div>
+                                    <div class="value__unit color-gray">kWh</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- //최대부하시간 충전 차량 순위 -->
+                </div>
+              </div>
+            </section>
+            <!-- //충전현황 -->
+
+            <!-- 가동률분석 -->
+            <section class="section section-slide-wrap">
+              <div class="section-head">
+                <div class="section-head__left">
+                  <h2 class="section-head__title section-head__title--medium">04 가동률분석</h2>
+                </div>
+                <div class="section-head__right">
+                  <div class="section-slide-controller"></div>
+                </div>
+              </div>
+              <div class="section-slide">
+                <div class="section-slide__list">
+                  <!-- 일간 가동률 -->
+                  <section class="section-slide__item">
+                    <div class="card card--widget">
+                      <div class="card-head card-head--widget">
+                        <div class="card-head__left">
+                          <h3 class="card-head__title">일간 가동률</h3>
+                        </div>
+                      </div>
+                      <div class="widget">
+                        <div class="widget__contents">
+                          <div class="chart-box chart-box--widget" id="chart4_1"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- //일간 가동률 -->
+
+                  <!-- 차량별 월간 가동률 -->
+                  <section class="section-slide__item">
+                    <div class="card card--widget">
+                      <div class="card-head card-head--widget">
+                        <div class="card-head__left">
+                          <h3 class="card-head__title">차량별 월간 가동률</h3>
+                        </div>
+                      </div>
+                      <div class="widget">
+                        <div class="widget__contents">
+                          <ul class="widget-list">
+                            <li class="widget-list__item">
+                              <div class="widget-list__block">
+                                <div class="widget-list__cell widget-list__cell--flexible">
+                                  <div class="color-light-gray">010가2345</div>
+                                  <div class="small-text color-gray">1100번</div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="small-text color-gray">
+                                    이번달 일 평균<br />
+                                    운행거리
+                                  </div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="fluctuation is-down">
+                                    <div class="value value--medium">
+                                      <div class="value__num">27</div>
+                                      <div class="value__unit color-gray">%</div>
+                                      <div class="for-a11y">하락</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="widget-list__item">
+                              <div class="widget-list__block">
+                                <div class="widget-list__cell widget-list__cell--flexible">
+                                  <div class="color-light-gray">010가2345</div>
+                                  <div class="small-text color-gray">1100번 외 3개</div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="small-text color-gray">
+                                    이번달 일 평균<br />
+                                    운행거리
+                                  </div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="fluctuation is-up">
+                                    <div class="value value--medium">
+                                      <div class="value__num">27</div>
+                                      <div class="value__unit color-gray">%</div>
+                                      <div class="for-a11y">상승</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="widget-list__item">
+                              <div class="widget-list__block">
+                                <div class="widget-list__cell widget-list__cell--flexible">
+                                  <div class="color-light-gray">010가2345</div>
+                                  <div class="small-text color-gray">노선정보없음</div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="small-text color-gray">
+                                    이번달 일 평균<br />
+                                    운행거리
+                                  </div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="fluctuation is-down">
+                                    <div class="value value--medium">
+                                      <div class="value__num">27</div>
+                                      <div class="value__unit color-gray">%</div>
+                                      <div class="for-a11y">하락</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- //차량별 월간 가동률 -->
+
+                  <!-- 배터리 n% 이하 운행 차량 -->
+                  <section class="section-slide__item">
+                    <div class="card card--widget">
+                      <div class="card-head card-head--widget">
+                        <div class="card-head__left">
+                          <h3 class="card-head__title">배터리 00% 이하 운행 차량</h3>
+                        </div>
+                      </div>
+                      <div class="widget">
+                        <div class="widget__contents">
+                          <ul class="widget-list">
+                            <li class="widget-list__item">
+                              <div class="widget-list__block">
+                                <div class="widget-list__cell widget-list__cell--flexible">
+                                  <div class="color-light-gray">010가2345</div>
+                                  <div class="small-text color-gray">1100번</div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="small-text color-gray">운행횟수</div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="value value--medium">
+                                    <div class="value__num">14</div>
+                                    <div class="value__unit color-gray">회</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="widget-list__item">
+                              <div class="widget-list__block">
+                                <div class="widget-list__cell widget-list__cell--flexible">
+                                  <div class="color-light-gray">010가2345</div>
+                                  <div class="small-text color-gray">1100번 외 3개</div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="small-text color-gray">운행횟수</div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="value value--medium">
+                                    <div class="value__num">14</div>
+                                    <div class="value__unit color-gray">회</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="widget-list__item">
+                              <div class="widget-list__block">
+                                <div class="widget-list__cell widget-list__cell--flexible">
+                                  <div class="color-light-gray">010가2345</div>
+                                  <div class="small-text color-gray">노선정보없음</div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="small-text color-gray">운행횟수</div>
+                                </div>
+                                <div class="widget-list__cell">
+                                  <div class="value value--medium">
+                                    <div class="value__num">14</div>
+                                    <div class="value__unit color-gray">회</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- //배터리 n% 이하 운행 차량 -->
+                </div>
+              </div>
+            </section>
+            <!-- //가동률분석 -->
+
+            <!-- 주행분석 -->
+            <section class="section section-slide-wrap">
+              <div class="section-head">
+                <div class="section-head__left">
+                  <h2 class="section-head__title section-head__title--medium">05 주행분석</h2>
+                </div>
+                <div class="section-head__right">
+                  <div class="section-slide-controller"></div>
+                </div>
+              </div>
+              <div class="section-slide">
+                <div class="section-slide__list">
+                  <!-- 안전지수 -->
+                  <section class="section-slide__item">
+                    <div class="card card--widget">
+                      <div class="card-head card-head--widget">
+                        <div class="card-head__left">
+                          <h3 class="card-head__title">안전지수</h3>
+                        </div>
+                      </div>
+                      <div class="widget">
+                        <div class="widget__contents">
+                          <div class="value row-item">
+                            <div class="value__num">95</div>
+                            <div class="value__unit">점</div>
+                          </div>
+                          <div class="datas datas--info">
+                            <dl class="datas__list">
+                              <div class="datas__item">
+                                <dt class="datas__key">전국버스평균 95점</dt>
+                                <dd class="datas__val">양호해요!</dd>
+                              </div>
+                            </dl>
+                          </div>
+                          <div class="chart-box chart-box--status row-contents-group" id="chart5_1"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- //안전지수 -->
+
+                  <!-- 승객안전운행지수 -->
+                  <section class="section-slide__item">
+                    <div class="card card--widget">
+                      <div class="card-head card-head--widget">
+                        <div class="card-head__left">
+                          <h3 class="card-head__title">승객안전운행지수</h3>
+                        </div>
+                      </div>
+                      <div class="widget">
+                        <div class="widget__contents">
+                          <div class="value row-item">
+                            <div class="value__num">68</div>
+                            <div class="value__unit">점</div>
+                          </div>
+                          <div class="datas datas--info">
+                            <dl class="datas__list">
+                              <div class="datas__item">
+                                <dt class="datas__key">전국버스평균 68점</dt>
+                                <dd class="datas__val">보통이에요!</dd>
+                              </div>
+                            </dl>
+                          </div>
+                          <div class="chart-box chart-box--status row-contents-group" id="chart5_2"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- //승객안전운행지수 -->
+
+                  <!-- 제한속도초과운행 -->
+                  <section class="section-slide__item">
+                    <div class="card card--widget">
+                      <div class="card-head card-head--widget">
+                        <div class="card-head__left">
+                          <h3 class="card-head__title">제한속도초과운행</h3>
+                        </div>
+                      </div>
+                      <div class="widget">
+                        <div class="widget__contents">
+                          <div class="value row-item">
+                            <div class="value__num">12</div>
+                            <div class="value__unit">점</div>
+                          </div>
+                          <div class="datas datas--info">
+                            <dl class="datas__list">
+                              <div class="datas__item">
+                                <dt class="datas__key">전국버스평균 12점</dt>
+                                <dd class="datas__val">주의가 필요해요!</dd>
+                              </div>
+                            </dl>
+                          </div>
+                          <div class="chart-box chart-box--status row-contents-group" id="chart5_3"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- //제한속도초과운행 -->
+
+                  <!-- 심야운행안전지수 -->
+                  <section class="section-slide__item">
+                    <div class="card card--widget">
+                      <div class="card-head card-head--widget">
+                        <div class="card-head__left">
+                          <h3 class="card-head__title">심야운행안전지수</h3>
+                        </div>
+                        <div class="card-head__right">
+                          <p class="card-head__sub">심야시간대 24:00 ~ 04:00</p>
+                        </div>
+                      </div>
+                      <div class="widget">
+                        <div class="widget__contents">
+                          <div class="value row-item">
+                            <div class="value__num">95</div>
+                            <div class="value__unit">점</div>
+                          </div>
+                          <div class="datas datas--info">
+                            <dl class="datas__list">
+                              <div class="datas__item">
+                                <dt class="datas__key">전국버스평균 95점</dt>
+                                <dd class="datas__val">양호해요!</dd>
+                              </div>
+                            </dl>
+                          </div>
+                          <div class="chart-box chart-box--status row-contents-group" id="chart5_4"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- //심야운행안전지수 -->
+
+                  <!-- 전비등급 -->
+                  <section class="section-slide__item">
+                    <div class="card card--widget">
+                      <div class="card-head card-head--widget">
+                        <div class="card-head__left">
+                          <h3 class="card-head__title">5월 전비등급</h3>
+                        </div>
+                      </div>
+                      <div class="widget">
+                        <div class="widget__contents">
+                          <div class="value row-item">
+                            <div class="value__num">6.3</div>
+                            <div class="value__unit">km/10kWh</div>
+                          </div>
+                          <div class="datas datas--info">
+                            <dl class="datas__list">
+                              <div class="datas__item">
+                                <dt class="datas__key">우리회사 평균전비는</dt>
+                                <dd class="datas__val">낮음 등급이에요!</dd>
+                              </div>
+                            </dl>
+                          </div>
+                          <div class="chart-box chart-box--status row-contents-group" id="chart5_5"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- //전비등급 -->
+
+                  <!-- 전력사용량 -->
+                  <section class="section-slide__item">
+                    <div class="card card--widget">
+                      <div class="card-head card-head--widget">
+                        <div class="card-head__left">
+                          <h3 class="card-head__title">전력사용량</h3>
+                        </div>
+                      </div>
+                      <div class="widget">
+                        <div class="widget__contents">
+                          <div class="form-flex">
+                            <section class="form-flex-cell form-flex-cell--flexible">
+                              <h4 class="small-text font-weight-regular color-gray row-contents-group">전력사용량</h4>
+                              <div class="chart-box chart-box--widget-amount" id="chart5_6_1"></div>
+                            </section>
+                            <div class="form-flex-cell form-flex-cell--full-hr">
+                              <div class="form-flex-hr"></div>
+                            </div>
+                            <section class="form-flex-cell form-flex-cell--flexible">
+                              <section class="widget-section">
+                                <h4 class="small-text font-weight-regular color-gray row-contents-group">누적운행거리</h4>
+                                <div class="chart-box chart-box--widget-amount" id="chart5_6_2"></div>
+                              </section>
+                            </section>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- //전력사용량 -->
+
+                  <!-- 대기시간 전력낭비현황 -->
+                  <section class="section-slide__item">
+                    <div class="card card--widget">
+                      <div class="card-head card-head--widget">
+                        <div class="card-head__left">
+                          <h3 class="card-head__title">대기시간 전력낭비현황</h3>
+                        </div>
+                      </div>
+                      <div class="widget">
+                        <div class="widget__contents">
+                          <div class="widget-list widget-list--col-2">
+                            <section class="widget-list__item widget-list__item--month-section">
+                              <div class="widget-list__block">
+                                <div class="widget-list__cell">
+                                  <h4 class="month-title">
+                                    <span class="month-title__num">3</span>
+                                    <span class="month-title__unit">월</span>
+                                  </h4>
+                                </div>
+                                <div class="widget-list__cell widget-list__cell--flexible">
+                                  <div class="datas datas--horizontal">
+                                    <dl class="datas__list row-item">
+                                      <div class="datas__item">
+                                        <dt class="datas__key">
+                                          <div class="small-text color-light-gray">대기시간</div>
+                                        </dt>
+                                        <dd class="datas__val">
+                                          <div class="value value--regular">
+                                            <div class="value__num">-</div>
+                                            <div class="value__unit color-gray">시간</div>
+                                          </div>
+                                        </dd>
+                                      </div>
+                                    </dl>
+                                    <dl class="datas__list row-item">
+                                      <div class="datas__item">
+                                        <dt class="datas__key">
+                                          <div class="small-text color-light-gray">전력량</div>
+                                        </dt>
+                                        <dd class="datas__val">
+                                          <div class="value value--regular">
+                                            <div class="value__num">-</div>
+                                            <div class="value__unit color-gray">kWh</div>
+                                          </div>
+                                        </dd>
+                                      </div>
+                                    </dl>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+                            <section class="widget-list__item widget-list__item--month-section">
+                              <div class="widget-list__block">
+                                <div class="widget-list__cell">
+                                  <h4 class="month-title">
+                                    <span class="month-title__num">4</span>
+                                    <span class="month-title__unit">월</span>
+                                  </h4>
+                                </div>
+                                <div class="widget-list__cell widget-list__cell--flexible">
+                                  <div class="datas datas--horizontal">
+                                    <dl class="datas__list row-item">
+                                      <div class="datas__item">
+                                        <dt class="datas__key">
+                                          <div class="small-text color-light-gray">대기시간</div>
+                                        </dt>
+                                        <dd class="datas__val">
+                                          <div class="value value--regular">
+                                            <div class="value__num">99,999</div>
+                                            <div class="value__unit color-gray">시간</div>
+                                          </div>
+                                        </dd>
+                                      </div>
+                                    </dl>
+                                    <dl class="datas__list row-item">
+                                      <div class="datas__item">
+                                        <dt class="datas__key">
+                                          <div class="small-text color-light-gray">전력량</div>
+                                        </dt>
+                                        <dd class="datas__val">
+                                          <div class="value value--regular">
+                                            <div class="value__num">9,999,999</div>
+                                            <div class="value__unit color-gray">kWh</div>
+                                          </div>
+                                        </dd>
+                                      </div>
+                                    </dl>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- //대기시간 전력낭비현황 -->
+                </div>
+              </div>
+            </section>
+            <!-- //주행분석 -->
+          </div>
+        </article>
+        <!-- //contents -->
+      </div>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript" src="/mobile/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/mobile/js/ui-script.js"></script>
+    <script type="text/javascript" src="/mobile/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <script>
+      // 지수
+      function chart1(el, data, unit, colorSet) {
+        var chart = Highcharts.chart(el, {
+          chart: {
+            type: 'bar',
+            marginTop: 0,
+            height: 60,
+            events: {
+              load: null,
+            },
+          },
+          xAxis: {
+            visible: false,
+            height: 8,
+          },
+          yAxis: {
+            visible: false,
+            endOnTick: false,
+            maxPadding: 0,
+            min: 0,
+          },
+          tooltip: {
+            enabled: false,
+          },
+          legend: UI_CHART.LEGEND.TYPE_SAFE(unit),
+          plotOptions: {
+            bar: {
+              stacking: 'normal',
+              pointWidth: null,
+              pointPadding: 0,
+              groupPadding: 0,
+            },
+          },
+          colors: UI_CHART.COLOR_SET[colorSet],
+          series: data,
+        });
+
+        $(chart.renderTo).data('highcharts', chart); // DD : 윈도우 리사이즈 시 슬라이드 안에 차트 리사이즈 업데이트 하기 위해 필요.
+      }
+
+      // 전력사용량
+      function chart2(el, categories, data, unit, colorSet) {
+        var chart = Highcharts.chart(el, {
+          chart: {
+            type: 'bar',
+            marginTop: 0,
+            events: {
+              load: null,
+            },
+          },
+          xAxis: {
+            lineWidth: 0,
+            categories: categories,
+            labels: UI_CHART.LABELS.TYPE_BAR,
+            margin: 0,
+            height: 162,
+          },
+          yAxis: {
+            visible: false,
+            endOnTick: false,
+            maxPadding: 0,
+            min: 0,
+          },
+          tooltip: {
+            enabled: false,
+          },
+          legend: {
+            enabled: false,
+          },
+          plotOptions: {
+            bar: {
+              grouping: false,
+              pointPlacement: -0.16,
+              dataLabels: UI_CHART.DATAlABELS.TYPE_BAR(unit),
+            },
+          },
+          colors: UI_CHART.COLOR_SET[colorSet],
+          series: data,
+        });
+
+        $(chart.renderTo).data('highcharts', chart); // DD : 윈도우 리사이즈 시 슬라이드 안에 차트 리사이즈 업데이트 하기 위해 필요.
+      }
+
+      // 월간최대부하 충전율
+      function chart3(el, categories, data) {
+        var chart = Highcharts.chart(el, {
+          chart: {
+            type: 'column',
+            spacingTop: 10,
+            events: {
+              load: null,
+            },
+          },
+          colors: UI_CHART.COLOR_SET.green,
+          xAxis: {
+            categories: categories,
+            labels: {
+              style: {
+                fontSize: '12px',
+                lineHeight: '18px',
+              },
+            },
+            reversedStacks: true,
+          },
+          yAxis: {
+            min: 0,
+            max: 100,
+            gridLineWidth: 0,
+            tickInterval: 20,
+            labels: {
+              style: {
+                fontSize: '11px',
+                lineHeight: '17px',
+              },
+            },
+          },
+          tooltip: UI_CHART.TOOLTIP({ val: '{point.y}%' }),
+          legend: {
+            symbolWidth: 8,
+            symbolHeight: 8,
+            itemMarginTop: -4,
+            itemMarginBottom: 0,
+          },
+          plotOptions: {
+            column: {
+              groupPadding: 0.82,
+            },
+          },
+          series: data,
+        });
+
+        $(chart.renderTo).data('highcharts', chart); // DD : 윈도우 리사이즈 시 슬라이드 안에 차트 리사이즈 업데이트 하기 위해 필요.
+      }
+
+      // 일간 가동률
+      function chart4(el, categories, data) {
+        var chart = Highcharts.chart(el, {
+          chart: {
+            type: 'area',
+            spacingTop: 10,
+            events: {
+              load: null,
+            },
+          },
+          xAxis: {
+            categories: categories,
+            labels: {
+              style: {
+                fontSize: '12px',
+                lineHeight: '18px',
+              },
+            },
+          },
+          yAxis: {
+            min: 0,
+            gridLineWidth: 0,
+            tickInterval: 20,
+            labels: {
+              style: {
+                fontSize: '11px',
+                lineHeight: '17px',
+              },
+            },
+          },
+          tooltip: {
+            enabled: false,
+          },
+          legend: {
+            enabled: false,
+          },
+          plotOptions: {
+            column: {
+              enableMouseTracking: false,
+              color: {
+                linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+                stops: [
+                  [0, UI_CHART.COLORS.PRIMARY_GRAD_TO],
+                  [1, UI_CHART.COLORS.PRIMARY_GRAD_FROM],
+                ],
+              },
+              dataLabels: {
+                enabled: true,
+                align: 'center',
+                verticalAlign: 'bottom',
+                padding: 0,
+                useHTML: true,
+                formatter: function () {
+                  return '<div class="chart-min-label">' + this.y + '%</div>';
+                },
+                y: -28,
+              },
+            },
+            area: {
+              enableMouseTracking: false,
+            },
+          },
+          series: data,
+        });
+
+        $(chart.renderTo).data('highcharts', chart); // DD : 윈도우 리사이즈 시 슬라이드 안에 차트 리사이즈 업데이트 하기 위해 필요.
+      }
+
+      $(window).on('load', function () {
+        // 충전 현황
+        chart1(
+          'chart3_1',
+          [
+            {
+              name: '최대부하',
+              data: [12],
+            },
+            {
+              name: '중간부하',
+              data: [27],
+            },
+            {
+              name: '경부하',
+              data: [61],
+            },
+          ],
+          '%',
+          'green'
+        );
+
+        // 안전지수
+        chart1(
+          'chart5_1',
+          [
+            {
+              name: '주의',
+              data: [53],
+            },
+            {
+              name: '보통',
+              data: [28],
+            },
+            {
+              name: '양호',
+              data: [98],
+            },
+          ],
+          '대',
+          'green'
+        );
+
+        // 승객안전운행지수
+        chart1(
+          'chart5_2',
+          [
+            {
+              name: '주의',
+              data: [53],
+            },
+            {
+              name: '보통',
+              data: [98],
+            },
+            {
+              name: '양호',
+              data: [28],
+            },
+          ],
+          '대',
+          'blue'
+        );
+
+        // 제한속도초과운행
+        chart1(
+          'chart5_3',
+          [
+            {
+              name: '주의',
+              data: [98],
+            },
+            {
+              name: '보통',
+              data: [28],
+            },
+            {
+              name: '양호',
+              data: [53],
+            },
+          ],
+          '대',
+          'red'
+        );
+
+        // 심야운행안전지수
+        chart1(
+          'chart5_4',
+          [
+            {
+              name: '주의',
+              data: [53],
+            },
+            {
+              name: '보통',
+              data: [28],
+            },
+            {
+              name: '양호',
+              data: [98],
+            },
+          ],
+          '대',
+          'green'
+        );
+
+        // 전비등급
+        chart1(
+          'chart5_5',
+          [
+            {
+              name: '낮음',
+              data: [98],
+            },
+            {
+              name: '보통',
+              data: [28],
+            },
+            {
+              name: '양호',
+              data: [53],
+            },
+          ],
+          '대',
+          'red'
+        );
+
+        // 전력사용량
+        chart2(
+          'chart5_6_1',
+          ['3월', '4월', '5월'],
+          [
+            {
+              name: '3월',
+              data: [511338, null, null],
+            },
+            {
+              name: '4월',
+              data: [null, 842156, null],
+            },
+            {
+              name: '5월',
+              data: [null, null, 220618],
+            },
+          ],
+          'kWh',
+          'green'
+        );
+        chart2(
+          'chart5_6_2',
+          ['3월', '4월', '5월'],
+          [
+            {
+              name: '3월',
+              data: [-1, null, null], // 데이터 없으면 -1
+            },
+            {
+              name: '4월',
+              data: [null, 0, null], // 사용량 없으면 0
+            },
+            {
+              name: '5월',
+              data: [null, null, 220618],
+            },
+          ],
+          'km',
+          'green'
+        );
+
+        // 월간최대부하 충전율
+        chart3(
+          'chart3_2',
+          ['경부하', '중간부하', '최대부하'],
+          [
+            {
+              name: '3월',
+              data: [87, 56, 92],
+            },
+            {
+              name: '4월',
+              data: [57, 65, 58],
+            },
+            {
+              name: '5월',
+              data: [95, 74, 26],
+            },
+          ]
+        );
+
+        // 일간 가동률
+        chart4(
+          'chart4_1',
+          ['10일', '11일', '12일', '13일', '14일', '15일', '16일'],
+          [
+            {
+              name: '',
+              data: [
+                81,
+                94,
+                109,
+                91,
+                97,
+                {
+                  y: 64,
+                  marker: {
+                    radius: 6,
+                    lineWidth: 8,
+                    lineColor: 'rgba(' + UI_CHART.COLORS.WHITE_RGB + ', 0.3)',
+                  },
+                },
+                101,
+              ],
+              zIndex: 10,
+            },
+            {
+              name: '',
+              data: [null, null, null, null, null, 64, null],
+              type: 'column',
+            },
+          ]
+        );
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

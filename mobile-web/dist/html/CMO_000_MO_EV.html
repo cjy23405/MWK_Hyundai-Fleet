@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/mobile/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/swiper/swiper-bundle.min.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- DD : 차량 관제일 경우 layout-wrap--map 클래스 값 추가 -->
+      <div class="layout-wrap layout-wrap--map">
+        <!-- toast-alert -->
+        <div class="ui-toast-alert" id="globalToastAlert"></div>
+        <!-- //toast-alert -->
+
+        <!-- contents -->
+        <article class="contents-wrap">
+          <div class="page-contents page-contents--vehicle-control">
+            <h2 class="for-a11y">차량관제</h2>
+
+            <!-- Top -->
+            <a href="" class="map-button map-button--back">
+              <span class="for-a11y">뒤로 가기</span>
+            </a>
+            <!-- 2022.10.05 : mod : 메뉴 버튼 추가로 구조 수정 -->
+            <div class="map-button-wrap">
+              <div class="map-button-wrap__item">
+                <a href="" class="map-button map-button--search">
+                  <span class="for-a11y">차량 목록</span>
+                </a>
+              </div>
+              <div class="map-button-wrap__item">
+                <a href="" class="map-button map-button--menu" data-layer-open="layer-gnb">
+                  <span class="for-a11y">메뉴</span>
+                </a>
+              </div>
+            </div>
+            <!-- //2022.10.05 : mod : 메뉴 버튼 추가로 구조 수정 -->
+            <!-- //Top -->
+
+            <!-- 2022.09.30 : add : 차량 대수 추가 -->
+            <!-- Count -->
+            <div class="map-count">
+              <span class="map-count__num">179</span>
+              <span class="map-count__unit">대</span>
+            </div>
+            <!-- Count -->
+            <!-- //2022.09.30 : add : 차량 대수 추가 -->
+
+            <!-- Tab -->
+            <div class="map-tab">
+              <ul class="map-tab__list">
+                <li class="map-tab__item">
+                  <div class="ui-radio-block">
+                    <input type="radio" class="ui-radio" name="mapTab1" id="mapTab1_1" checked />
+                    <label for="mapTab1_1" class="map-tab__button map-tab__button--all">
+                      <span class="map-tab__button-text">등록차량</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="map-tab__item">
+                  <div class="ui-radio-block">
+                    <input type="radio" class="ui-radio" name="mapTab1" id="mapTab1_2" />
+                    <label for="mapTab1_2" class="map-tab__button map-tab__button--on">
+                      <span class="map-tab__button-text">운행중</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="map-tab__item">
+                  <div class="ui-radio-block">
+                    <input type="radio" class="ui-radio" name="mapTab1" id="mapTab1_3" />
+                    <label for="mapTab1_3" class="map-tab__button map-tab__button--off">
+                      <span class="map-tab__button-text">운행종료</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="map-tab__item">
+                  <div class="ui-radio-block">
+                    <input type="radio" class="ui-radio" name="mapTab1" id="mapTab1_4" />
+                    <label for="mapTab1_4" class="map-tab__button map-tab__button--breakdown">
+                      <span class="map-tab__button-text">고장알림</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="map-tab__item">
+                  <div class="ui-radio-block">
+                    <input type="radio" class="ui-radio" name="mapTab1" id="mapTab1_5" />
+                    <label for="mapTab1_5" class="map-tab__button map-tab__button--check">
+                      <span class="map-tab__button-text">점검알림</span>
+                    </label>
+                  </div>
+                </li>
+                <li class="map-tab__item">
+                  <div class="ui-radio-block">
+                    <input type="radio" class="ui-radio" name="mapTab1" id="mapTab1_6" />
+                    <label for="mapTab1_6" class="map-tab__button map-tab__button--maintenance">
+                      <span class="map-tab__button-text">정비요청중</span>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- //Tab -->
+
+            <!-- Detail -->
+            <button type="button" class="ui-button map-button map-button--fold js-map-detail-close">
+              <span class="for-a11y">차량 상세 접기</span>
+            </button>
+            <section class="map-detail">
+              <div class="map-detail__container">
+                <div class="map-detail__head">
+                  <button type="button" class="ui-button map-detail__opener">
+                    <span class="for-a11y">차량 상세 열기</span>
+                  </button>
+                  <div class="card-head card-head--top">
+                    <div class="card-head__left">
+                      <span class="ui-status is-good">정상</span>
+                      <span class="ui-status is-danger">고장</span>
+                      <span class="ui-status is-check">점검</span>
+                      <span class="ui-status is-normal">정비요청중</span>
+                    </div>
+                    <div class="card-head__right">
+                      <span class="car-status display-block">운행중</span>
+                      <span class="car-status is-disabled display-block">운행종료</span>
+                    </div>
+                  </div>
+                  <div class="card-head card-head--no-margin">
+                    <div class="card-head__left">
+                      <h2 class="card-head__title">010가2345</h2>
+                      <div class="card-head__sub">엑시언트 수소트럭 (FCEV)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-detail__body">
+                  <div class="map-detail__body-inner">
+                    <!-- 상단 정보 -->
+                    <!-- Case : 상단 정보 - 대상차량 only Type 1 -->
+                    <div class="box row-contents-group">
+                      <div class="box__inner">
+                        <p class="basic-text color-gray">정상차량</p>
+                      </div>
+                    </div>
+                    <!-- //Case : 상단 정보 - 대상차량 only Type 1 -->
+
+                    <!-- Case : 상단 정보 - 대상차량 only Type 2 -->
+                    <div class="box row-contents-group">
+                      <div class="box__inner">
+                        <div class="log">
+                          <ul class="log__list">
+                            <li class="log__item">
+                              <div class="log__text">고장코드 : P1BBA04 (제어기명-최대10글자)</div>
+                              <div class="log__date">05.16 07:55</div>
+                            </li>
+                            <li class="log__item">
+                              <div class="log__text">고장코드 : P1BBA04 (제어기명-최대10글자)</div>
+                              <div class="log__date">05.16 07:55</div>
+                            </li>
+                            <li class="log__item">
+                              <div class="log__text">고장코드 : P1BBA04 (제어기명-최대10글자)</div>
+                              <div class="log__date">05.16 07:55</div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //Case : 상단 정보 - 대상차량 only Type 2 -->
+
+                    <!-- Case : 상단 정보 - 기본 -->
+                    <div class="box row-contents-group">
+                      <div class="box__inner">
+                        <div class="form-flex">
+                          <div class="form-flex-cell form-flex-cell--flexible form-flex-cell--medium-margin">
+                            <div class="datas">
+                              <dl class="datas__list">
+                                <div class="datas__item">
+                                  <dt class="datas__key color-gray">누적 주행거리</dt>
+                                  <dd class="datas__val">
+                                    <div class="value value--small">
+                                      <div class="value__num color-light-gray">320,000</div>
+                                      <div class="value__unit color-gray">km</div>
+                                    </div>
+                                  </dd>
+                                </div>
+                              </dl>
+                            </div>
+                          </div>
+                          <div class="form-flex-cell form-flex-cell--full-hr form-flex-cell--medium-margin">
+                            <div class="form-flex-hr form-flex-hr--secondary"></div>
+                          </div>
+                          <div class="form-flex-cell form-flex-cell--flexible form-flex-cell--medium-margin">
+                            <div class="datas">
+                              <dl class="datas__list">
+                                <div class="datas__item">
+                                  <dt class="datas__key color-gray">배터리잔량</dt>
+                                  <dd class="datas__val">
+                                    <div class="value value--small">
+                                      <div class="value__num color-light-gray">89</div>
+                                      <div class="value__unit color-gray">%</div>
+                                    </div>
+                                  </dd>
+                                </div>
+                              </dl>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //Case : 상단 정보 - 기본 -->
+
+                    <!-- cluster -->
+                    <div class="cluster row-contents-group">
+                      <div class="cluster__top">
+                        <div class="cluster__top-left">
+                          <p class="cluster__top-text">현재시간 08:40</p>
+                        </div>
+                        <div class="cluster__top-right">
+                          <p class="cluster__top-text">업데이트 시간 08:42:00</p>
+                        </div>
+                      </div>
+
+                      <div class="cluster__contents">
+                        <div class="cluster__left">
+                          <span class="cluster__data">28.0</span>
+                          <span class="cluster__unit">FUEL (%)</span>
+                        </div>
+                        <div class="cluster__detail">
+                          <div class="cluster__detail-top">
+                            <div class="cluster__detail-title">ODO</div>
+                            <div class="cluster__detail-data">
+                              180,000
+                              <span class="cluster__detail-unit">km</span>
+                            </div>
+                          </div>
+                          <div class="cluster__detail-bottom">
+                            <div class="cluster__detail-title">운행거리</div>
+                            <div class="cluster__detail-data">
+                              1,000
+                              <span class="cluster__detail-unit">km</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cluster__right">
+                          <span class="cluster__data">88</span>
+                          <span class="cluster__unit">km</span>
+                        </div>
+                      </div>
+
+                      <!-- cluster-box -->
+                      <div class="cluster-box">
+                        <div class="cluster-box__cell">
+                          <dl class="cluster-box__cell-info">
+                            <dt class="cluster-box__cell-info-title">고전압 배터리</dt>
+                            <dd class="cluster-box__cell-info-text">
+                              <dl class="cluster-box__cell-info">
+                                <dt class="cluster-box__cell-info-title">전류</dt>
+                                <dd class="cluster-box__cell-info-text">
+                                  <div class="cluster-box__cell-data">00.0<span class="cluster-box__cell-unit">A</span></div>
+                                </dd>
+                                <dt class="cluster-box__cell-info-title">전압</dt>
+                                <dd class="cluster-box__cell-info-text">
+                                  <!-- 2022.09.05 : mod : 전압 단위 변경 -->
+                                  <div class="cluster-box__cell-data">00.0<span class="cluster-box__cell-unit">V</span></div>
+                                </dd>
+                              </dl>
+                            </dd>
+                          </dl>
+                        </div>
+                        <div class="cluster-box__cell">
+                          <dl class="cluster-box__cell-info">
+                            <dt class="cluster-box__cell-info-title">24v 배터리전압</dt>
+                            <dd class="cluster-box__cell-info-text">
+                              <div class="cluster-box__cell-data">28.1<span class="cluster-box__cell-unit">v</span></div>
+                            </dd>
+                          </dl>
+                          <span class="cluster-box__cell-status">READY</span>
+                        </div>
+                      </div>
+                      <!--// cluster-box -->
+                    </div>
+                    <!-- // cluster -->
+
+                    <!-- table -->
+                    <div class="ui-table row-contents-group">
+                      <div class="ui-table__scroller">
+                        <div class="ui-table__doc">
+                          <div class="ui-table__table">
+                            <div class="ui-table__table-inner">
+                              <table>
+                                <colgroup>
+                                  <!-- 2022.10.14 : mod : 너비 값 변경 -->
+                                  <col style="width: 94px" />
+                                  <col style="width: 84px" />
+                                  <col style="width: 94px" />
+                                  <col style="width: 84px" />
+                                  <col style="width: 84px" />
+                                  <!-- //2022.10.14 : mod : 너비 값 변경 -->
+                                </colgroup>
+                                <thead>
+                                  <tr>
+                                    <!-- 2022.10.14 : mod : 줄바 꿈 추가 및 문구 변경 -->
+                                    <th>출발<br />일시</th>
+                                    <th>출발<br />배터리 (%)</th>
+                                    <th>도착<br />일시</th>
+                                    <th>도착<br />배터리 (%)</th>
+                                    <th>배터리<br />소모량 (%)</th>
+                                    <!-- //2022.10.14 : mod : 줄바 꿈 추가 및 문구 변경 -->
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <!-- 2022.10.14 : mod : 월.일 시:분 형식으로 변경 -->
+                                    <td>01.01 15:00</td>
+                                    <td>80</td>
+                                    <!-- 2022.10.14 : mod : 월.일 시:분 형식으로 변경 -->
+                                    <td>01.01 16:24</td>
+                                    <td>-</td>
+                                    <td>25.0</td>
+                                  </tr>
+                                  <tr>
+                                    <!-- 2022.10.14 : mod : 월.일 시:분 형식으로 변경 -->
+                                    <td>01.01 12:24</td>
+                                    <td>80</td>
+                                    <!-- 2022.10.14 : mod : 월.일 시:분 형식으로 변경 -->
+                                    <td>01.01 13:40</td>
+                                    <td>-</td>
+                                    <td>25.0</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //table -->
+
+                    <!-- 알림 상태 -->
+                    <div class="box row-contents-group">
+                      <div class="box__inner">
+                        <div class="status-menu">
+                          <ul class="status-menu__list">
+                            <li class="status-menu__item">
+                              <a href="" class="status-menu__link">
+                                <span class="ui-status is-danger">고장</span>
+                                <div class="status-menu__text">고장알림</div>
+                                <div class="status-menu__right">
+                                  <div class="value value--small">
+                                    <div class="value__num color-light-gray">8</div>
+                                    <div class="value__unit color-gray">건</div>
+                                  </div>
+                                </div>
+                              </a>
+                            </li>
+                            <li class="status-menu__item">
+                              <a href="" class="status-menu__link">
+                                <span class="ui-status is-check">점검</span>
+                                <div class="status-menu__text">차량주요상태정보</div>
+                                <div class="status-menu__right">
+                                  <div class="value value--small">
+                                    <div class="value__num color-light-gray">8</div>
+                                    <div class="value__unit color-gray">건</div>
+                                  </div>
+                                </div>
+                              </a>
+                            </li>
+                            <li class="status-menu__item">
+                              <a href="" class="status-menu__link">
+                                <span class="ui-status is-normal">정비</span>
+                                <div class="status-menu__text">정비요청중</div>
+                                <div class="status-menu__right">
+                                  <div class="value value--small">
+                                    <div class="value__num color-light-gray">8</div>
+                                    <div class="value__unit color-gray">건</div>
+                                  </div>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //알림 상태 -->
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- //Detail -->
+
+            <div class="map-cover"></div>
+
+            <!-- Map -->
+            <div class="full-map" id="map"></div>
+            <!-- //Map -->
+
+            <!--
+            <div class="map-pin is-bus is-on">
+              <div class="map-pin__block">
+                <div class="map-pin__name">
+                  <div class="map-pin__name-text">0825</div>
+                </div>
+                <div class="map-pin__status">
+                  <div class="map-pin__status-item is-breakdown"></div>
+                  <div class="map-pin__status-item is-check"></div>
+                  <div class="map-pin__status-item is-maintenance"></div>
+                </div>
+              </div>
+            </div>
+            <div class="map-pin is-bus is-on is-selected">
+              <div class="map-pin__block">
+                <div class="map-pin__name">
+                  <div class="map-pin__name-text">0825</div>
+                </div>
+                <div class="map-pin__status">
+                  <div class="map-pin__status-item is-breakdown"></div>
+                  <div class="map-pin__status-item is-check"></div>
+                  <div class="map-pin__status-item is-maintenance"></div>
+                </div>
+              </div>
+            </div>
+            <div class="map-pin is-bus is-off">
+              <div class="map-pin__block">
+                <div class="map-pin__name">
+                  <div class="map-pin__name-text">0825</div>
+                </div>
+                <div class="map-pin__status">
+                  <div class="map-pin__status-item is-breakdown"></div>
+                  <div class="map-pin__status-item is-check"></div>
+                  <div class="map-pin__status-item is-maintenance"></div>
+                </div>
+              </div>
+            </div>
+            <div class="map-pin is-bus is-off is-selected">
+              <div class="map-pin__block">
+                <div class="map-pin__name">
+                  <div class="map-pin__name-text">0825</div>
+                </div>
+                <div class="map-pin__status">
+                  <div class="map-pin__status-item is-breakdown"></div>
+                  <div class="map-pin__status-item is-check"></div>
+                  <div class="map-pin__status-item is-maintenance"></div>
+                </div>
+              </div>
+            </div>
+            <div class="map-pin is-truck is-on">
+              <div class="map-pin__block">
+                <div class="map-pin__name">
+                  <div class="map-pin__name-text">0825</div>
+                </div>
+                <div class="map-pin__status">
+                  <div class="map-pin__status-item is-breakdown"></div>
+                  <div class="map-pin__status-item is-check"></div>
+                  <div class="map-pin__status-item is-maintenance"></div>
+                </div>
+              </div>
+            </div>
+            <div class="map-pin is-truck is-on is-selected">
+              <div class="map-pin__block">
+                <div class="map-pin__name">
+                  <div class="map-pin__name-text">0825</div>
+                </div>
+                <div class="map-pin__status">
+                  <div class="map-pin__status-item is-breakdown"></div>
+                  <div class="map-pin__status-item is-check"></div>
+                  <div class="map-pin__status-item is-maintenance"></div>
+                </div>
+              </div>
+            </div>
+            <div class="map-pin is-truck is-off">
+              <div class="map-pin__block">
+                <div class="map-pin__name">
+                  <div class="map-pin__name-text">0825</div>
+                </div>
+                <div class="map-pin__status">
+                  <div class="map-pin__status-item is-breakdown"></div>
+                  <div class="map-pin__status-item is-check"></div>
+                  <div class="map-pin__status-item is-maintenance"></div>
+                </div>
+              </div>
+            </div>
+            <div class="map-pin is-truck is-off is-selected">
+              <div class="map-pin__block">
+                <div class="map-pin__name">
+                  <div class="map-pin__name-text">0825</div>
+                </div>
+                <div class="map-pin__status">
+                  <div class="map-pin__status-item is-breakdown"></div>
+                  <div class="map-pin__status-item is-check"></div>
+                  <div class="map-pin__status-item is-maintenance"></div>
+                </div>
+              </div>
+            </div>
+            -->
+          </div>
+        </article>
+        <!-- //contents -->
+      </div>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript" src="/mobile/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/mobile/js/ui-script.js"></script>
+    <script type="text/javascript" src="/mobile/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <script>
+      $(function () {
+        // 2022.09.16 : mod : 지도 라이브러리 변경 적용 : start
+
+        // 지도 생성
+        var map = new routo.maps.Map('map', {
+          center: {
+            lat: 37.483146288862415,
+            lng: 126.89767972698557,
+          },
+          zoom: 15,
+        });
+
+        // 마커 생성
+        function addOverlay(map, latLng, data) {
+          var html = '';
+          var typeClass = (function () {
+            if (data.type === 'bus') return 'is-bus';
+            else if (data.type === 'truck') return 'is-truck';
+            else return '';
+          })();
+          var powerClass = (function () {
+            if (data.power === 'on') return 'is-on';
+            else return 'is-off';
+          })();
+
+          html += '<div class="map-pin ' + typeClass + ' ' + powerClass + '">';
+          html += '<div class="map-pin__block">';
+          html += '<div class="map-pin__name">';
+          html += '<div class="map-pin__name-text">' + data.name + '</div>';
+          html += '</div>';
+
+          if (data.breakdown > 0 || data.check > 0 || data.maintenance > 0) {
+            html += '<div class="map-pin__status">';
+            if (data.breakdown > 0) {
+              html += '<div class="map-pin__status-item is-breakdown"></div>';
+            }
+            if (data.check > 0) {
+              html += '<div class="map-pin__status-item is-check"></div>';
+            }
+            if (data.maintenance > 0) {
+              html += '<div class="map-pin__status-item is-maintenance"></div>';
+            }
+            html += '</div>';
+          }
+
+          html += '</div>';
+          html += '</div>';
+
+          var infowindow = new routo.maps.InfoWindow({
+            content: html,
+            position: latLng,
+          });
+
+          infowindow.open({
+            map: map,
+          });
+
+          var el = infowindow.getContent();
+          var $el = $(el);
+          var $pin = $el.find('.map-pin');
+          var $parent = $el.parent();
+
+          $el.addClass('ui-custom-routo-infowindow-map-pin');
+
+          $pin.on('click', function () {
+            var $this = $(this);
+
+            setTimeout(function () {
+              $this.addClass('is-selected');
+              $parent.css('z-index', '10');
+
+              // 2022.09.30 : del : 불 필요 콘솔 제거
+              // console.log($this.hasClass('is-selected'));
+
+              $('.map-pin')
+                .not($this)
+                .each(function () {
+                  var $thisOtherPin = $(this);
+                  var $thisOtherParent = $thisOtherPin.closest('.routo-infowindow').parent();
+
+                  $thisOtherPin.removeClass('is-selected');
+                  $thisOtherParent.css('z-index', '');
+                });
+
+              map.setCenter(latLng);
+
+              uiJSMapDetail.show(); // 상세 레이어 여는 함수
+              //uiJSMapDetail.hide(); // 상세 레이어 닫는 함수
+            }, 0);
+          });
+        }
+
+        // 더미 마커 생성
+        addOverlay(
+          map,
+          {
+            lat: 37.4899827821219,
+            lng: 126.89473181962967,
+          },
+          {
+            type: 'bus',
+            power: 'on',
+            name: '1234',
+            breakdown: 4,
+            check: 2,
+            maintenance: 5,
+          }
+        );
+        addOverlay(
+          map,
+          {
+            lat: 37.48644558855695,
+            lng: 126.89473181962967,
+          },
+          {
+            type: 'bus',
+            power: 'off',
+            name: '0825',
+            breakdown: 1,
+            check: 0,
+            maintenance: 0,
+          }
+        );
+        addOverlay(
+          map,
+          {
+            lat: 37.482597476593185,
+            lng: 126.89473181962967,
+          },
+          {
+            type: 'truck',
+            power: 'on',
+            name: '6313',
+            breakdown: 0,
+            check: 2,
+            maintenance: 0,
+          }
+        );
+        addOverlay(
+          map,
+          {
+            lat: 37.47861293942931,
+            lng: 126.89473181962967,
+          },
+          {
+            type: 'truck',
+            power: 'off',
+            name: '6822',
+            breakdown: 0,
+            check: 0,
+            maintenance: 5,
+          }
+        );
+        addOverlay(
+          map,
+          {
+            lat: 37.4899827821219,
+            lng: 126.90003991127013,
+          },
+          {
+            type: 'bus',
+            power: 'on',
+            name: '1357',
+            breakdown: 0,
+            check: 0,
+            maintenance: 0,
+          }
+        );
+        addOverlay(
+          map,
+          {
+            lat: 37.48644558855695,
+            lng: 126.90003991127013,
+          },
+          {
+            type: 'bus',
+            power: 'on',
+            name: '8167',
+            breakdown: 1,
+            check: 5,
+            maintenance: 0,
+          }
+        );
+
+        // 2022.09.16 : mod : 지도 라이브러리 변경 적용 : end
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

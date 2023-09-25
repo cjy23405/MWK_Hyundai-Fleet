@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+/* page-contents--calendar */
+.page-contents--calendar {
+  padding-top: 8px;
+}
+html.calendar-page body {
+  background-color: var(--white);
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g data-name="그룹 17063">
+        <path data-name="사각형 18344" style="fill:transparent" d="M0 0h24v24H0z"/>
+        <g data-name="그룹 17062">
+            <g data-name="그룹 15056">
+                <g data-name="합치기 84" style="fill:none">
+                    <path d="M7.283 14.167H0V2.833h7.283L17.436 0A.534.534 0 0 1 18 .5v16a.534.534 0 0 1-.564.5z" style="stroke:none" transform="translate(4.299 2.001)"/>
+                    <path d="M16.5 15.182V1.818L7.488 4.333H1.5v8.334h5.988l9.012 2.515M17.436 17 7.283 14.167H0V2.833h7.283L17.436 0c.312 0 .564.223.564.5v16c0 .277-.252.5-.564.5z" style="fill:#fff;stroke:none" transform="translate(4.299 2.001)"/>
+                </g>
+            </g>
+            <g data-name="패스 14323" style="fill:none">
+                <path d="M0 5.721 5 9V0H0z" style="stroke:none" transform="translate(.999 6)"/>
+                <path d="M3.5 6.223V1.5h-2v3.411l2 1.312M5 9 0 5.721V0h5v9z" style="fill:#fff;stroke:none" transform="translate(.999 6)"/>
+            </g>
+            <g data-name="사각형 18377" style="stroke:#fff;stroke-width:1.5px;fill:none">
+                <path style="stroke:none" d="M0 0h5v7H0z" transform="translate(6.799 14.699)"/>
+                <path style="fill:none" d="M.75.75h3.5v5.5H.75z" transform="translate(6.799 14.699)"/>
+            </g>
+        </g>
+    </g>
+</svg>

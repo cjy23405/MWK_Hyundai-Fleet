@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title></title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/desktop/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/desktop/css/common.css" />
+    <style>
+      body {
+        margin: 0;
+      }
+      .is-emphasis {
+        font-weight: 700;
+        color: #ff706e;
+      }
+      .index-wrap {
+        box-sizing: border-box;
+        min-width: 1900px;
+        padding: 20px;
+      }
+      .index-title {
+        font-size: 30px;
+        line-height: 40px;
+        margin: 0 0 20px;
+      }
+      .index-links:before {
+        content: '';
+        display: table;
+      }
+      .index-links__inner {
+        margin: -10px 0 0 -10px;
+      }
+      .index-links__inner:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+      .index-links a {
+        display: block;
+        margin: 10px 0 0 10px;
+        float: left;
+        padding: 5px 15px;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        background: #666;
+      }
+      .index-gnb {
+        margin: 20px 0;
+      }
+      .index-bottom {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        min-width: 1900px;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        background: rgba(0, 0, 0, 0.4);
+      }
+      .index-bottom a {
+        background-color: #066cb3;
+      }
+      .index-section {
+        border-radius: 5px;
+        background-color: var(--bg-secondary);
+      }
+      .index-section + .index-section {
+        margin-top: 20px;
+      }
+      .index-section--clicked {
+        -webkit-animation: index-section-clicked 0.8s linear;
+        animation: index-section-clicked 0.8s linear;
+      }
+      @-webkit-keyframes index-section-clicked {
+        0% {
+          background-color: var(--bg-primary);
+        }
+        30% {
+          background-color: var(--tertiary-dark);
+        }
+        70% {
+          background-color: var(--tertiary-dark);
+        }
+        100% {
+          background-color: var(--bg-primary);
+        }
+      }
+      @keyframes index-section-clicked {
+        0% {
+          background-color: var(--bg-primary);
+        }
+        30% {
+          background-color: var(--tertiary-dark);
+        }
+        70% {
+          background-color: var(--tertiary-dark);
+        }
+        100% {
+          background-color: var(--bg-primary);
+        }
+      }
+      .index-section__title {
+        margin: 0;
+        padding: 5px 15px;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        color: #fff;
+        border-radius: 5px 5px 0 0;
+        background: #333;
+      }
+      .index-table > table {
+        width: 100%;
+        table-layout: fixed;
+        margin: 0;
+        padding: 0;
+        border-spacing: 0;
+        box-sizing: border-box;
+      }
+      .index-table > table > thead > tr > th,
+      .index-table > table > tbody > tr > th,
+      .index-table > table > tbody > tr > td {
+        box-sizing: border-box;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: left;
+        padding: 5px 10px;
+        border: 0 solid var(--line-secondary);
+        border-width: 0 1px 1px 0;
+        background: none;
+        word-break: keep-all;
+        word-wrap: break-word;
+      }
+      .index-table > table > tbody > tr:hover > th,
+      .index-table > table > tbody > tr:hover > td {
+        background-color: var(--gray-800);
+      }
+      .index-table > table > thead > tr > th:first-child,
+      .index-table > table > tbody > tr > th:first-child,
+      .index-table > table > tbody > tr > td:first-child {
+        border-left-width: 1px;
+      }
+      .index-table > table > thead > tr > th {
+        border-top-width: 1px;
+        font-weight: 500;
+      }
+      .index-table > table > thead > tr > th,
+      .index-table > table > tbody > tr > th {
+        background-color: var(--gray-600);
+      }
+      .index-table > table > tbody > tr:last-child > td:first-child {
+        border-radius: 0 0 0 5px;
+      }
+      .index-table > table > tbody > tr:last-child > td:last-child {
+        border-radius: 0 0 5px 0;
+      }
+      .index-table a {
+        color: var(--primary);
+      }
+      .index-status {
+        display: inline-block;
+        vertical-align: top;
+        padding: 3px 8px;
+        margin: -3px 0;
+        background: #999;
+        color: #fff;
+        font-weight: 700;
+        border-radius: 5px;
+      }
+      .index-status--ing {
+        background-color: #cf8800;
+      }
+      .index-status--end {
+        background-color: #00a6a0;
+      }
+      .index-status--moding {
+        background-color: #ff4594;
+      }
+      .index-log {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .index-log__item {
+        position: relative;
+        padding-left: 80px;
+      }
+      .index-log__item__date {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .index-text {
+        margin-bottom: 20px;
+      }
+      .index-type {
+        color: #2b5cd9;
+      }
+    </style>
+    <!-- //style -->
+  </head>
+  <body>
+    <div class="index-wrap">
+      <h1 class="index-title"></h1>
+      <div class="index-gnb">
+        <div class="index-links">
+          <div class="index-links__inner">
+            <a href="./guide-popup.html" target="_blank">레이어 팝업 가이드</a>
+            <a href="./guide-component.html" target="_blank">컴포넌트 가이드</a>
+            <a href="./guide-script.html" target="_blank">스크립트 가이드</a>
+          </div>
+        </div>
+      </div>
+      <div class="index-bottom">
+        <div class="index-links">
+          <div class="index-links__inner" id="nav"></div>
+        </div>
+      </div>
+
+      <!--
+      <div class="index-text">기타 문구</div>
+      -->
+
+      <div class="index-datas" id="indexTable"></div>
+    </div>
+
+    <div class="index-fake-botttom"></div>
+
+    <!-- script -->
+    <script type="text/javascript" src="/desktop/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script>
+      var title = '현대차 블루링크 Fleet - PC';
+      var tableData = [
+        /*
+        {
+          depth1: '',
+          data: [
+            {
+              id: '',
+              depth2: '',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '',
+              status: '',
+              create: '',
+              update: '',
+              log: [
+                //{ date: '', text: '', },
+              ],
+            },
+          ],
+        },
+        */
+        {
+          depth1: '공통',
+          data: [
+            {
+              id: '',
+              depth2: '로딩바',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/_loading.html',
+              status: 'end',
+              create: '2022.08.19',
+              log: [],
+            },
+            {
+              id: '',
+              depth2: '레이아웃',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/_layout.html',
+              status: 'end',
+              create: '2022.06.27',
+              log: [
+                { date: '2022.07.04', text: '차트 기본 설정 스크립트 추가' },
+                { date: '2022.07.07', text: '공지사항, 알림 레이어 추가' },
+                { date: '2022.07.15', text: '데이트 피커 라이브러리 추가' },
+                { date: '2022.08.19', text: '지도 API 추가' },
+                { date: '2022.09.16', text: 'header 메뉴 영역 디자인 변경 적용\n메인 화면용 header, top 버튼, footer 추가\n지도 라이브러리 변경' },
+                { date: '2022.09.22', text: 'header 프로필 이미지 영역 추가' },
+                { date: '2022.10.05', text: 'header 언어변경 아이콘 추가, \n footer select box 추가' },
+                { date: '2022.10.21', text: 'footer 개인정보처리방침, 이용약관 url 추가' },
+              ],
+            },
+            {
+              id: '',
+              depth2: '얼럿 레이어 팝업',
+              depth3: '버튼 한개',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/_alert-1.html',
+              status: 'end',
+              create: '2022.06.27',
+              log: [{ date: '2022.08.19', text: '함수 반영' }],
+            },
+            {
+              id: '',
+              depth2: '얼럿 레이어 팝업',
+              depth3: '버튼 두개',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/_alert-2.html',
+              status: 'end',
+              create: '2022.06.27',
+              log: [{ date: '2022.08.19', text: '함수 반영' }],
+            },
+            {
+              id: '',
+              depth2: '얼럿 레이어 팝업',
+              depth3: '타이틀만 있는 경우',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/_alert-3.html',
+              status: 'end',
+              create: '2022.06.27',
+              log: [{ date: '2022.08.19', text: '함수 반영' }],
+            },
+            {
+              id: 'NOT_005_PC_EV',
+              depth2: '[팝업] 공지사항',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/NOT_005_PC_EV.html',
+              status: 'end',
+              create: '2022.07.22',
+              log: [],
+            },
+            {
+              id: 'ERR_000_PC_COM',
+              depth2: '시스템 오류 메세지',
+              depth3: '접속 불가',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/ERR_000_PC_COM.html',
+              status: 'end',
+              create: '2022.08.19',
+              log: [{ date: '2022.10.07', text: '"뒤로" 버튼 추가' }],
+            },
+            {
+              id: 'ERR_005_PC_COM',
+              depth2: '시스템 오류 메세지',
+              depth3: '서비스 에러',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/ERR_005_PC_COM.html',
+              status: 'end',
+              create: '2022.08.19',
+              log: [{ date: '2022.10.07', text: '"뒤로" 버튼 추가' }],
+            },
+          ],
+        },
+        {
+          depth1: '메인',
+          data: [
+            {
+              id: 'MAI_000_PC_ALL',
+              depth2: '',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/MAI_000_PC_ALL.html',
+              status: 'end',
+              create: '2022.09.16',
+              log: [{ date: '2022.10.07', text: '컨텐츠 적용' }],
+            },
+          ],
+        },
+        {
+          depth1: '차량등록',
+          data: [
+            {
+              id: 'CRE_000_PC_EV',
+              depth2: '[팝업] 최초 등록 시',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/CRE_000_PC_EV.html',
+              status: 'end',
+              create: '2022.06.27',
+              log: [
+                { date: '2022.07.07', text: '약관 영역 태그 변경' },
+                { date: '2022.07.15', text: '줄바꿈 수정' },
+                { date: '2022.07.22', text: '필수 항목 변경 및 구분선 추가로 html 구조 변경' },
+                { date: '2022.08.19', text: '동의 영역 .invalid() 함수 적용 가이드 추가' },
+              ],
+            },
+            {
+              id: 'CRE_005_PC_EV',
+              depth2: '[팝업] 추가 등록 시',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/CRE_005_PC_EV.html',
+              status: 'end',
+              create: '2022.06.27',
+              log: [
+                { date: '2022.07.07', text: '약관 영역 태그 변경' },
+                { date: '2022.07.15', text: '줄바꿈 수정' },
+                { date: '2022.07.22', text: '필수 항목 변경 및 구분선 추가로 html 구조 변경' },
+                { date: '2022.08.16', text: '수정 버튼 크기 변경' },
+                { date: '2022.08.19', text: '동의 영역 .invalid() 함수 적용 가이드 추가' },
+              ],
+            },
+          ],
+        },
+        {
+          depth1: 'CI등록',
+          data: [
+            {
+              id: 'PRO_000_PC_EV',
+              depth2: '[팝업] 등록',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/PRO_000_PC_EV.html',
+              status: 'end',
+              create: '2022.09.22',
+              log: [
+                { date: '2022.10.05', text: '항목 타이틀 너비 조정' },
+                { date: '2022.10.07', text: '첨부파일 조건 텍스트 변경' },
+              ],
+            },
+            {
+              id: 'PRO_005_PC_EV',
+              depth2: '[팝업] 수정',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/PRO_005_PC_EV.html',
+              status: 'end',
+              create: '2022.09.22',
+              log: [
+                { date: '2022.10.05', text: '항목 타이틀 너비 조정' },
+                { date: '2022.10.07', text: '첨부파일 조건 텍스트 변경' },
+              ],
+            },
+          ],
+        },
+        {
+          depth1: '대시보드',
+          data: [
+            {
+              id: 'DAS_000_PC_EV',
+              depth2: 'EV',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/DAS_000_PC_EV.html',
+              status: 'end',
+              create: '2022.07.04',
+              log: [
+                { date: '2022.07.07', text: '각 카드 타이틀에 링크 기능 추가' },
+                { date: '2022.07.29', text: 'KAU 차트 옵션 추가' },
+                { date: '2022.08.16', text: '문구 수정 및 일부 구조 수정' },
+                { date: '2022.08.19', text: '상단 영역 추가\n모두 정상/데이터 집계중 카드 추가' },
+                { date: '2022.08.29', text: '모터 냉각수 > PE 냉각수 변경,\n대기시간 전력낭비현황 타이틀 옆 텍스트 변경' },
+                {
+                  date: '2022.09.16',
+                  text: '충전현황분포 하단 i 텍스트 변경,\n대기시간 전력낭비현황 원 > kWh 변경,\n불필요 소스 제거',
+                },
+                { date: '2022.10.21', text: '차량별 데이터 집계중 케이스 추가\nPE 냉각수 > 구동 냉각수 변경,\n월 충전 현황 분포, 월간 충전시간대별 비교 카드 하단 문구 수정' },
+              ],
+            },
+            {
+              id: 'DAS_000_PC_FCEV',
+              depth2: 'FCEV',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/DAS_000_PC_FCEV.html',
+              status: 'end',
+              create: '2022.08.29',
+              log: [
+                { date: '2022.09.16', text: '불필요 소스 제거' },
+                { date: '2022.10.21', text: '차량별 데이터 집계중 케이스 추가' },
+              ],
+            },
+            {
+              id: 'DAS_010_PC_EV',
+              depth2: '서비스 처음 시작',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/DAS_010_PC_EV.html',
+              status: 'end',
+              create: '2022.08.29',
+              log: [],
+            },
+          ],
+        },
+        {
+          depth1: '차량현황',
+          data: [
+            {
+              id: 'DTC_015_PC_EV',
+              depth2: '차량고장현황',
+              depth3: '고장 알림 차량별 현황',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/DTC_015_PC_EV.html',
+              status: 'end',
+              create: '2022.07.07',
+              log: [
+                { date: '2022.07.15', text: '차량 목록 타이틀 영역 디자인 수정 반영' },
+                { date: '2022.08.16', text: '상단 "정비 요청중" 컬러 변경,\n"고장 발생 일시" 초단위로 변경,\n항목명 수정' },
+                { date: '2022.08.19', text: '정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가' },
+                { date: '2022.09.22', text: '설명 문구 추가' },
+                { date: '2022.09.30', text: '설명 문구 타입 추가' },
+                { date: '2022.10.21', text: '고장 코드, 고장내용 말줄임표 처리' },
+              ],
+            },
+            {
+              id: 'DTC_020_PC_EV',
+              depth2: '차량고장현황',
+              depth3: '정비 요청중 차량별 현황',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/DTC_020_PC_EV.html',
+              status: 'end',
+              create: '2022.07.07',
+              log: [
+                { date: '2022.08.16', text: '상단 "고장 알림" 컬러 변경,\n"고장 발생 일시","정비요청일시" 초단위로 변경,\n항목명 수정' },
+                { date: '2022.08.19', text: '정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가' },
+                { date: '2022.09.22', text: '설명 문구 추가' },
+                { date: '2022.09.30', text: '설명 문구 타입 추가' },
+              ],
+            },
+            {
+              id: 'CHK_015_PC_EV',
+              depth2: '차량 주요 상태 정보',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/CHK_015_PC_EV.html',
+              status: 'end',
+              create: '2022.06.27',
+              log: [
+                { date: '2022.07.04', text: '검색 바 form 태그 추가 및 차트 추가' },
+                { date: '2022.07.07', text: '차량 운행 표시에 클래스 값 추가' },
+                { date: '2022.07.15', text: '차량 목록 타이틀 영역 및 상태 정보 타이틀 영역 디자인 수정 반영' },
+                { date: '2022.08.19', text: '정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가' },
+                { date: '2022.08.29', text: '시동배터리전압 "이상횟수"를 "이상일수"로 변경' },
+                { date: '2022.09.30', text: '설명 문구, 문구타입 추가' },
+                { date: '2022.10.14', text: '배터리냉각수, 시동배터리 전압 차트 기준치 표시' },
+                { date: '2022.10.21', text: '배터리냉각수, 시동배터리 전압 y축 고정값 변경, \n 배터리냉각수 가이드라인 수치 변경, \n PE 냉각수 > 구동 냉각수 변경' },
+                { date: '2022.10.24', text: '상단 설명 문구 변경' },
+              ],
+            },
+            {
+              id: 'CHK_020_PC_EV',
+              depth2: '차량 주요 상태 정보',
+              depth3: '[팝업] 배터리냉각수',
+              depth4: 'EV',
+              depth5: '',
+              depth6: '',
+              path: '/CHK_020_PC_EV.html',
+              status: 'end',
+              create: '2022.06.27',
+              log: [
+                { date: '2022.08.16', text: '폰트 굵기 클래스 추가' },
+                { date: '2022.09.05', text: '페이지네이션 이전/다음 버튼 태그 변경' },
+              ],
+            },
+            {
+              id: 'CHK_020_PC_FCEV',
+              depth2: '차량 주요 상태 정보',
+              depth3: '[팝업] 배터리냉각수',
+              depth4: 'FCEV',
+              depth5: '',
+              depth6: '',
+              path: '/CHK_020_PC_FCEV.html',
+              status: 'end',
+              create: '2022.08.19',
+              log: [{ date: '2022.09.05', text: '페이지네이션 이전/다음 버튼 태그 변경' }],
+            },
+            {
+              id: 'CHK_025_PC_EV',
+              depth2: '차량 주요 상태 정보',
+              depth3: '[팝업] 시동 배터리 전압',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/CHK_025_PC_EV.html',
+              status: 'end',
+              create: '2022.06.27',
+              log: [
+                { date: '2022.08.29', text: '하단 설명 문구글 수정' },
+                { date: '2022.09.05', text: '페이지네이션 이전/다음 버튼 태그 변경' },
+              ],
+            },
+            {
+              id: 'CHK_030_PC_EV',
+              depth2: '차량 주요 상태 정보',
+              depth3: '[팝업] PE 냉각수',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/CHK_030_PC_EV.html',
+              status: 'end',
+              create: '2022.06.27',
+              log: [
+                { date: '2022.08.16', text: '폰트 굵기 클래스 추가' },
+                { date: '2022.09.05', text: '페이지네이션 이전/다음 버튼 태그 변경' },
+                { date: '2022.10.21', text: 'PE 냉각수 > 구동 냉각수 변경' },
+              ],
+            },
+            {
+              id: 'CMO_000_PC_EV',
+              depth2: '차량관제',
+              depth3: 'EV',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/CMO_000_PC_EV.html',
+              status: 'end',
+              create: '2022.07.15',
+              log: [
+                { date: '2022.08.19', text: '지도 API 적용 및 마커 작업\n정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가\n클러스터 영역 추가\n상단 탭 태그 수정' },
+                { date: '2022.08.29', text: '문구 수정 및 항목 추가' },
+                { date: '2022.09.05', text: '고전압배터리 전압 단위 변경' },
+                { date: '2022.09.16', text: '공통 header, gnb 적용\n지도 라이브러리 변경 적용' },
+                { date: '2022.10.14', text: '차량상세 테이블 데이터 형식 수정 및 너비 변경' },
+                { date: '2022.10.21', text: '고장내용 툴팁 말줄임표 처리\nPE 냉각수 > 구동 냉각수 변경' },
+              ],
+            },
+            {
+              id: 'CMO_000_PC_FCEV',
+              depth2: '차량관제',
+              depth3: 'FCEV',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/CMO_000_PC_FCEV.html',
+              status: 'end',
+              create: '2022.08.29',
+              log: [
+                { date: '2022.09.16', text: '공통 header, gnb 적용\n지도 라이브러리 변경 적용' },
+                { date: '2022.10.14', text: '차량상세 테이블 데이터 형식 수정 및 너비 변경' },
+                { date: '2022.10.21', text: '고장내용 툴팁 말줄임표 처리\nPE 냉각수 > 구동 냉각수 변경' },
+              ],
+            },
+            {
+              id: 'CMO_005_PC_EV',
+              depth2: '차량관제',
+              depth3: '검색 결과 없을 경우',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/CMO_005_PC_EV.html',
+              status: 'end',
+              create: '2022.09.16',
+              log: [
+                { date: '2022.10.14', text: '차량상세 테이블 데이터 형식 수정 및 너비 변경' },
+                { date: '2022.10.21', text: '고장내용 툴팁 말줄임표 처리\nPE 냉각수 > 구동 냉각수 변경' },
+              ],
+            },
+            {
+              id: 'CMO_010_PC_EV',
+              depth2: '차량관제',
+              depth3: '상태 차량 없을 경우',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/CMO_010_PC_EV.html',
+              status: 'end',
+              create: '2022.09.16',
+              log: [
+                { date: '2022.10.14', text: '차량상세 테이블 데이터 형식 수정 및 너비 변경' },
+                { date: '2022.10.21', text: '고장내용 툴팁 말줄임표 처리\nPE 냉각수 > 구동 냉각수 변경' },
+              ],
+            },
+            {
+              id: 'CMO_000_PC_SUB',
+              depth2: '차량관제',
+              depth3: 'Sub Target 차종만 등록',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/CMO_000_PC_SUB.html',
+              status: 'end',
+              create: '2022.09.30',
+              log: [
+                { date: '2022.10.14', text: '차량상세 테이블 데이터 형식 수정 및 너비 변경' },
+                { date: '2022.10.21', text: '고장내용 툴팁 말줄임표 처리\nPE 냉각수 > 구동 냉각수 변경' },
+              ],
+            },
+            {
+              id: 'CMO_020_PC_EV',
+              depth2: '차량관제',
+              depth3: '[팝업] 정비완료',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/CMO_020_PC_EV.html',
+              status: 'end',
+              create: '2022.07.07',
+              log: [],
+            },
+            {
+              id: 'CMO_021_PC_EV',
+              depth2: '차량관제',
+              depth3: '[팝업] 하이테크반 정비요청',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/CMO_021_PC_EV.html',
+              status: 'end',
+              create: '2022.07.07',
+              log: [],
+            },
+          ],
+        },
+        {
+          depth1: '차량운영분석',
+          data: [
+            {
+              id: 'CHA_035_PC_EV',
+              depth2: '충전분석',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/CHA_035_PC_EV.html',
+              status: 'end',
+              create: '2022.07.07',
+              log: [
+                { date: '2022.08.16', text: '텍스트 수정, 간격 클래스 추가' },
+                { date: '2022.08.19', text: '정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가' },
+                { date: '2022.09.16', text: '차량 목록 일부 간격 수정' },
+                { date: '2022.09.22', text: '설명 문구 추가' },
+              ],
+            },
+            {
+              id: 'CHA_040_PC_EV',
+              depth2: '충전분석',
+              depth3: '[팝업] 상세',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/CHA_040_PC_EV.html',
+              status: 'end',
+              create: '2022.07.07',
+              log: [],
+            },
+            {
+              id: 'UPT_040_PC_EV',
+              depth2: '가동률 분석',
+              depth3: 'EV',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/UPT_040_PC_EV.html',
+              status: 'end',
+              create: '2022.07.07',
+              log: [
+                { date: '2022.08.04', text: '불필요한 콘솔 로그 제거' },
+                { date: '2022.08.16', text: '텍스트 수정' },
+                { date: '2022.08.19', text: '정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가' },
+                { date: '2022.09.22', text: '설명 문구 추가' },
+              ],
+            },
+            {
+              id: 'UPT_040_PC_FCEV',
+              depth2: '가동률 분석',
+              depth3: 'FCEV',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/UPT_040_PC_FCEV.html',
+              status: 'end',
+              create: '2022.08.19',
+              log: [{ date: '2022.09.22', text: '설명 문구 추가' }],
+            },
+          ],
+        },
+        {
+          depth1: '주행분석',
+          data: [
+            {
+              id: 'DSA_015_PC_EV',
+              depth2: '안전지수',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/DSA_015_PC_EV.html',
+              status: 'end',
+              create: '2022.07.04',
+              log: [
+                { date: '2022.08.16', text: '텍스트 수정, 그래프 택스트 컬러 수정,\n 간격 클래스 수정' },
+                { date: '2022.08.19', text: '정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가' },
+                { date: '2022.09.22', text: '설명 문구 추가' },
+                { date: '2022.10.21', text: '방사형그래프 롤오버 시 데이터 표시 기능 제거' },
+              ],
+            },
+            {
+              id: 'DSA_030_PC_EV',
+              depth2: '안전지수',
+              depth3: '[팝업] 상세',
+              depth4: 'EV',
+              depth5: '',
+              depth6: '',
+              path: '/DSA_030_PC_EV.html',
+              status: 'end',
+              create: '2022.07.04',
+              log: [
+                { date: '2022.08.16', text: '테이블 라인 제거 및 단위 텍스트 수정' },
+                { date: '2022.09.05', text: '페이지네이션 이전/다음 버튼 태그 변경' },
+                { date: '2022.09.16', text: '테이블 하단 버튼 크기 및 간격 수정' },
+                { date: '2022.09.30', text: '스크롤 범위 수정 및 초단위 추가' },
+              ],
+            },
+            {
+              id: 'DSA_030_PC_FCEV',
+              depth2: '안전지수',
+              depth3: '[팝업] 상세',
+              depth4: 'FCEV',
+              depth5: '',
+              depth6: '',
+              path: '/DSA_030_PC_FCEV.html',
+              status: 'end',
+              create: '2022.08.19',
+              log: [
+                { date: '2022.09.05', text: '페이지네이션 이전/다음 버튼 태그 변경' },
+                { date: '2022.09.16', text: '테이블 하단 버튼 크기 및 간격 수정' },
+                { date: '2022.09.30', text: '스크롤 범위 수정 및 초단위 추가' },
+              ],
+            },
+            {
+              id: 'PSA_015_PC_EV',
+              depth2: '승객위험운행지수',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/PSA_015_PC_EV.html',
+              status: 'end',
+              create: '2022.07.04',
+              log: [
+                { date: '2022.07.07', text: '해당 컨텐츠는 상세가 없어 차량 리스트에 링크 기능 제거' },
+                { date: '2022.08.16', text: '텍스트 및 간격 클래스 수정' },
+                { date: '2022.08.19', text: '정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가' },
+                { date: '2022.09.22', text: '설명 문구 추가' },
+              ],
+            },
+            {
+              id: 'LSP_015_PC_EV',
+              depth2: '제한속도초과운행지수',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/LSP_015_PC_EV.html',
+              status: 'end',
+              create: '2022.07.04',
+              log: [
+                { date: '2022.07.07', text: '해당 컨텐츠는 상세가 없어 차량 리스트에 링크 기능 제거' },
+                { date: '2022.08.16', text: '텍스트 수정' },
+                { date: '2022.08.19', text: '정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가' },
+                { date: '2022.09.22', text: '설명 문구 추가' },
+              ],
+            },
+            {
+              id: 'MSA_015_PC_EV',
+              depth2: '심야운행안전지수',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/MSA_015_PC_EV.html',
+              status: 'end',
+              create: '2022.07.04',
+              log: [
+                { date: '2022.07.07', text: '해당 컨텐츠는 상세가 없어 차량 리스트에 링크 기능 제거' },
+                { date: '2022.08.16', text: '텍스트 수정 및 그래프 텍스트 컬러 수정, 간격 클래스 수정' },
+                { date: '2022.08.19', text: '정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가' },
+                { date: '2022.09.22', text: '설명 문구 추가' },
+                { date: '2022.10.21', text: '방사형그래프 롤오버 시 데이터 표시 기능 제거' },
+              ],
+            },
+            {
+              id: 'ELE_015_PC_EV',
+              depth2: '전비등급',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/ELE_015_PC_EV.html',
+              status: 'end',
+              create: '2022.07.04',
+              log: [
+                { date: '2022.07.29', text: '차량별 현황 select option 추가(평균전비 높은 순/낮은순)' },
+                { date: '2022.08.16', text: '간격 클래스 수정' },
+                { date: '2022.08.19', text: '정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가' },
+                { date: '2022.09.30', text: '설명 문구 추가' },
+                { date: '2022.10.07', text: '차량 목록 전비 단위 줄바꿈 처리' },
+              ],
+            },
+            {
+              id: 'ELE_020_PC_EV',
+              depth2: '전비등급',
+              depth3: '[팝업] 상세',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/ELE_020_PC_EV.html',
+              status: 'end',
+              create: '2022.07.07',
+              log: [
+                { date: '2022.07.15', text: '일부 소스 수정' },
+                { date: '2022.08.19', text: '지도 API 적용 및 라인, 마커 작업' },
+                { date: '2022.08.29', text: '항목 타이틀 단위 추가' },
+                { date: '2022.09.05', text: '페이지네이션 이전/다음 버튼 태그 변경' },
+                { date: '2022.09.16', text: '테이블 하단 버튼 크기 및 간격 수정' },
+                { date: '2022.10.05', text: '"Trip 정보" 타이틀 스타일 수정' },
+              ],
+            },
+            {
+              id: 'ELE_015_PC_FCEV',
+              depth2: '연비등급 (FCEV)',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/ELE_015_PC_FCEV.html',
+              status: 'end',
+              create: '2022.08.19',
+              log: [{ date: '2022.09.30', text: '설명 문구 추가' }],
+            },
+            {
+              id: 'ELE_020_PC_FCEV',
+              depth2: '연비등급 (FCEV)',
+              depth3: '[팝업] 상세',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/ELE_020_PC_FCEV.html',
+              status: 'end',
+              create: '2022.08.19',
+              log: [
+                { date: '2022.08.29', text: '항목 타이틀 단위 추가' },
+                { date: '2022.09.05', text: '페이지네이션 이전/다음 버튼 태그 변경' },
+                { date: '2022.09.16', text: '테이블 하단 버튼 크기 및 간격 수정' },
+                { date: '2022.10.05', text: '"Trip 정보" 타이틀 스타일 수정' },
+              ],
+            },
+            {
+              id: 'EUS_015_PC_EV',
+              depth2: '전력사용량',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/EUS_015_PC_EV.html',
+              status: 'end',
+              create: '2022.07.07',
+              log: [
+                { date: '2022.08.19', text: '정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가\n차량 목록 여백 수정' },
+                { date: '2022.09.16', text: '차량별 하단 전력사용량 텍스트 변경 ' },
+                { date: '2022.09.30', text: '설명 문구 추가' },
+              ],
+            },
+            {
+              id: 'EUS_025_PC_FCEV',
+              depth2: '연료사용량 (FCEV)',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/EUS_025_PC_FCEV.html',
+              status: 'end',
+              create: '2022.08.19',
+              log: [{ date: '2022.09.30', text: '설명 문구 추가' }],
+            },
+            {
+              id: 'FCE_005_PC_FCEV',
+              depth2: '연비지수 (FCEV)',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/FCE_005_PC_FCEV.html',
+              status: 'end',
+              create: '2022.08.19',
+              log: [],
+            },
+          ],
+        },
+        {
+          depth1: '탄소배출/환경',
+          data: [
+            {
+              id: 'KAU_030_PC_EV',
+              depth2: '온실가스배출(KAU)',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/KAU_030_PC_EV.html',
+              status: 'end',
+              create: '2022.07.07',
+              log: [
+                { date: '2022.08.16', text: '상단 차트 타이틀 클래스 값 수정' },
+                { date: '2022.08.19', text: '정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가' },
+                { date: '2022.09.30', text: '설명 문구 추가' },
+                { date: '2022.10.21', text: '차량 삭제 시 케이스 추가' },
+              ],
+            },
+            {
+              id: 'KAU_015_PC_EV',
+              depth2: '온실가스배출(KAU)',
+              depth3: '[팝업] 대상차량등록',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/KAU_015_PC_EV.html',
+              status: 'end',
+              create: '2022.07.07',
+              log: [
+                { date: '2022.07.22', text: '테이블 하단 버튼 크기 및 간격 수정' },
+                { date: '2022.08.16', text: '차대번호 텍스트 마스킹처리 수정' },
+              ],
+            },
+            {
+              id: 'KAU_010_PC_EV',
+              depth2: '온실가스배출(KAU)',
+              depth3: '[팝업] 연간목표치 설정',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/KAU_010_PC_EV.html',
+              status: 'end',
+              create: '2022.07.07',
+              log: [],
+            },
+            {
+              id: 'KOC_025_PC_EV',
+              depth2: '온실가스 배출(KOC)',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/KOC_025_PC_EV.html',
+              status: 'end',
+              create: '2022.07.07',
+              log: [
+                { date: '2022.08.16', text: '상단 차트 타이틀 클래스 값 및 문구 수정\n버튼명 수정' },
+                { date: '2022.08.19', text: '정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가' },
+                { date: '2022.08.29', text: '메인타이틀 수정\n 현재감축금액 타이틀명 변경' },
+                { date: '2022.09.30', text: '설명 문구 추가' },
+                { date: '2022.10.21', text: '일부 문구 삭제\n차량 삭제 시 케이스 추가' },
+              ],
+            },
+            {
+              id: 'KOC_020_PC_EV',
+              depth2: '온실가스 배출(KOC)',
+              depth3: '[팝업] KOC 기준정보 입력',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/KOC_020_PC_EV.html',
+              status: 'end',
+              create: '2022.07.15',
+              log: [{ date: '2022.08.16', text: '서브타이틀 수정' }],
+            },
+            {
+              id: 'KOC_030_PC_EV',
+              depth2: '온실가스 배출(KOC)',
+              depth3: '[팝업] 데이터 다운로드 안내',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/KOC_030_PC_EV.html',
+              status: 'end',
+              create: '2022.07.07',
+              log: [],
+            },
+            {
+              id: 'KOC_015_PC_EV',
+              depth2: '온실가스 배출(KOC)',
+              depth3: '[팝업] 대상 차량 등록',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/KOC_015_PC_EV.html',
+              status: 'end',
+              create: '2022.07.07',
+              log: [{ date: '2022.07.22', text: '테이블 하단 버튼 크기 및 간격 수정' }],
+            },
+            {
+              id: 'CTR_005_PC_EV',
+              depth2: '탄소나무 숲',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/CTR_005_PC_EV.html',
+              status: 'end',
+              create: '2022.07.15',
+              log: [
+                { date: '2022.08.16', text: '상단 차트 타이틀 클래스 값 수정' },
+                { date: '2022.08.19', text: '정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가' },
+                { date: '2022.09.30', text: '설명 문구 추가' },
+              ],
+            },
+            {
+              id: 'EBU_010_PC_EV',
+              depth2: '환경을 지키는 버스',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/EBU_010_PC_EV.html',
+              status: 'end',
+              create: '2022.07.15',
+              log: [
+                { date: '2022.08.16', text: '간격 클래스 및 텍스트 수정' },
+                { date: '2022.08.19', text: '정렬 드롭 다운 텍스트 변경 기능 추가\n차량 검색 자동 완성 기능 추가' },
+                { date: '2022.09.30', text: '설명 문구 추가' },
+              ],
+            },
+          ],
+        },
+        {
+          depth1: '정기점검리포트',
+          data: [
+            {
+              id: 'REP_000_PC_EV',
+              depth2: 'EV',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/REP_000_PC_EV.html',
+              status: 'end',
+              create: '2022.07.15',
+              log: [
+                { date: '2022.08.16', text: '환경, 온실가스 배출 영역 삭제 및 최신 설계서 반영' },
+                { date: '2022.08.19', text: '고장 현황 전체/정상 삭제' },
+                {
+                  date: '2022.08.29',
+                  text: '정기점검리포트 대상 차량 확정에 \n 따른 문구 변경, \n 정비 요청중 "회" 로 변경, \n DTC별 고장 현황 횟수 삭제, \n 정비요청 차량정보 타이틀 변경, \n HMC_하이테크반 담당자명 삭제, \n 정비요청 차량정보 pagination 추가',
+                },
+                { date: '2022.09.05', text: '페이지네이션 이전/다음 버튼 태그 변경' },
+                { date: '2022.09.16', text: '불필요 소스 제거' },
+                { date: '2022.10.21', text: '대기시간 전력낭비현황 카드 > \n 전력량 단위 변경, \n 월간 충전시간대별 비교 카드 하단 문구 수정' },
+              ],
+            },
+            {
+              id: 'REP_010_PC_EV',
+              depth2: 'EV',
+              depth3: '데이터 집계중인 경우',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/REP_010_PC_EV.html',
+              status: 'end',
+              create: '2022.09.16',
+              log: [],
+            },
+            {
+              id: 'REP_000_PC_FCEV',
+              depth2: 'FCEV',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/REP_000_PC_FCEV.html',
+              status: 'end',
+              create: '2022.08.29',
+              log: [
+                { date: '2022.09.05', text: '페이지네이션 이전/다음 버튼 태그 변경' },
+                { date: '2022.09.16', text: '불필요 소스 제거' },
+              ],
+            },
+            {
+              id: 'REP_010_PC_FCEV',
+              depth2: 'FCEV',
+              depth3: '데이터 집계중인 경우',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/REP_010_PC_FCEV.html',
+              status: 'end',
+              create: '2022.09.16',
+              log: [],
+            },
+            {
+              id: 'REP_005_PC_EV',
+              depth2: '[팝업] 블루링크 서비스 현황 상세',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/REP_005_PC_EV.html',
+              status: 'end',
+              create: '2022.07.15',
+              log: [],
+            },
+          ],
+        },
+        {
+          depth1: 'DTG 다운로드',
+          data: [
+            {
+              id: 'DTG_000_PC_EV',
+              depth2: '',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/DTG_000_PC_EV.html',
+              status: 'end',
+              create: '2022.07.15',
+              log: [{ date: '2022.09.30', text: '설명 문구 추가' }],
+            },
+          ],
+        },
+        {
+          depth1: '설정',
+          data: [
+            {
+              id: 'SCA_000_PC_EV',
+              depth2: '차량목록',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/SCA_000_PC_EV.html',
+              status: 'end',
+              create: '2022.06.27',
+              log: [
+                { date: '2022.08.16', text: '셀 너비 변경 및 항목 추가' },
+                { date: '2022.08.19', text: '차량 검색 자동 완성 기능 추가' },
+                { date: '2022.08.29', text: '노선번호 sorting 기능 제거' },
+              ],
+            },
+            {
+              id: 'SCA_005_PC_EV',
+              depth2: '차량목록',
+              depth3: '[팝업] 노선 설정',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/SCA_005_PC_EV.html',
+              status: 'end',
+              create: '2022.06.27',
+              log: [],
+            },
+            {
+              id: 'SLI_000_PC_EV',
+              depth2: '노선 정보 관리',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/SLI_000_PC_EV.html',
+              status: 'end',
+              create: '2022.08.16',
+              log: [{ date: '2022.09.16', text: '결과 없음 케이스 추가 ' }],
+            },
+            {
+              id: 'SLI_005_PC_EV',
+              depth2: '노선 정보 관리',
+              depth3: '[팝업] 노선 등록',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/SLI_005_PC_EV.html',
+              status: 'end',
+              create: '2022.08.16',
+              log: [],
+            },
+            {
+              id: 'SLI_010_PC_EV',
+              depth2: '노선 정보 관리',
+              depth3: '[팝업] 노선 수정',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/SLI_010_PC_EV.html',
+              status: 'end',
+              create: '2022.08.16',
+              log: [],
+            },
+            {
+              id: 'SNU_000_PC_EV',
+              depth2: '알림 연락처 관리',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/SNU_000_PC_EV.html',
+              status: 'end',
+              create: '2022.07.15',
+              log: [{ date: '2022.08.16', text: '데이터 없을 시, 문구 수정' }],
+            },
+            {
+              id: 'SNU_005_PC_EV',
+              depth2: '알림 연락처 관리',
+              depth3: '[팝업] 수신자 등록',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/SNU_005_PC_EV.html',
+              status: 'end',
+              create: '2022.07.15',
+              log: [
+                { date: '2022.08.19', text: '수신 받을 메시지 선택 영역 .invalid() 함수 적용 가이드 추가' },
+                { date: '2022.10.24', text: '오타 수정' },
+              ],
+            },
+            {
+              id: 'SNU_010_PC_EV',
+              depth2: '알림 연락처 관리',
+              depth3: '[팝업] 수신자 정보 수정',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/SNU_010_PC_EV.html',
+              status: 'end',
+              create: '2022.07.15',
+              log: [
+                { date: '2022.08.19', text: '수신 받을 메시지 선택 영역 .invalid() 함수 적용 가이드 추가' },
+                { date: '2022.10.24', text: '오타 수정' },
+              ],
+            },
+            {
+              id: 'SNU_030_PC_EV',
+              depth2: '알림 연락처 관리',
+              depth3: '[팝업] 주재원 등록',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/SNU_030_PC_EV.html',
+              status: 'end',
+              create: '2022.07.15',
+              log: [
+                { date: '2022.07.22', text: '테이블 하단 버튼 크기 및 간격 수정' },
+                { date: '2022.08.16', text: '검색 기능 추가' },
+              ],
+            },
+            {
+              id: 'SIN_000_PC_EV',
+              depth2: '기준 정보 관리',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/SIN_000_PC_EV.html',
+              status: 'end',
+              create: '2022.08.16',
+              log: [],
+            },
+            {
+              id: 'SIN_005_PC_EV',
+              depth2: '기준 정보 관리',
+              depth3: '수정',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/SIN_005_PC_EV.html',
+              status: 'end',
+              create: '2022.08.16',
+              log: [],
+            },
+            {
+              id: 'SDA_000_PC_EV',
+              depth2: '대시보드 카드 설정 (EV/FCEV)',
+              depth3: '',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/SDA_000_PC_EV.html',
+              status: 'end',
+              create: '2022.07.15',
+              log: [{ date: '2022.10.21', text: 'PE 냉각수 > 구동 냉각수 변경' }],
+            },
+          ],
+        },
+        {
+          depth1: 'E-mail Form',
+          data: [
+            {
+              id: 'DTC_040_PC_EV',
+              depth2: '차량고장진단',
+              depth3: '하이테크반 / 연구소',
+              depth4: '',
+              depth5: '',
+              depth6: '',
+              path: '/DTC_040_PC_EV.html',
+              status: 'end',
+              create: '2022.08.29',
+              log: [
+                { date: '2022.09.30', text: '푸터 문구 추가' },
+                { date: '2022.10.24', text: '우측 상단 문구 제거' },
+              ],
+            },
+          ],
+        },
+      ];
+
+      var html = '';
+      var navHTML = '';
+      var totalIndex = 0;
+      var dates = (function () {
+        var array = [];
+
+        function add(date) {
+          if (typeof date === 'string' && date.length && array.indexOf(date) === -1) {
+            array.push(date);
+          }
+        }
+
+        $.each(tableData, function (i) {
+          var sectionData = tableData[i].data;
+          $.each(sectionData, function (j) {
+            add(this.create);
+            $.each(sectionData[j].log, function (l) {
+              add(this.date);
+            });
+          });
+        });
+
+        array.sort();
+
+        return array;
+      })();
+      var latestDate = dates[dates.length - 1];
+
+      $.each(tableData, function (i) {
+        var sectionIndex = i;
+        var sectionData = tableData[i].data;
+        var tableHTML = '';
+
+        $.each(sectionData, function (j) {
+          var returnVal = function (key, secondTestKey) {
+            var val = sectionData[j][key];
+            var secondTestVal = sectionData[j][secondTestKey];
+            var prevIndex = j - 1;
+            var isPrint = true;
+            if (prevIndex >= 0) {
+              if (sectionData[prevIndex][key] === val) {
+                isPrint = false;
+              }
+              if (typeof secondTestKey === 'string' && secondTestKey.length && !sectionData[j].depthOnly) {
+                if (sectionData[prevIndex][key] === val && sectionData[prevIndex][secondTestKey] === secondTestVal) {
+                  isPrint = false;
+                } else {
+                  isPrint = true;
+                }
+              }
+            }
+            return isPrint ? val.replace(/\n/g, '<br>') : '';
+          };
+          var id = returnVal('id');
+          //var type = returnVal('type', 'depth2');
+          var depth2 = returnVal('depth2');
+          var depth3 = returnVal('depth3');
+          var depth4 = returnVal('depth4');
+          var depth5 = returnVal('depth5');
+          var depth6 = returnVal('depth6');
+          var path = (function () {
+            var val = sectionData[j].path;
+            var href = '';
+            if (val.match(/^\.\//g)) {
+              href = val;
+            } else {
+              href = './dist/html' + val;
+            }
+            return val.length ? '<a href="' + href + '" target="_blank">' + val + '</a>' : '';
+          })();
+          var status = (function () {
+            var val = sectionData[j].status;
+            var text = '';
+            if (val === 'ing') {
+              text = '작업중';
+            } else if (val === 'end') {
+              text = '작업완료';
+            } else if (val === 'moding') {
+              text = '수정중';
+            }
+            return val.length ? '<span class="index-status index-status--' + val + '">' + text + '</span>' : '';
+          })();
+          var create = this.create;
+          var update = '';
+          var log = (function () {
+            var val = sectionData[j].log;
+            var length = val.length;
+            var html = '<ul class="index-log">';
+            $.each(val, function (l) {
+              var date = this.date;
+              html +=
+                '<li class="index-log__item' + (date === latestDate ? ' is-emphasis' : '') + '"><div class="index-log__item__date">[' + date + ']</div>' + this.text.replace(/\n/g, '<br>') + '</li>';
+              if (length - 1 === l) {
+                update = date;
+              }
+            });
+            html += '</ul>';
+
+            return html;
+          })();
+
+          tableHTML +=
+            '<tr>' +
+            '<td>' +
+            (j + 1) +
+            '</td>' +
+            '<td>' +
+            id +
+            '</td>' +
+            //'<td class="index-type">' +
+            //type +
+            //'</td>' +
+            '<td>' +
+            depth2 +
+            '</td>' +
+            '<td>' +
+            depth3 +
+            '</td>' +
+            '<td>' +
+            depth4 +
+            '</td>' +
+            '<td>' +
+            depth5 +
+            '</td>' +
+            '<td>' +
+            depth6 +
+            '</td>' +
+            '<td>' +
+            path +
+            '</td>' +
+            '<td>' +
+            status +
+            '</td>' +
+            '<td class="' +
+            (create === latestDate ? ' is-emphasis' : '') +
+            '">' +
+            create +
+            '</td>' +
+            '<td class="' +
+            (update === latestDate ? ' is-emphasis' : '') +
+            '">' +
+            update +
+            '</td>' +
+            '<td>' +
+            log +
+            '</td>' +
+            '</tr>';
+
+          totalIndex++;
+        });
+
+        navHTML += '<a href="#section' + i + '">' + tableData[i].depth1 + '</a>';
+
+        html +=
+          '<div class="index-section" id="section' +
+          i +
+          '">' +
+          '<h2 class="index-section__title">' +
+          tableData[i].depth1 +
+          '</h2>' +
+          '<div class="index-table">' +
+          '<table>' +
+          '<colgroup>' +
+          '<col width="50px" />' +
+          '<col width="160px" />' +
+          //'<col width="80px" />' +
+          '<col width="160px" />' +
+          '<col width="160px" />' +
+          '<col width="160px" />' +
+          '<col width="160px" />' +
+          '<col width="160px" />' +
+          '<col width="" />' +
+          '<col width="100px" />' +
+          '<col width="110px" />' +
+          '<col width="110px" />' +
+          '<col width="300px" />' +
+          '</colgroup>' +
+          '<thead>' +
+          '<tr>' +
+          '<th>No</th>' +
+          '<th>ID</th>' +
+          //'<th>type</th>' +
+          '<th>depth2</th>' +
+          '<th>depth3</th>' +
+          '<th>depth4</th>' +
+          '<th>depth5</th>' +
+          '<th>depth6</th>' +
+          '<th>path</th>' +
+          '<th>status</th>' +
+          '<th>create</th>' +
+          '<th>update</th>' +
+          '<th>log</th>' +
+          '</tr>' +
+          '</thead>' +
+          '<tbody>' +
+          tableHTML +
+          '</tbody>' +
+          '</table>' +
+          '</div>' +
+          '</div>';
+      });
+
+      $('title, .index-title').text(title);
+      $('#nav').append(navHTML);
+      $('#indexTable').append(html);
+
+      var $nav = $('.index-bottom');
+      var $doc = $(document);
+      var $win = $(window);
+
+      function paddingBottom() {
+        $('.index-fake-botttom').css('height', $nav.outerHeight());
+      }
+
+      var clickedTimer = null;
+
+      $doc.on('click', '#nav a', function () {
+        var $this = $(this);
+        var href = $this.attr('href');
+        var $target = $(href);
+        var $sections = $('.index-section');
+
+        $sections.removeClass('index-section--clicked');
+
+        clearTimeout(clickedTimer);
+
+        clickedTimer = setTimeout(function () {
+          $target.addClass('index-section--clicked');
+        }, 100);
+      });
+
+      $win
+        .on('scroll', function () {
+          var scrollLeft = $win.scrollLeft();
+          $nav.css('margin-left', -scrollLeft);
+        })
+        .on('resize', function () {
+          paddingBottom();
+        })
+        .on('load', function () {
+          paddingBottom();
+        });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

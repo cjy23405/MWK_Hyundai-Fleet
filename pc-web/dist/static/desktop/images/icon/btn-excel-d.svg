@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <clipPath id="32u0ns93xa">
+            <path data-name="패스 15616" d="m0 0 6-.75V5.5L0 5z" transform="translate(59.012 698.002)" style="stroke:#707070;fill:#546e7a"/>
+        </clipPath>
+    </defs>
+    <path data-name="사각형 19366" style="fill:none" d="M0 0h16v16H0z"/>
+    <g data-name="패스 15614" style="fill:none">
+        <path d="M0 .071 11-1v15L0 12.929z" style="stroke:none" transform="translate(1 1)"/>
+        <path d="m9.5.653-8 .78v10.135l8 .779V.653M11-1v15L0 12.929V.07L11-1z" style="fill:#546e7a;stroke:none" transform="translate(1 1)"/>
+    </g>
+    <g data-name="사각형 19367" style="stroke:#546e7a;stroke-width:1.5px;fill:none">
+        <path style="stroke:none" d="M0 0h4v10H0z" transform="translate(10.5 3)"/>
+        <path style="fill:none" d="M.75.75h2.5v8.5H.75z" transform="translate(10.5 3)"/>
+    </g>
+    <g data-name="마스크 그룹 1" transform="translate(-55.512 -693.002)" style="clip-path:url(#32u0ns93xa)">
+        <path data-name="합치기 315" d="m-10003.817-11629.019-1.616 2.309-1.227-.861 1.929-2.754-1.771-2.528 1.227-.861 1.459 2.083 2.381-3.4 1.227.861-2.692 3.846 2.205 3.148-1.227.861z" transform="translate(10065.672 12330.715)" style="fill:#546e7a"/>
+    </g>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <path data-name="사각형 18451" style="fill:transparent" d="M0 0h48v48H0z"/>
+    <g data-name="그룹 15199">
+        <path data-name="사각형 18337" style="fill:transparent" d="M0 0h24v24H0z" transform="translate(12 12)"/>
+        <g data-name="그룹 15182">
+            <g data-name="그룹 15181">
+                <g data-name="타원 2361" style="stroke:#cfd9de;stroke-width:1.5px;fill:none" transform="translate(12 12)">
+                    <circle cx="12" cy="12" r="12" style="stroke:none"/>
+                    <circle cx="12" cy="12" r="11.25" style="fill:none"/>
+                </g>
+                <g data-name="타원 2362" transform="translate(21 21)" style="stroke:#cfd9de;stroke-width:1.5px;fill:none">
+                    <circle cx="3" cy="3" r="3" style="stroke:none"/>
+                    <circle cx="3" cy="3" r="2.25" style="fill:none"/>
+                </g>
+                <path data-name="패스 14296" d="M0 0h8" transform="translate(20 30.5)" style="stroke:#cfd9de;stroke-width:1.5px;fill:none"/>
+                <g data-name="그룹 15180">
+                    <path data-name="패스 14269" d="m7.653 5.166 3.793-3.508" transform="translate(18.554 17.342)" style="stroke:#cfd9de;stroke-width:1.5px;fill:none"/>
+                    <path data-name="패스 14275" d="M-.692 14.34 1.688 12" transform="translate(20.692 13.66)" style="stroke:#cfd9de;stroke-width:1.5px;fill:none"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

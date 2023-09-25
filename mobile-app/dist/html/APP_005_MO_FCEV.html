@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/app/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/app/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/app/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/app/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="layout-wrap">
+        <!-- header -->
+        <div class="fix-top-wrap">
+          <header class="header">
+            <div class="header__left">
+              <a href="" class="header__button header__button--back">
+                <span class="for-a11y">뒤로 가기</span>
+              </a>
+            </div>
+            <div class="header__center">
+              <h1 class="header__title">연비 운전 가이드</h1>
+            </div>
+            <div class="header__right">
+              <a href="" class="header__button header__button--calendar">
+                <span class="for-a11y">날짜 선택</span>
+              </a>
+            </div>
+          </header>
+        </div>
+        <!-- //header -->
+
+        <!-- contents -->
+        <article class="contents-wrap">
+          <div class="page-contents">
+            <p class="small-text color-gray font-family-head row-contents-group">2022년 07월 14일</p>
+
+            <section class="card row-contents">
+              <div class="section">
+                <div class="section-head">
+                  <div class="section-head__left">
+                    <h2 class="section-head__title">연비 운전 점수</h2>
+                  </div>
+                </div>
+                <div class="fraction">
+                  <div class="fraction__numerator color-point">49</div>
+                  <div class="fraction__denominator">/100 (상위 86.0%)</div>
+                </div>
+                <div class="progress-bar row-item-small">
+                  <div class="progress-bar__active" style="width: 49%"></div>
+                </div>
+                <p class="star-text row-item">오늘의 전국 최고 점수 100</p>
+                <div class="count-data row-item-group">
+                  <dl class="count-data__list">
+                    <div class="count-data__item">
+                      <dt class="count-data__key">정속 주행</dt>
+                      <dd class="count-data__val">55</dd>
+                    </div>
+                    <div class="count-data__item">
+                      <dt class="count-data__key">공회전</dt>
+                      <dd class="count-data__val">87</dd>
+                    </div>
+                    <div class="count-data__item">
+                      <dt class="count-data__key">제동</dt>
+                      <dd class="count-data__val">87</dd>
+                    </div>
+                    <div class="count-data__item">
+                      <dt class="count-data__key">언덕 주행</dt>
+                      <dd class="count-data__val">0</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </section>
+
+            <section class="card row-contents">
+              <div class="section">
+                <div class="section-head section-head--float">
+                  <div class="section-head__left">
+                    <h2 class="section-head__title">일주일간의 기록</h2>
+                  </div>
+                </div>
+                <div class="chart-box" id="chart1"></div>
+              </div>
+            </section>
+          </div>
+        </article>
+        <!-- //contents -->
+      </div>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript" src="/app/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/app/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/app/js/ui-script.js"></script>
+    <script type="text/javascript" src="/app/js/chart-env.js"></script>
+    <script>
+      // 일주일간의 기록
+      function chart1(el, categories, data) {
+        Highcharts.chart(el, {
+          chart: {
+            type: 'spline',
+          },
+          legend: {
+            reversed: true,
+          },
+          symbols: ['circle', 'circle'],
+          xAxis: {
+            categories: categories,
+            labels: {
+              formatter: function () {
+                return this.value.replace(' ', '<br />');
+              },
+            },
+          },
+          series: data,
+        });
+      }
+
+      $(window).on('load', function () {
+        // 일주일간의 기록
+        chart1(
+          'chart1',
+          ['7월 8일', '7월 8일', '7월 10일', '7월 11일', '7월 12일', '7월 13일', '7월 14일'],
+          [
+            {
+              name: '전국 평균',
+              data: [11, 18, 46, 57, 25, 82, 25],
+              type: 'areaspline',
+              color: UI_CHART.COLORS.GRAY_TERTIARY,
+              fillColor: 'rgba(0, 0, 0, 0.025)',
+            },
+            {
+              name: '개인',
+              data: [9, 4, 14, 41, 20, 41, 16],
+              color: UI_CHART.COLORS.PRIMARY,
+            },
+          ]
+        );
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

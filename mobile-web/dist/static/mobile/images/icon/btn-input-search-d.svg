@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        opacity: 0;
+      }
+
+      .cls-2, .cls-5 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #546e7a;
+        stroke-linecap: round;
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        fill: #546e7a;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="btn-input-search" transform="translate(-1104 -601)">
+    <rect id="사각형_18513" data-name="사각형 18513" class="cls-1" width="20" height="20" transform="translate(1104 601)"/>
+    <g id="그룹_16260" data-name="그룹 16260" transform="translate(0.472 0.018)">
+      <g id="타원_2368" data-name="타원 2368" class="cls-2" transform="translate(1104.929 601.732)">
+        <circle class="cls-4" cx="8" cy="8" r="8"/>
+        <circle class="cls-5" cx="8" cy="8" r="7"/>
+      </g>
+      <rect id="사각형_19070" data-name="사각형 19070" class="cls-3" width="2" height="7" transform="translate(1117 615.414) rotate(-45)"/>
+    </g>
+  </g>
+</svg>

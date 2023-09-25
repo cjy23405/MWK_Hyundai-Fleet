@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <linearGradient id="jieajgk1pb" x1=".167" y1=".139" x2=".859" y2="1.116" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#ff878d"/>
+            <stop offset="1" stop-color="#c12b32"/>
+        </linearGradient>
+        <linearGradient id="632hj7o48c" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#dfdfdf"/>
+            <stop offset="1" stop-color="#6c777d"/>
+        </linearGradient>
+        <linearGradient id="i68hjgkthd" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#8b3e42"/>
+            <stop offset="1" stop-color="#720509"/>
+        </linearGradient>
+        <filter id="7aau7uqgaa" x="3.999" y="1.5" width="32.002" height="32.002" filterUnits="userSpaceOnUse">
+            <feOffset dy="-1"/>
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feFlood flood-color="#ff878d" flood-opacity=".4"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <path data-name="사각형 18501" style="fill:none" d="M0 0h40v40H0z"/>
+    <g style="filter:url(#7aau7uqgaa)">
+        <path data-name="빼기 72" d="M12956.035 23939.537h-17v-13.385l3.616-3.617h9.858l3.527 3.531v13.471z" transform="translate(-12927.53 -23912.54)" style="fill:url(#jieajgk1pb)"/>
+    </g>
+    <path data-name="합치기 409" d="M14144 23690.512v-2.5h.06v-.012h-.06l1.2-2h21.6l1.2 2h-.142v.012h.14v2.5z" transform="translate(-14135.998 -23660.002)" style="fill:url(#632hj7o48c)"/>
+    <path data-name="사각형 21109" d="M2 0a2 2 0 0 1 2 2v4H0V2a2 2 0 0 1 2-2z" transform="translate(18 20)" style="fill:url(#i68hjgkthd)"/>
+</svg>

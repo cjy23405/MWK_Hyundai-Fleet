@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <path data-name="사각형 20771" style="fill:transparent" d="M0 0h20v20H0z"/>
+    <g data-name="사각형 6325" style="stroke:#fff;fill:none">
+        <path style="stroke:none" d="M0 0h18v1.5H0z" transform="translate(1 5)"/>
+        <path style="fill:none" d="M.5.5h17V1H.5z" transform="translate(1 5)"/>
+    </g>
+    <g data-name="사각형 6325" style="stroke:#fff;fill:none">
+        <path style="stroke:none" d="M0 0h18v1.5H0z" transform="translate(1 13.5)"/>
+        <path style="fill:none" d="M.5.5h17V1H.5z" transform="translate(1 13.5)"/>
+    </g>
+</svg>

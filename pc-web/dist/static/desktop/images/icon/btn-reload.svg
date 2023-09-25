@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <g data-name="그룹 17087">
+        <g data-name="그룹 17082">
+            <g data-name="그룹 17080">
+                <path data-name="합치기 314" d="M0 7V0h14.6v1.75H1.5V7z" transform="translate(2.5 3.25)" style="fill:#90a4ae"/>
+            </g>
+            <path data-name="패스 15613" d="m-8070.417-23755 2.5-2.5-2.5-2.5" transform="translate(8084.918 23761.502)" style="fill:none;stroke:#90a4ae;stroke-linejoin:bevel;stroke-width:1.5px"/>
+        </g>
+        <g data-name="그룹 17102">
+            <g data-name="그룹 17080">
+                <path data-name="합치기 314" d="M0 7V0h14.6v1.752H1.5V7z" transform="rotate(180 8.55 8.25)" style="fill:#90a4ae"/>
+            </g>
+            <path data-name="패스 15613" d="m-8067.917-23760-2.5 2.5 2.5 2.5" transform="translate(8073.014 23773.25)" style="fill:none;stroke:#90a4ae;stroke-linejoin:bevel;stroke-width:1.5px"/>
+        </g>
+    </g>
+</svg>

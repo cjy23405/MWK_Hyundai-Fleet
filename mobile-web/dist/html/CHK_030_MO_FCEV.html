@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/mobile/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/swiper/swiper-bundle.min.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="layout-wrap">
+        <!-- toast-alert -->
+        <div class="ui-toast-alert" id="globalToastAlert"></div>
+        <!-- //toast-alert -->
+
+        <!-- header -->
+        <div class="fix-top-wrap">
+          <header class="header">
+            <div class="header__left">
+              <a href="" class="header__button header__button--back">
+                <span class="for-a11y">뒤로 가기</span>
+              </a>
+            </div>
+            <div class="header__center">
+              <h1 class="header__title">차트 상세 정보</h1>
+            </div>
+          </header>
+        </div>
+        <!-- //header -->
+
+        <!-- contents -->
+        <article class="contents-wrap">
+          <div class="page-contents">
+            <section class="row-group">
+              <h3 class="small-text font-weight-regular color-light-gray row-item-small">배터리 냉각수 기준 정보</h3>
+              <p class="small-text color-gray">배터리 냉각수 온도가 <strong class="color-gray-emphasis font-weight-medium">50</strong>도 이상 시 표시합니다.</p>
+            </section>
+
+            <div class="card-head row-contents">
+              <div class="card-head__left">
+                <h2 class="card-head__title">010가2345</h2>
+                <div class="card-head__sub">일렉시티수소</div>
+                <div class="card-head__hr"></div>
+                <h3 class="card-head__sub-title">배터리냉각수</h3>
+              </div>
+            </div>
+
+            <div class="ui-table">
+              <div class="ui-table__scroller">
+                <div class="ui-table__doc">
+                  <div class="ui-table__table">
+                    <div class="ui-table__table-inner">
+                      <table>
+                        <colgroup>
+                          <col style="width: 70px" />
+                          <col style="width: 168px" />
+                          <col style="width: 90px" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>발생일시</th>
+                            <th>온도(도)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>999</td>
+                            <td>2022.04.12 10:32</td>
+                            <td>58</td>
+                          </tr>
+                          <tr>
+                            <td>999</td>
+                            <td>2022.04.12 10:32</td>
+                            <td>58</td>
+                          </tr>
+                          <tr>
+                            <td>999</td>
+                            <td>2022.04.12 10:32</td>
+                            <td>58</td>
+                          </tr>
+                          <tr>
+                            <td>999</td>
+                            <td>2022.04.12 10:32</td>
+                            <td>58</td>
+                          </tr>
+                          <tr>
+                            <td>999</td>
+                            <td>2022.04.12 10:32</td>
+                            <td>58</td>
+                          </tr>
+                          <tr>
+                            <td>999</td>
+                            <td>2022.04.12 10:32</td>
+                            <td>58</td>
+                          </tr>
+                          <tr>
+                            <td>999</td>
+                            <td>2022.04.12 10:32</td>
+                            <td>58</td>
+                          </tr>
+                          <tr>
+                            <td>999</td>
+                            <td>2022.04.12 10:32</td>
+                            <td>58</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2022.09.05 : mod : 페이지네이션 구성 변경 -->
+            <nav class="pagination">
+              <h3 class="for-a11y">Pagination</h3>
+              <ul class="pagination__list">
+                <li class="pagination__item">
+                  <!-- DD : 첫번째 페이지일 경우 disabled 속성 추가 -->
+                  <button type="button" class="ui-button pagination__link pagination__link--prev">
+                    <span class="for-a11y">이전</span>
+                  </button>
+                </li>
+                <li class="pagination__item">
+                  <a href="" class="pagination__link">1</a>
+                </li>
+                <li class="pagination__item">
+                  <span class="pagination__ellipsis">...</span>
+                </li>
+                <li class="pagination__item">
+                  <a href="" class="pagination__link">22</a>
+                </li>
+                <li class="pagination__item">
+                  <!-- DD : 현재 페이지면 is-active 클래스 값 추가 -->
+                  <a href="" class="pagination__link is-active">23</a>
+                </li>
+                <li class="pagination__item">
+                  <a href="" class="pagination__link">24</a>
+                </li>
+                <li class="pagination__item">
+                  <span class="pagination__ellipsis">...</span>
+                </li>
+                <li class="pagination__item">
+                  <a href="" class="pagination__link">999</a>
+                </li>
+                <li class="pagination__item">
+                  <!-- DD : 마지막 페이지일 경우 disabled 속성 추가 -->
+                  <button type="button" class="ui-button pagination__link pagination__link--next">
+                    <span class="for-a11y">다음</span>
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <!-- //2022.09.05 : mod : 페이지네이션 구성 변경 -->
+          </div>
+        </article>
+        <!-- //contents -->
+      </div>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript" src="/mobile/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/mobile/js/ui-script.js"></script>
+    <script type="text/javascript" src="/mobile/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <!-- //script -->
+  </body>
+</html>

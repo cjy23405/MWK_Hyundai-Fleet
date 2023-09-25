@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="80" viewBox="0 0 100 80">
+    <path data-name="사각형 19261" style="fill:none" d="M0 0h100v80H0z"/>
+    <path data-name="합치기 314" d="M-3709-17727v-8h-20v8.006h-7v-8.006h-4.1l-6.9-6.9v-30.1h-5v-9h5v-6a4.007 4.007 0 0 1 4-4.006h48a4.007 4.007 0 0 1 4 4.006v6h5v9h-5v30.1l-6.9 6.9h-4.1v8.006zm0-22a4 4 0 0 0 4 4 4 4 0 0 0 4-4 4.005 4.005 0 0 0-4-4 4.005 4.005 0 0 0-4 4zm-28 0a4 4 0 0 0 4 4 4 4 0 0 0 4-4 4.005 4.005 0 0 0-4-4 4.005 4.005 0 0 0-4 4zm-4-12h44v-18h-44z" transform="translate(3769 17799)" style="fill:#71868f"/>
+    <g data-name="그룹 16961" transform="translate(-935 -541.775)">
+        <circle data-name="타원 2407" cx="14" cy="14" r="14" transform="translate(1005 590.775)" style="fill:#455a64"/>
+        <path data-name="사각형 19284" transform="rotate(45 -210.527 1535.235)" style="fill:#71868f" d="M0 0h2v16H0z"/>
+        <path data-name="사각형 19285" transform="rotate(135 386.362 517.273)" style="fill:#71868f" d="M0 0h2v16H0z"/>
+    </g>
+</svg>

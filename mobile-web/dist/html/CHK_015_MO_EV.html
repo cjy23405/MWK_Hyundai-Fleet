@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/mobile/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/swiper/swiper-bundle.min.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="layout-wrap">
+        <!-- toast-alert -->
+        <div class="ui-toast-alert" id="globalToastAlert"></div>
+        <!-- //toast-alert -->
+
+        <!-- header -->
+        <div class="fix-top-wrap">
+          <header class="header">
+            <div class="header__left">
+              <a href="" class="header__button header__button--back">
+                <span class="for-a11y">뒤로 가기</span>
+              </a>
+            </div>
+            <div class="header__center">
+              <h1 class="header__title">차량주요상태정보</h1>
+            </div>
+          </header>
+        </div>
+        <!-- //header -->
+
+        <!-- contents -->
+        <article class="contents-wrap">
+          <div class="page-contents">
+            <div class="row-group">
+              <!-- 2022.08.16 : add : 조회기간 위치 수정으로 인한 추가 -->
+              <p class="basic-text color-gray row-item-group">조회기간 22.01.01 ~ 22.01.07</p>
+              <!--// 2022.08.16 : add : 조회기간 위치 수정으로 인한 추가 -->
+              <div class="card card--light row-item-group">
+                <div class="count-list">
+                  <dl class="count-list__list">
+                    <div class="count-list__item">
+                      <dt class="count-list__key">전체</dt>
+                      <dd class="count-list__val">
+                        <div class="value value--medium">
+                          <div class="value__num">200</div>
+                          <div class="value__unit">대</div>
+                        </div>
+                      </dd>
+                    </div>
+                    <div class="count-list__item">
+                      <dt class="count-list__key">정상</dt>
+                      <dd class="count-list__val">
+                        <div class="value value--medium">
+                          <div class="value__num">195</div>
+                          <div class="value__unit">대</div>
+                        </div>
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+              <div class="card card--light row-item-group">
+                <div class="count-list count-list--no-margin">
+                  <dl class="count-list__list">
+                    <div class="count-list__item count-list__item--vertical">
+                      <!-- 2022.10.21 : mod : PE냉각수 > 구동냉각수 변경 -->
+                      <dt class="count-list__key">구동 냉각수</dt>
+                      <dd class="count-list__val">
+                        <div class="value value--medium">
+                          <div class="value__num">100</div>
+                          <div class="value__unit">건</div>
+                        </div>
+                      </dd>
+                    </div>
+                    <div class="count-list__item count-list__item--vertical">
+                      <dt class="count-list__key">배터리 냉각수</dt>
+                      <dd class="count-list__val">
+                        <div class="value value--medium">
+                          <div class="value__num">100</div>
+                          <div class="value__unit">건</div>
+                        </div>
+                      </dd>
+                    </div>
+                    <div class="count-list__item count-list__item--vertical count-list__item--per-360">
+                      <dt class="count-list__key">시동 배터리 전압</dt>
+                      <dd class="count-list__val">
+                        <div class="value value--medium">
+                          <div class="value__num">100</div>
+                          <div class="value__unit">건</div>
+                        </div>
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+
+            <div class="board-top">
+              <div class="board-top__row">
+                <form action="">
+                  <div class="ui-search">
+                    <div class="ui-search__form">
+                      <div class="ui-input-block ui-search__input">
+                        <!-- 2022.08.19 : mod : js-search-keyword-target 클래스 값 및 id, autocomplete 속성 추가 -->
+                        <input type="search" class="ui-input js-search-keyword-target" title="차량 검색" placeholder="차량명(차량번호), 차종" autocomplete="off" id="carSearch" />
+                      </div>
+                      <button type="submit" class="ui-button ui-search__submit">
+                        <span class="for-a11y">검색</span>
+                      </button>
+                    </div>
+                    <div class="ui-search__layer">
+                      <div class="ui-search__contents">
+                        <ul class="ui-search__list">
+                          <!-- 2022.08.19 : del : 더미 데이터 스크립트로 추가함으로 제거
+                          <li class="ui-search__item">
+                            <a href="" class="ui-search__link">
+                              <span class="ui-search__text">76이4443</span>
+                              <span class="ui-search__sub">일렉시티</span>
+                            </a>
+                          </li>
+                          <li class="ui-search__item">
+                            <a href="" class="ui-search__link">
+                              <span class="ui-search__text">11나7473</span>
+                              <span class="ui-search__sub">일렉시티2층</span>
+                            </a>
+                          </li>
+                          <li class="ui-search__item">
+                            <a href="" class="ui-search__link">
+                              <span class="ui-search__text">32가0095</span>
+                              <span class="ui-search__sub">일렉시티</span>
+                            </a>
+                          </li>
+                          <li class="ui-search__item">
+                            <a href="" class="ui-search__link">
+                              <span class="ui-search__text">43가5820</span>
+                              <span class="ui-search__sub">일렉시티 FCEV</span>
+                            </a>
+                          </li>
+                          <li class="ui-search__item">
+                            <a href="" class="ui-search__link">
+                              <span class="ui-search__text">76이4443</span>
+                              <span class="ui-search__sub">일렉시티</span>
+                            </a>
+                          </li>
+                          <li class="ui-search__item">
+                            <a href="" class="ui-search__link">
+                              <span class="ui-search__text">11나7473</span>
+                              <span class="ui-search__sub">일렉시티2층</span>
+                            </a>
+                          </li>
+                          <li class="ui-search__item">
+                            <a href="" class="ui-search__link">
+                              <span class="ui-search__text">32가0095</span>
+                              <span class="ui-search__sub">일렉시티</span>
+                            </a>
+                          </li>
+                          <li class="ui-search__item">
+                            <a href="" class="ui-search__link">
+                              <span class="ui-search__text">43가5820</span>
+                              <span class="ui-search__sub">일렉시티 FCEV</span>
+                            </a>
+                          </li>
+                          -->
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="board-top__row">
+                <div class="ui-dropdown js-ui-dropdown">
+                  <div class="ui-dropdown__head">
+                    <!-- 2022.08.19 : mod : js-ui-dropdown__watch 클래스 값 추가 -->
+                    <div class="ui-dropdown__text js-ui-dropdown__watch">점검 알림 많은 순</div>
+                    <button type="button" class="ui-button ui-dropdown__opener js-ui-dropdown__opener">
+                      <span class="for-a11y">
+                        정렬 메뉴
+                        <span class="open-text">open</span>
+                        <span class="close-text">close</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="ui-dropdown__layer js-ui-dropdown__layer">
+                    <div class="ui-dropdown__contents">
+                      <ul class="ui-dropdown__list">
+                        <li class="ui-dropdown__item">
+                          <!-- 2022.08.19 : mod : js-ui-dropdown__closer 클래스 값 및 data-dropdown-option 속성 추가 -->
+                          <a href="" class="ui-dropdown__link js-ui-dropdown__closer" data-dropdown-option="점검 알림 많은 순">점검 알림 많은 순</a>
+                        </li>
+                        <li class="ui-dropdown__item">
+                          <!-- 2022.08.19 : mod : js-ui-dropdown__closer 클래스 값 및 data-dropdown-option 속성 추가 -->
+                          <a href="" class="ui-dropdown__link js-ui-dropdown__closer" data-dropdown-option="차량명(차량번호) 순">차량명(차량번호) 순</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2022.08.16 : del : 조회기간 위치 수정으로 인한 삭제 
+            <p class="basic-text color-gray row-item-group">조회기간 22.01.01 ~ 22.01.07</p>
+            -->
+
+            <!-- Case : 차량 없을 때 -->
+            <div class="card">
+              <div class="ui-empty">
+                <p class="ui-empty__text">점검 알림 차량이 없습니다.</p>
+              </div>
+            </div>
+            <!-- //Case : 차량 없을 때 -->
+
+            <!-- Case : 검색 결과 없을 때 -->
+            <div class="card">
+              <div class="ui-empty ui-empty--search-empty">
+                <p class="ui-empty__text">검색 결과가 없습니다.</p>
+              </div>
+            </div>
+            <!-- //Case : 검색 결과 없을 때 -->
+
+            <!-- list -->
+            <div class="card-list">
+              <ul class="card-list__list">
+                <li class="card-list__item">
+                  <a href="" class="card">
+                    <div class="card-head card-head--top">
+                      <div class="card-head__left">
+                        <span class="ui-status is-check">점검</span>
+                      </div>
+                      <div class="card-head__right">
+                        <span class="car-status display-block">운행중</span>
+                      </div>
+                    </div>
+                    <div class="card-head card-head--line">
+                      <div class="card-head__left">
+                        <h2 class="card-head__title">010가2345</h2>
+                        <div class="card-head__sub">엑시언트 수소트럭 (FCEV)</div>
+                      </div>
+                    </div>
+                    <section class="box-head box-head--no-line box-head--no-margin row-item">
+                      <div class="box-head__left">
+                        <!-- DD : 정상일 때 is-good 클래스 값 추가 -->
+                        <div class="box-head__icon box-head__icon--motor-cooling-water is-good"></div>
+                        <!-- 2022.10.21 : mod : PE냉각수 > 구동냉각수 변경 -->
+                        <h3 class="box-head__title">구동 냉각수</h3>
+                      </div>
+                      <div class="box-head__right">
+                        <span class="round-status display-block">정상</span>
+                      </div>
+                    </section>
+                    <section class="box-head box-head--no-line box-head--no-margin row-item">
+                      <div class="box-head__left">
+                        <!-- DD : 비정상일 때 is-danger 클래스 값 추가 -->
+                        <div class="box-head__icon box-head__icon--battery-coolant is-danger"></div>
+                        <h3 class="box-head__title">배터리 냉각수</h3>
+                      </div>
+                      <div class="box-head__right">
+                        <span class="round-status round-status--icon round-status--icon-danger display-block">이상횟수 3회</span>
+                      </div>
+                    </section>
+                    <section class="box-head box-head--no-line box-head--no-margin row-item">
+                      <div class="box-head__left">
+                        <div class="box-head__icon box-head__icon--starting-battery-voltage is-danger"></div>
+                        <h3 class="box-head__title">시동배터리 전압</h3>
+                      </div>
+                      <div class="box-head__right">
+                        <!-- 2022.08.16 : mod : 단위텍스트 수정 -->
+                        <span class="round-status round-status--icon round-status--icon-danger display-block">이상횟수 3일</span>
+                      </div>
+                    </section>
+                  </a>
+                </li>
+                <li class="card-list__item">
+                  <a href="" class="card">
+                    <div class="card-head card-head--top">
+                      <div class="card-head__left">
+                        <span class="ui-status is-check">점검</span>
+                      </div>
+                      <div class="card-head__right">
+                        <span class="car-status is-disabled display-block">운행종료</span>
+                      </div>
+                    </div>
+                    <div class="card-head card-head--line">
+                      <div class="card-head__left">
+                        <h2 class="card-head__title">010가2345</h2>
+                        <div class="card-head__sub">엑시언트 수소트럭 (FCEV)</div>
+                      </div>
+                    </div>
+                    <section class="box-head box-head--no-line box-head--no-margin row-item">
+                      <div class="box-head__left">
+                        <div class="box-head__icon box-head__icon--motor-cooling-water is-danger"></div>
+                        <!-- 2022.10.21 : mod : PE냉각수 > 구동냉각수 변경 -->
+                        <h3 class="box-head__title">구동 냉각수</h3>
+                      </div>
+                      <div class="box-head__right">
+                        <span class="round-status round-status--icon round-status--icon-danger display-block">이상횟수 3회</span>
+                      </div>
+                    </section>
+                    <section class="box-head box-head--no-line box-head--no-margin row-item">
+                      <div class="box-head__left">
+                        <div class="box-head__icon box-head__icon--battery-coolant is-danger"></div>
+                        <h3 class="box-head__title">배터리 냉각수</h3>
+                      </div>
+                      <div class="box-head__right">
+                        <span class="round-status round-status--icon round-status--icon-danger display-block">이상횟수 3회</span>
+                      </div>
+                    </section>
+                    <section class="box-head box-head--no-line box-head--no-margin row-item">
+                      <div class="box-head__left">
+                        <div class="box-head__icon box-head__icon--starting-battery-voltage is-danger"></div>
+                        <h3 class="box-head__title">시동배터리 전압</h3>
+                      </div>
+                      <div class="box-head__right">
+                        <!-- 2022.08.16 : mod : 단위텍스트 수정 -->
+                        <span class="round-status round-status--icon round-status--icon-danger display-block">이상횟수 3일</span>
+                      </div>
+                    </section>
+                  </a>
+                </li>
+                <li class="card-list__item">
+                  <a href="" class="card">
+                    <div class="card-head card-head--top">
+                      <div class="card-head__left">
+                        <span class="ui-status is-check">점검</span>
+                      </div>
+                      <div class="card-head__right">
+                        <span class="car-status is-disabled display-block">운행종료</span>
+                      </div>
+                    </div>
+                    <div class="card-head card-head--line">
+                      <div class="card-head__left">
+                        <h2 class="card-head__title">010가2345</h2>
+                        <div class="card-head__sub">엑시언트 수소트럭 (FCEV)</div>
+                      </div>
+                    </div>
+                    <section class="box-head box-head--no-line box-head--no-margin row-item">
+                      <div class="box-head__left">
+                        <div class="box-head__icon box-head__icon--motor-cooling-water is-danger"></div>
+                        <!-- 2022.10.21 : mod : PE냉각수 > 구동냉각수 변경 -->
+                        <h3 class="box-head__title">구동 냉각수</h3>
+                      </div>
+                      <div class="box-head__right">
+                        <span class="round-status round-status--icon round-status--icon-danger display-block">이상횟수 3회</span>
+                      </div>
+                    </section>
+                    <section class="box-head box-head--no-line box-head--no-margin row-item">
+                      <div class="box-head__left">
+                        <div class="box-head__icon box-head__icon--battery-coolant is-good"></div>
+                        <h3 class="box-head__title">배터리 냉각수</h3>
+                      </div>
+                      <div class="box-head__right">
+                        <span class="round-status display-block">정상</span>
+                      </div>
+                    </section>
+                    <section class="box-head box-head--no-line box-head--no-margin row-item">
+                      <div class="box-head__left">
+                        <div class="box-head__icon box-head__icon--starting-battery-voltage is-good"></div>
+                        <h3 class="box-head__title">시동배터리 전압</h3>
+                      </div>
+                      <div class="box-head__right">
+                        <span class="round-status display-block">정상</span>
+                      </div>
+                    </section>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- //list -->
+          </div>
+        </article>
+        <!-- //contents -->
+      </div>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript" src="/mobile/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/mobile/js/ui-script.js"></script>
+    <script type="text/javascript" src="/mobile/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <script>
+      $(function () {
+        $('form').on('submit', function (e) {
+          alert('submit test');
+
+          e.preventDefault();
+        });
+
+        // 2022.08.19 : add : 차량 검색 더미 데이터 추가 : start
+        // 차량 검색 데이터
+        var searchOptions = {
+          html: function (data) {
+            var html = '';
+            html += '<li class="ui-search__item">';
+            html += '<a href="" class="ui-search__link" data-search-keyword="' + data.keyword + '">';
+            html += '<span class="ui-search__text">' + data.name + '</span>';
+            html += '<span class="ui-search__sub">' + data.model + '</span>';
+            html += '</a>';
+            html += '</li>';
+            return html;
+          },
+          datas: [
+            {
+              keyword: '76다4443 일렉시티',
+              name: '76다4443',
+              model: '일렉시티',
+            },
+            {
+              keyword: '11나7473 일렉시티2층',
+              name: '11나7473',
+              model: '일렉시티2층',
+            },
+            {
+              keyword: '32가0095 일렉시티',
+              name: '32가0095',
+              model: '일렉시티',
+            },
+            {
+              keyword: '43가5820 일렉시티 FCEV',
+              name: '43가5820',
+              model: '일렉시티 FCEV',
+            },
+            {
+              keyword: '345다7632 일렉시티',
+              name: '345다7632',
+              model: '일렉시티',
+            },
+            {
+              keyword: '13나7443 엑시언트 수소트럭 (FCEV)',
+              name: '13나7443',
+              model: '엑시언트 수소트럭 (FCEV)',
+            },
+            {
+              keyword: '032가7431 일렉시티',
+              name: '032가7431',
+              model: '일렉시티',
+            },
+            {
+              keyword: '83가5642 일렉시티 FCEV',
+              name: '83가5642',
+              model: '일렉시티 FCEV',
+            },
+          ],
+        };
+        $('#carSearch').data('searchOptions', searchOptions);
+        // 2022.08.19 : add : 차량 검색 더미 데이터 추가 : end
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/desktop/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/simplebar/simplebar.min.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <a href="" class="basic-link" data-layer-open="layer-fuel-efficiency-level-detail">연비등급 상세</a>
+
+    <!-- layer: 연비등급 상세 -->
+    <div class="layer-wrap" data-layer="layer-fuel-efficiency-level-detail">
+      <div class="layer-container">
+        <section class="ui-layer ui-layer--large">
+          <div class="ui-layer__head">
+            <div class="ui-layer-header">
+              <div class="ui-layer-header__left">
+                <h2 class="ui-layer-header__title">06가2345</h2>
+                <p class="ui-layer-header__sub">일렉시티</p>
+              </div>
+              <div class="ui-layer-header__right">
+                <p class="basic-text color-gray">조회기간 22.04.01 ~ 22.04.30</p>
+              </div>
+              <button type="button" class="ui-button ui-layer-header__close" data-role="layerClose">
+                <span class="for-a11y">레이어 닫기</span>
+              </button>
+            </div>
+          </div>
+          <div class="ui-layer__body">
+            <div class="ui-layer__body-scroller ui-scroller">
+              <div class="ui-layer__body-inner">
+                <!-- map -->
+                <div class="section">
+                  <div class="popup-map">
+                    <div class="popup-map__loading">
+                      <div class="popup-map__loading-object"></div>
+                      <div class="popup-map__loading-text">해당 Trip의 연비지도를 표시하는 중입니다.</div>
+                      <div class="popup-map__loading-small-text">(잠시만 기다려주세요.)</div>
+                    </div>
+                    <div class="popup-map__legend">
+                      <div class="popup-map__legend-title">연비등급</div>
+                      <div class="popup-map__legend-item is-good">양호</div>
+                      <div class="popup-map__legend-item is-warning">보통</div>
+                      <div class="popup-map__legend-item is-danger">낮음</div>
+                    </div>
+                    <div class="popup-map__area" id="map"></div>
+                  </div>
+                </div>
+
+                <!--
+                <div class="map-bubble">
+                  <div class="map-bubble__block">
+                    <div class="map-bubble__text">급출발</div>
+                  </div>
+                </div>
+                -->
+                <!-- // map -->
+
+                <section class="section">
+                  <div class="section-head">
+                    <div class="section-head__left">
+                      <!-- 2022.10.05 : mod : section-head__title--secondary 클래스 값 추가 -->
+                      <h3 class="section-head__title section-head__title--secondary">Trip 정보</h3>
+                    </div>
+                    <div class="section-head__right">
+                      <p class="basic-text color-gray">클릭시 해당 Trip의 전비 지도를 확인할 수 있습니다.</p>
+                    </div>
+                  </div>
+                  <!-- table -->
+                  <div class="board-table board-table--popup">
+                    <div class="board-table__body">
+                      <div class="board-table__table-wrap" role="table">
+                        <div class="board-table__thead">
+                          <table role="rowgroup" class="board-table__table">
+                            <colgroup>
+                              <!-- 2022.08.29 : mod : 단위 문구 추가로 셀 너비 변경 -->
+                              <col style="width: 120px" />
+                              <col style="width: 90px" />
+                              <col style="width: 90px" />
+                              <col style="width: 83px" />
+                              <col style="width: 107px" />
+                              <col style="width: 107px" />
+                              <col style="width: 107px" />
+                              <col style="width: 90px" />
+                              <col style="width: 90px" />
+                              <col style="width: 137px" />
+                              <col style="width: 98px" />
+                              <col style="width: 98px" />
+                              <col style="width: 98px" />
+                              <col style="width: 110px" />
+                              <col style="width: 120px" />
+                              <!-- //2022.08.29 : mod : 단위 문구 추가로 셀 너비 변경 -->
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th>
+                                  <div class="board-table__colhead">
+                                    <div class="board-table__colhead-text">운행일</div>
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="board-table__colhead">
+                                    <div class="board-table__colhead-text">출발시간</div>
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="board-table__colhead">
+                                    <div class="board-table__colhead-text">도착시간</div>
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="board-table__colhead">
+                                    <div class="board-table__colhead-text">운행시간(분)</div>
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="board-table__colhead">
+                                    <div class="board-table__colhead-text">출발 연료 잔량(%)</div>
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="board-table__colhead">
+                                    <div class="board-table__colhead-text">도착 연료 잔량(%)</div>
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="board-table__colhead">
+                                    <div class="board-table__colhead-text">연료 소모량(%)</div>
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="board-table__colhead">
+                                    <div class="board-table__colhead-text">운행거리(km)</div>
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="board-table__colhead">
+                                    <div class="board-table__colhead-text">평균속도(km)</div>
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="board-table__colhead">
+                                    <div class="board-table__colhead-text">평균연비(km/kg)</div>
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="board-table__colhead">
+                                    <!-- 2022.08.29 : mod : 단위 문구 추가 -->
+                                    <div class="board-table__colhead-text">급출발(회)</div>
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="board-table__colhead">
+                                    <!-- 2022.08.29 : mod : 단위 문구 추가 -->
+                                    <div class="board-table__colhead-text">급가속(회)</div>
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="board-table__colhead">
+                                    <!-- 2022.08.29 : mod : 단위 문구 추가 -->
+                                    <div class="board-table__colhead-text">급정지(회)</div>
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="board-table__colhead">
+                                    <!-- 2022.08.29 : mod : 단위 문구 추가 -->
+                                    <div class="board-table__colhead-text">제한속도 초과(회)</div>
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="board-table__colhead">
+                                    <div class="board-table__colhead-text">연비지도</div>
+                                  </div>
+                                </th>
+                              </tr>
+                            </thead>
+                          </table>
+                        </div>
+                        <div class="board-table__tbody">
+                          <div class="board-table__tbody-scroller ui-scroller">
+                            <table role="rowgroup" class="board-table__table">
+                              <colgroup>
+                                <!-- 2022.08.29 : mod : 단위 문구 추가로 셀 너비 변경 -->
+                                <col style="width: 120px" />
+                                <col style="width: 90px" />
+                                <col style="width: 90px" />
+                                <col style="width: 83px" />
+                                <col style="width: 107px" />
+                                <col style="width: 107px" />
+                                <col style="width: 107px" />
+                                <col style="width: 90px" />
+                                <col style="width: 90px" />
+                                <col style="width: 137px" />
+                                <col style="width: 98px" />
+                                <col style="width: 98px" />
+                                <col style="width: 98px" />
+                                <col style="width: 110px" />
+                                <col style="width: 120px" />
+                                <!-- //2022.08.29 : mod : 단위 문구 추가로 셀 너비 변경 -->
+                              </colgroup>
+                              <tbody>
+                                <tr>
+                                  <td>22.05.14</td>
+                                  <td>08:30</td>
+                                  <td>08:30</td>
+                                  <td>60</td>
+                                  <td>60</td>
+                                  <td>60</td>
+                                  <td>20</td>
+                                  <td>200</td>
+                                  <td>45</td>
+                                  <td>5.8</td>
+                                  <td>1</td>
+                                  <td>1</td>
+                                  <td>2</td>
+                                  <td>2</td>
+                                  <td>
+                                    <a href="" class="ui-basic-button ui-basic-button--regular ui-basic-button--tertiary ui-basic-button--inline-block">
+                                      <span class="ui-basic-button__text">보기</span>
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>22.05.14</td>
+                                  <td>08:30</td>
+                                  <td>08:30</td>
+                                  <td>60</td>
+                                  <td>60</td>
+                                  <td>60</td>
+                                  <td>20</td>
+                                  <td>200</td>
+                                  <td>45</td>
+                                  <td>5.8</td>
+                                  <td></td>
+                                  <td>1</td>
+                                  <td></td>
+                                  <td>2</td>
+                                  <td>
+                                    <a href="" class="ui-basic-button ui-basic-button--regular ui-basic-button--tertiary ui-basic-button--inline-block">
+                                      <span class="ui-basic-button__text">보기</span>
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>22.05.14</td>
+                                  <td>08:30</td>
+                                  <td>08:30</td>
+                                  <td>60</td>
+                                  <td>60</td>
+                                  <td>60</td>
+                                  <td>20</td>
+                                  <td>200</td>
+                                  <td>45</td>
+                                  <td>5.8</td>
+                                  <td>1</td>
+                                  <td>2</td>
+                                  <td>2</td>
+                                  <td>2</td>
+                                  <td>
+                                    <a href="" class="ui-basic-button ui-basic-button--regular ui-basic-button--tertiary ui-basic-button--inline-block">
+                                      <span class="ui-basic-button__text">보기</span>
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>22.05.14</td>
+                                  <td>08:30</td>
+                                  <td>08:30</td>
+                                  <td>60</td>
+                                  <td>60</td>
+                                  <td>60</td>
+                                  <td>20</td>
+                                  <td>200</td>
+                                  <td>45</td>
+                                  <td>5.8</td>
+                                  <td>1</td>
+                                  <td></td>
+                                  <td>4</td>
+                                  <td></td>
+                                  <td>
+                                    <a href="" class="ui-basic-button ui-basic-button--regular ui-basic-button--tertiary ui-basic-button--inline-block">
+                                      <span class="ui-basic-button__text">보기</span>
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>22.05.14</td>
+                                  <td>08:30</td>
+                                  <td>08:30</td>
+                                  <td>60</td>
+                                  <td>60</td>
+                                  <td>60</td>
+                                  <td>20</td>
+                                  <td>200</td>
+                                  <td>45</td>
+                                  <td>5.8</td>
+                                  <td></td>
+                                  <td>1</td>
+                                  <td>2</td>
+                                  <td>2</td>
+                                  <td>
+                                    <a href="" class="ui-basic-button ui-basic-button--regular ui-basic-button--tertiary ui-basic-button--inline-block">
+                                      <span class="ui-basic-button__text">보기</span>
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 2022.09.16 : mod : board-table__foot--medium 클래스 추가 -->
+                    <div class="board-table__foot board-table__foot--medium">
+                      <div class="board-table__cell-left"></div>
+                      <div class="board-table__cell-center">
+                        <nav class="pagination">
+                          <h3 class="for-a11y">Pagination</h3>
+                          <ul class="pagination__list">
+                            <li class="pagination__item">
+                              <!-- 2022.09.05 : mod : button 태그로 변경 -->
+                              <!-- DD : 첫번째 페이지일 경우 disabled 속성 추가 -->
+                              <button type="button" class="ui-button pagination__link pagination__link--prev">
+                                <span class="for-a11y">이전</span>
+                              </button>
+                              <!-- //2022.09.05 : mod : button 태그로 변경 -->
+                            </li>
+                            <li class="pagination__item">
+                              <a href="" class="pagination__link">1</a>
+                            </li>
+                            <li class="pagination__item">
+                              <span class="pagination__ellipsis">...</span>
+                            </li>
+                            <li class="pagination__item">
+                              <a href="" class="pagination__link">7</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a href="" class="pagination__link">8</a>
+                            </li>
+                            <li class="pagination__item">
+                              <!-- DD : 현재 페이지면 is-active 클래스 값 추가 -->
+                              <a href="" class="pagination__link is-active">9</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a href="" class="pagination__link">10</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a href="" class="pagination__link">11</a>
+                            </li>
+                            <li class="pagination__item">
+                              <span class="pagination__ellipsis">...</span>
+                            </li>
+                            <li class="pagination__item">
+                              <a href="" class="pagination__link">999</a>
+                            </li>
+                            <li class="pagination__item">
+                              <!-- 2022.09.05 : mod : button 태그로 변경 -->
+                              <!-- DD : 마지막 페이지일 경우 disabled 속성 추가 -->
+                              <button type="button" class="ui-button pagination__link pagination__link--next">
+                                <span class="for-a11y">다음</span>
+                              </button>
+                              <!-- //2022.09.05 : mod : button 태그로 변경 -->
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                      <div class="board-table__cell-right">
+                        <div class="ui-buttons ui-buttons--right ui-buttons--no-margin">
+                          <ul class="ui-buttons__list">
+                            <li class="ui-buttons__item">
+                              <!-- 2022.09.16 : mod : button 큰 사이즈 변경 -->
+                              <button type="button" class="ui-button ui-basic-button ui-basic-button--auto ui-basic-button--icon ui-basic-button--icon-excel">
+                                <span class="ui-basic-button__text">Excel 다운로드</span>
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //table -->
+                </section>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- //layer: 연비등급 상세 -->
+
+    <!-- script -->
+    <script type="text/javascript" src="/desktop/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/simplebar/simplebar.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/sortablejs/sortable.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/desktop/js/ui-script.js"></script>
+    <script type="text/javascript" src="/desktop/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <script>
+      $(function () {
+        uiJSLayer.open('layer-fuel-efficiency-level-detail');
+
+        // 2022.09.16 : mod : 지도 라이브러리 변경 적용 : start
+
+        // 라인 그리기
+        function drawLine(map, coordinates, state) {
+          var color = (function () {
+            if (state === 'danger') return '#ff878d';
+            else if (state === 'warning') return '#ebba57';
+            else return '#00bfa5';
+          })();
+
+          new routo.maps.Polyline({
+            path: coordinates,
+            strokeColor: color,
+            strokeWeight: 6,
+            map: map,
+          });
+        }
+
+        // 라인 보더 그리기
+        function drawLineBorder(map, coordinates) {
+          new routo.maps.Polyline({
+            path: coordinates,
+            strokeColor: '#ffffff',
+            strokeOpacity: 0.86,
+            strokeWeight: 12,
+            map: map,
+          });
+        }
+
+        // 마커 생성
+        function addOverlay(map, latLng, text) {
+          var html = '';
+
+          html += '<div class="map-bubble">';
+          html += '<div class="map-bubble__block">';
+          html += '<div class="map-bubble__text">' + text + '</div>';
+          html += '</div>';
+          html += '</div>';
+
+          var infowindow = new routo.maps.InfoWindow({
+            content: html,
+            position: latLng,
+          });
+
+          infowindow.open({
+            map: map,
+          });
+
+          var el = infowindow.getContent();
+          var $el = $(el);
+
+          $el.addClass('ui-custom-routo-infowindow-map-bubble');
+        }
+
+        // 경로 그리기
+        function mapDraw(map) {
+          // 더미 라인 그리기
+          drawLineBorder(map, [
+            {
+              lat: 37.475847903351834,
+              lng: 126.88086211681366,
+            },
+            {
+              lat: 37.47696329588172,
+              lng: 126.88491225242616,
+            },
+            {
+              lat: 37.47696329588172,
+              lng: 126.88491225242616,
+            },
+            {
+              lat: 37.4779020007398,
+              lng: 126.88806653022766,
+            },
+            {
+              lat: 37.47939198423846,
+              lng: 126.88995480537416,
+            },
+            {
+              lat: 37.47939198423846,
+              lng: 126.88995480537416,
+            },
+            {
+              lat: 37.478463940862966,
+              lng: 126.89536213874818,
+            },
+            {
+              lat: 37.47848948349544,
+              lng: 126.89598441123965,
+            },
+            {
+              lat: 37.47848948349544,
+              lng: 126.89598441123965,
+            },
+            {
+              lat: 37.47938347013144,
+              lng: 126.90137028694153,
+            },
+            {
+              lat: 37.47938347013144,
+              lng: 126.90137028694153,
+            },
+            {
+              lat: 37.48048178192836,
+              lng: 126.90731406211854,
+            },
+            {
+              lat: 37.48048178192836,
+              lng: 126.90731406211854,
+            },
+            {
+              lat: 37.48181846520379,
+              lng: 126.91450238227844,
+            },
+            {
+              lat: 37.48181846520379,
+              lng: 126.91450238227844,
+            },
+            {
+              lat: 37.48321897712272,
+              lng: 126.9218301773071,
+            },
+          ]);
+          drawLine(
+            map,
+            [
+              {
+                lat: 37.475847903351834,
+                lng: 126.88086211681366,
+              },
+              {
+                lat: 37.47696329588172,
+                lng: 126.88491225242616,
+              },
+            ],
+            'none'
+          );
+          drawLine(
+            map,
+            [
+              {
+                lat: 37.47696329588172,
+                lng: 126.88491225242616,
+              },
+              {
+                lat: 37.4779020007398,
+                lng: 126.88806653022766,
+              },
+              {
+                lat: 37.47939198423846,
+                lng: 126.88995480537416,
+              },
+            ],
+            'danger'
+          );
+          drawLine(
+            map,
+            [
+              {
+                lat: 37.47939198423846,
+                lng: 126.88995480537416,
+              },
+              {
+                lat: 37.478463940862966,
+                lng: 126.89536213874818,
+              },
+              {
+                lat: 37.47848948349544,
+                lng: 126.89598441123965,
+              },
+            ],
+            'warning'
+          );
+          drawLine(
+            map,
+            [
+              {
+                lat: 37.47848948349544,
+                lng: 126.89598441123965,
+              },
+              {
+                lat: 37.47938347013144,
+                lng: 126.90137028694153,
+              },
+            ],
+            'none'
+          );
+          drawLine(
+            map,
+            [
+              {
+                lat: 37.47938347013144,
+                lng: 126.90137028694153,
+              },
+              {
+                lat: 37.48048178192836,
+                lng: 126.90731406211854,
+              },
+            ],
+            'danger'
+          );
+          drawLine(
+            map,
+            [
+              {
+                lat: 37.48048178192836,
+                lng: 126.90731406211854,
+              },
+              {
+                lat: 37.48181846520379,
+                lng: 126.91450238227844,
+              },
+            ],
+            'none'
+          );
+          drawLine(
+            map,
+            [
+              {
+                lat: 37.48181846520379,
+                lng: 126.91450238227844,
+              },
+              {
+                lat: 37.48321897712272,
+                lng: 126.9218301773071,
+              },
+            ],
+            'danger'
+          );
+
+          // 더미 마커 생성
+          addOverlay(
+            map,
+            {
+              lat: 37.47696329588172,
+              lng: 126.88491225242616,
+            },
+            '급출발'
+          );
+          addOverlay(
+            map,
+            {
+              lat: 37.47938347013144,
+              lng: 126.90137028694153,
+            },
+            '과속'
+          );
+          addOverlay(
+            map,
+            {
+              lat: 37.48181846520379,
+              lng: 126.91450238227844,
+            },
+            '급가속'
+          );
+        }
+
+        // 지도 업데이트
+        function mapUpdate($mapWrap) {
+          var $mapArea = $mapWrap.find('.popup-map__area');
+          var $mapLoading = $mapWrap.find('.popup-map__loading');
+          var $map = $('<div class="popup-map__area" id="map"></div>');
+
+          $mapLoading.stop().removeAttr('style');
+          $mapArea.replaceWith($map);
+
+          // 지도 생성
+          var map = new routo.maps.Map($map.get(0), {
+            center: {
+              lat: 37.478985434545336,
+              lng: 126.89898312091827,
+            },
+            zoom: 15,
+          });
+
+          // 데이터 로드 후 지도 보여지는 기능 setTimeout으로 임시 구현
+          timer = setTimeout(function () {
+            mapDraw(map);
+            $mapLoading.stop().fadeOut(500);
+
+            clearTimeout(timer);
+          }, 3000);
+        }
+
+        var timer = null; // 데이터 로드 후 지도 보여지는 기능 setTimeout으로 임시 구현
+
+        // 레이어 열리고 나서 지도 업데이트
+        $('[data-layer="layer-fuel-efficiency-level-detail"]').on('layerOpened', function () {
+          var $this = $(this);
+          var $mapWrap = $this.find('.popup-map');
+
+          clearTimeout(timer); // 데이터 로드 후 지도 보여지는 기능 setTimeout으로 임시 구현
+
+          mapUpdate($mapWrap);
+        });
+
+        // 2022.09.16 : mod : 지도 라이브러리 변경 적용 : end
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

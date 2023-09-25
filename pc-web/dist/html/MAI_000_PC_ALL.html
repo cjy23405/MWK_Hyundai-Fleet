@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/desktop/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/simplebar/simplebar.min.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- DD : 메인 화면일 경우 layout-wrap--main 클래스 값 추가 -->
+      <div class="layout-wrap layout-wrap--main">
+        <!-- skip-nav -->
+        <nav class="skip-nav">
+          <h2 class="for-a11y">Skip navigation</h2>
+          <ul class="skip-nav__list">
+            <li class="skip-nav__item">
+              <a href="#header" class="skip-nav__link">Header</a>
+            </li>
+            <li class="skip-nav__item">
+              <a href="#contents" class="skip-nav__link">Contents</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- //skip-nav -->
+
+        <!-- toast-alert -->
+        <div class="ui-toast-alert" id="globalToastAlert"></div>
+        <!-- //toast-alert -->
+
+        <!-- header -->
+        <div class="fix-top-wrap">
+          <header class="header" id="header">
+            <div class="header__left">
+              <h1 class="header__logo">
+                <a href="" class="header__logo-link">
+                  <span class="for-a11y">Bluelink Fleet</span>
+                </a>
+              </h1>
+              <div class="header-gnb">
+                <ul class="header-gnb__list">
+                  <li class="header-gnb__item">
+                    <a href="#mainSection1" class="header-gnb__link js-hash-scroll-link">
+                      <span class="header-gnb__link-text">블루링크 플릿 이란?</span>
+                    </a>
+                  </li>
+                  <li class="header-gnb__item">
+                    <a href="#mainSection2" class="header-gnb__link js-hash-scroll-link">
+                      <span class="header-gnb__link-text">소개영상</span>
+                    </a>
+                  </li>
+                  <li class="header-gnb__item">
+                    <a href="#mainSection3" class="header-gnb__link js-hash-scroll-link">
+                      <span class="header-gnb__link-text">사용가이드 영상</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="header__right">
+              <ul class="header__nav">
+                <li class="header__nav-item header__nav-item--add">
+                  <button type="button" class="ui-button ui-basic-button ui-basic-button--small ui-basic-button--quinary ui-basic-button--icon ui-basic-button--icon-download">
+                    <span class="ui-basic-button__text">사용가이드 다운로드</span>
+                  </button>
+                </li>
+                <li class="header__nav-item header__nav-item--add">
+                  <button type="button" class="ui-button ui-basic-button ui-basic-button--small ui-basic-button--quinary ui-basic-button--icon ui-basic-button--icon-new-win">
+                    <span class="ui-basic-button__text">서비스 둘러보기</span>
+                  </button>
+                </li>
+                <li class="header__nav-item">
+                  <a href="" class="header__nav-link">
+                    <span class="header__nav-icon header__nav-icon--login"></span>
+                    <span class="header__nav-text">로그인</span>
+                  </a>
+                </li>
+                <!-- 2022.10.05 : add : 헤더 언어변경 dropdown box 추가 -->
+                <li class="header__nav-item">
+                  <div class="ui-language js-ui-dropdown">
+                    <div class="ui-language__head">
+                      <div class="ui-language__text">KR</div>
+                      <button type="button" class="ui-button ui-language__opener js-ui-dropdown__opener">
+                        <span class="for-a11y">
+                          언어변경 메뉴
+                          <span class="open-text">open</span>
+                          <span class="close-text">close</span>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="ui-language__layer js-ui-dropdown__layer">
+                      <div class="ui-language__contents">
+                        <ul class="ui-language__list">
+                          <li class="ui-language__item">
+                            <a href="" class="ui-language__link">KR</a>
+                          </li>
+                          <li class="ui-language__item">
+                            <a href="" class="ui-language__link">EU</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- //2022.10.05 : add : 헤더 언어변경 dropdown box 추가 -->
+              </ul>
+            </div>
+          </header>
+        </div>
+        <!-- //header -->
+
+        <!-- contents -->
+        <article class="contents-wrap" id="contents">
+          <div class="page-contents page-contents--main">
+            <!-- 2022.10.07 : mod : 컨텐츠 적용 -->
+            <div class="main-section main-section--001" id="mainSection1">
+              <div class="main-section__inner">
+                <p class="main-section__big-text">
+                  현대 커넥티드 상용차<br />
+                  특화 관제시스템
+                </p>
+                <p class="main-section__text">
+                  상용차 관리 필수 서비스 블루링크 플릿<br />
+                  한 번 더 스마트해진 얼굴로 새롭게 태어났습니다.
+                </p>
+                <div class="main-section__button-area">
+                  <a href="" class="main-section__button">서비스 둘러보기</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="main-section main-section--002">
+              <div class="main-section__inner">
+                <p class="main-section__big-text">
+                  한번 더 스마트해진<br />
+                  <mark>블루링크 플릿</mark>
+                </p>
+                <p class="main-section__text">
+                  차량관제부터 고장알림 SMS, 정비요청까지 한번에,<br />
+                  그리고 다양한 분석기능까지 지금 시작해보세요!
+                </p>
+              </div>
+              <div class="main-section__visual">
+                <div class="main-section__object main-section__object--001"></div>
+                <div class="main-section__widgets">
+                  <div class="main-section__widgets-inner">
+                    <div class="main-section__widgets-group">
+                      <div class="main-section__widgets-item main-section__widgets-item--001"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--002"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--003"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--004"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--005"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--006"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--007"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--008"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--009"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--010"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--011"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--012"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--013"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--014"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--015"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--016"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--017"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--018"></div>
+                    </div>
+                    <div class="main-section__widgets-group">
+                      <div class="main-section__widgets-item main-section__widgets-item--001"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--002"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--003"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--004"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--005"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--006"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--007"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--008"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--009"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--010"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--011"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--012"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--013"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--014"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--015"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--016"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--017"></div>
+                      <div class="main-section__widgets-item main-section__widgets-item--018"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <section class="main-section main-section--003">
+              <div class="main-section__inner">
+                <h2 class="main-section__title">Maintenance</h2>
+                <p class="main-section__big-text">
+                  전기차 고장 나면 어쩌지?<br />
+                  정비는?
+                </p>
+                <p class="main-section__text">
+                  블루링크 플릿은 차량 고장 시<br />
+                  즉시 차량관리자에게 알림 SMS를 전송하며,<br />
+                  모바일을 통해<br />
+                  정비요청까지 한번에 처리할 수 있습니다.
+                </p>
+              </div>
+              <div class="main-section__visual">
+                <div class="main-section__visual-video">
+                  <video muted playsinline>
+                    <source src="/desktop/video/main-maintenance.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </section>
+
+            <section class="main-section main-section--middle main-section--004">
+              <div class="main-section__inner">
+                <h2 class="main-section__title">Safety & Efficient</h2>
+                <p class="main-section__big-text">
+                  차량을 안전하고,<br />
+                  효율적으로 운행해보세요.
+                </p>
+                <p class="main-section__text">
+                  블루링크 플릿은 차량의 주행분석 데이터를<br />
+                  활용하여 운전자의 안전운전 향상과<br />
+                  회사의 차량 운영 효율이 높아질 수 있도록<br />
+                  도움을 드립니다.
+                </p>
+              </div>
+              <div class="main-section__visual">
+                <div class="main-section__object main-section__object--001"></div>
+                <div class="main-section__object main-section__object--002"></div>
+                <div class="main-section__object main-section__object--003"></div>
+                <div class="main-section__object main-section__object--004"></div>
+              </div>
+            </section>
+
+            <section class="main-section main-section--middle main-section--005">
+              <div class="main-section__inner">
+                <h2 class="main-section__title">Map</h2>
+                <p class="main-section__big-text">
+                  더 강력해진<br />
+                  차량관제 화면을 만나보세요.
+                </p>
+                <p class="main-section__text">
+                  실시간 차량관제를 통해 위치 및 차량 상태 뿐만 아니라<br />
+                  클러스터 정보를 제공하여<br />
+                  차량속도, 배터리상태, 전압등의 정보를 볼 수 있습니다.
+                </p>
+              </div>
+              <div class="main-section__visual">
+                <div class="main-section__object main-section__object--001"></div>
+                <div class="main-section__object main-section__object--002"></div>
+                <div class="main-section__object main-section__object--003"></div>
+                <div class="main-section__object main-section__object--004"></div>
+                <div class="main-section__object main-section__object--005"></div>
+                <div class="main-section__object main-section__object--006"></div>
+                <div class="main-section__object main-section__object--007"></div>
+              </div>
+            </section>
+
+            <section class="main-section main-section--006">
+              <div class="main-section__inner">
+                <h2 class="main-section__title">Green Energy</h2>
+                <p class="main-section__big-text">
+                  블루링크 플릿을 사용하면<br />
+                  그린에너지 실천에 동참할 수 있어요.
+                </p>
+                <p class="main-section__text">
+                  차량을 운행할 때마다 온실가스를 저감하여 탄소나무를 심는 효과가 발생해요~!<br />
+                  우리회사가 탄소나무를 얼마나 만들어 친환경에 기여했는지 알 수 있어요.
+                </p>
+              </div>
+            </section>
+
+            <section class="main-section main-section--video main-section--007" id="mainSection2">
+              <div class="main-section__inner">
+                <h2 class="main-section__title">블루링크 플릿 소개 영상</h2>
+                <p class="main-section__big-text">블루링크 플릿을 미리 만나보세요.</p>
+                <div class="main-section__video">
+                  <div style="line-height: 540px; text-align: center; background-color: #22313b">영상 영역</div>
+                </div>
+                <div class="main-section__notice">
+                  <p class="main-section__notice-item">
+                    블루링크 플릿 2.0은 일렉시티, 일렉시티 이층, 일렉시티 타운, 일렉시티 수소전기, 유니버스 수소전기 차종에 한하여 서비스되며,<br />
+                    카운티 일렉트릭, 유니버스, 파비스, 엑시언트프로, 엑시언트수소 차종은 차량관제 서비스만 제공됩니다.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="main-section main-section--video main-section--008" id="mainSection3">
+              <div class="main-section__inner">
+                <h2 class="main-section__title">블루링크 플릿 사용 가이드 영상</h2>
+                <p class="main-section__big-text">
+                  블루링크 플릿의 주요 기능 사용법을<br />
+                  안내해드립니다.
+                </p>
+                <div class="main-section__video">
+                  <div style="line-height: 540px; text-align: center; background-color: #22313b">영상 영역</div>
+                </div>
+              </div>
+            </section>
+            <!-- //2022.10.07 : mod : 컨텐츠 적용 -->
+
+            <!-- top button -->
+            <div class="top-button-area">
+              <a href="#wrap" class="top-button js-top-button">
+                <span class="top-button__text">TOP</span>
+              </a>
+            </div>
+            <!-- //top button -->
+          </div>
+        </article>
+        <!-- //contents -->
+
+        <!-- footer -->
+        <footer class="footer">
+          <div class="footer__inner">
+            <h2 class="footer__logo">
+              <a href="" class="footer__logo-link">
+                <span class="for-a11y">Bluelink Fleet</span>
+              </a>
+            </h2>
+            <div class="footer__contents">
+              <ul class="footer__info">
+                <li class="footer__info-item">고객센터(상용) 080-200-6000</li>
+                <li class="footer__info-item">상용 블루링크 센터 1899-8884</li>
+              </ul>
+              <ul class="footer__nav">
+                <!-- 2022.10.21 : add : href 값 변경 및 target 속성 추가 -->
+                <li class="footer__nav-item">
+                  <a href="https://www.hyundai.com/content/hyundai/kr/ko/personal-information.html?sub=005" target="_blank" class="footer__nav-link">개인정보 처리방침</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="https://www.hyundai.com/content/hyundai/kr/ko/agreements.html?sub=005" target="_blank" class="footer__nav-link">이용약관</a>
+                </li>
+                <!-- //2022.10.21 : add : href 값 변경 및 target 속성 추가 -->
+                <li class="footer__nav-item">
+                  <a href="" class="footer__nav-link">데이터 분석 기준 안내</a>
+                </li>
+              </ul>
+              <address class="footer__copy">&copy; Hyundai Motor Company. All rights reserved.</address>
+            </div>
+            <div class="footer__right">
+              <!-- 2022.10.05 : add : 푸터 family site 추가 -->
+              <div class="ui-dropdown js-ui-dropdown">
+                <div class="ui-dropdown__head">
+                  <div class="ui-dropdown__text">Family Site</div>
+                  <button type="button" class="ui-button ui-dropdown__opener js-ui-dropdown__opener">
+                    <span class="for-a11y">
+                      패밀리 사이트 메뉴
+                      <span class="open-text">open</span>
+                      <span class="close-text">close</span>
+                    </span>
+                  </button>
+                </div>
+                <div class="ui-dropdown__layer js-ui-dropdown__layer">
+                  <div class="ui-dropdown__contents">
+                    <ul class="ui-dropdown__list">
+                      <li class="ui-dropdown__item">
+                        <a href="" class="ui-dropdown__link">현대자동차</a>
+                      </li>
+                      <li class="ui-dropdown__item">
+                        <a href="" class="ui-dropdown__link">현대트럭앤버스</a>
+                      </li>
+                      <li class="ui-dropdown__item">
+                        <a href="" class="ui-dropdown__link">블루링크플릿 - 유럽</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!--// 2022.10.05 : add : 푸터 family site 추가 -->
+              <ul class="footer__sns">
+                <li class="footer__sns-item">
+                  <a href="" class="footer__sns-link footer__sns-link--youtube">
+                    <span class="for-a11y">YouTube</span>
+                  </a>
+                </li>
+                <li class="footer__sns-item">
+                  <a href="" class="footer__sns-link footer__sns-link--naver-post">
+                    <span class="for-a11y">네이버 포스트</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+        <!-- //footer -->
+      </div>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript" src="/desktop/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/simplebar/simplebar.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/sortablejs/sortable.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/desktop/js/ui-script.js"></script>
+    <script type="text/javascript" src="/desktop/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <!-- //script -->
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <path data-name="사각형 19375" style="fill:none" d="M0 0h40v40H0z"/>
+    <path data-name="사각형 9624" transform="translate(11 13.5)" style="fill:#78909c" d="M0 0h18v1.5H0z"/>
+    <g data-name="사각형 9625" style="stroke:#78909c;stroke-width:1.5px;fill:none">
+        <path style="stroke:none" d="M0 0h8v4.5H0z" transform="translate(16 10.5)"/>
+        <path style="fill:none" d="M.75.75h6.5v3H.75z" transform="translate(16 10.5)"/>
+    </g>
+    <g data-name="사각형 9626" style="stroke:#78909c;stroke-width:1.5px;fill:none">
+        <path style="stroke:none" d="M0 0h14v16H0z" transform="translate(13 13.5)"/>
+        <path style="fill:none" d="M.75.75h12.5v14.5H.75z" transform="translate(13 13.5)"/>
+    </g>
+    <path data-name="사각형 9690" transform="translate(17 18.5)" style="fill:#78909c" d="M0 0h1.5v6H0z"/>
+    <path data-name="사각형 9691" transform="translate(21.5 18.5)" style="fill:#78909c" d="M0 0h1.5v6H0z"/>
+</svg>

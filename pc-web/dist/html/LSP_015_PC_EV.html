@@ -1,0 +1,2332 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/desktop/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/simplebar/simplebar.min.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="layout-wrap">
+        <!-- skip-nav -->
+        <nav class="skip-nav">
+          <h2 class="for-a11y">Skip navigation</h2>
+          <ul class="skip-nav__list">
+            <li class="skip-nav__item">
+              <a href="#header" class="skip-nav__link">Header</a>
+            </li>
+            <li class="skip-nav__item">
+              <a href="#gnb" class="skip-nav__link">Global navigation bar</a>
+            </li>
+            <li class="skip-nav__item">
+              <a href="#contents" class="skip-nav__link">Contents</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- //skip-nav -->
+
+        <!-- toast-alert -->
+        <div class="ui-toast-alert" id="globalToastAlert"></div>
+        <!-- //toast-alert -->
+
+        <!-- header -->
+        <div class="fix-top-wrap">
+          <header class="header" id="header">
+            <div class="header__left">
+              <h1 class="header__logo">
+                <a href="" class="header__logo-link">
+                  <span class="for-a11y">Bluelink Fleet</span>
+                </a>
+              </h1>
+            </div>
+            <div class="header__right">
+              <!-- 2022.09.22 : mod : 프로필 이미지 영역 추가로 구조 수정 -->
+              <div class="header__my">
+                <!-- DD : 이미지 없을 때 -->
+                <a href="" class="header__my-photo">
+                  <span class="header__my-photo-inner"></span>
+                </a>
+                <!-- //DD : 이미지 없을 때 -->
+
+                <!-- DD : 이미지 에러 -->
+                <a href="" class="header__my-photo">
+                  <span class="header__my-photo-inner">
+                    <img src="/desktop/images/_dummy/" alt="" onerror="this.parentNode.className += ' is-error';" />
+                  </span>
+                </a>
+                <!-- //DD : 이미지 에러 -->
+
+                <!-- DD : 이미지 있을 때 -->
+                <a href="" class="header__my-photo">
+                  <span class="header__my-photo-inner">
+                    <img src="/desktop/images/_dummy/my-photo.png" alt="" onerror="this.parentNode.className += ' is-error';" />
+                  </span>
+                </a>
+                <!-- //DD : 이미지 있을 때-->
+
+                <p class="header__my-text"><strong>현대운수</strong>님 안녕하세요.</p>
+              </div>
+              <!-- //2022.09.22 : mod : 프로필 이미지 영역 추가로 구조 수정 -->
+              <ul class="header__nav">
+                <li class="header__nav-item header__nav-item--add">
+                  <button type="button" class="ui-button ui-basic-button ui-basic-button--small ui-basic-button--quinary ui-basic-button--icon ui-basic-button--icon-add">
+                    <span class="ui-basic-button__text">차량등록</span>
+                  </button>
+                </li>
+                <!-- 2022.09.16 : mod : 헤더 메뉴 디자인 변경으로 인한 구조 변경 -->
+                <li class="header__nav-item">
+                  <a href="" class="header__nav-link">
+                    <span class="header__nav-icon header__nav-icon--carlist"></span>
+                    <span class="header__nav-text">차량목록</span>
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="" class="header__nav-link" data-layer-open="layer-notice" data-toggle="true">
+                    <span class="header__nav-icon header__nav-icon--notice">
+                      <span class="header__nav-count">
+                        <span class="for-a11y">(신규</span>
+                        <span class="header__nav-count-text">10</span>
+                        <span class="for-a11y">개)</span>
+                      </span>
+                    </span>
+                    <span class="header__nav-text">공지사항</span>
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="" class="header__nav-link" data-layer-open="layer-push" data-toggle="true">
+                    <span class="header__nav-icon header__nav-icon--push">
+                      <span class="header__nav-count">
+                        <span class="for-a11y">(신규</span>
+                        <span class="header__nav-count-text">99+</span>
+                        <span class="for-a11y">개)</span>
+                      </span>
+                    </span>
+                    <span class="header__nav-text">알림</span>
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="" class="header__nav-link">
+                    <span class="header__nav-icon header__nav-icon--logout"></span>
+                    <span class="header__nav-text">로그아웃</span>
+                  </a>
+                </li>
+                <!-- //2022.09.16 : mod : 헤더 메뉴 디자인 변경으로 인한 구조 변경 -->
+              </ul>
+            </div>
+          </header>
+        </div>
+        <!-- //header -->
+
+        <!-- 2022.07.07 : add : 알림, 공지사항 레이어 추가 -->
+        <!-- 알림 -->
+        <div class="notice-layer" data-layer="layer-push" data-scroll-block="false" data-cycle-focus="false">
+          <div class="notice-layer__block">
+            <div class="notice-layer__head">
+              <h2 class="notice-layer__title">알림</h2>
+              <button type="button" class="ui-button notice-layer__close" data-role="layerClose">
+                <span class="for-a11y">알림 레이어 닫기</span>
+              </button>
+            </div>
+            <div class="notice-layer__body">
+              <div class="notice-layer__body-scroller ui-scroller">
+                <!-- Case : 데이터 없을 때 -->
+                <div class="notice-empty notice-empty--push">
+                  <p class="notice-empty__text">등록된 알림이 없습니다.</p>
+                </div>
+                <!-- //Case : 데이터 없을 때 -->
+
+                <!-- Case : 데이터 있을 때 -->
+                <div class="notice-accordion">
+                  <ul class="notice-accordion__list js-ui-accordion">
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">고장알림 - 06가2345<span class="ui-require" aria-label="(신규)"></span></h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            차량명 : 000가0000<br />
+                            차대번호 : 00000000000000000<br />
+                            고장코드 : P1BBA04<br />
+                            카테코리 : 제어기명(최대10자)<br /><br />
+
+                            해당 차량에서 고장이 발생하였습니다.<br />
+                            자세한 사항은 아래의 링크를 통해 확인하여 주세요.<br /><br />
+
+                            https://Hyundai.com/bluelinkfleet.vin_KMQTEST1111111111
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">고장알림 - 06가2345<span class="ui-require" aria-label="(신규)"></span></h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            차량명 : 000가0000<br />
+                            차대번호 : 00000000000000000<br />
+                            고장코드 : P1BBA04<br />
+                            카테코리 : 제어기명(최대10자)<br /><br />
+
+                            해당 차량에서 고장이 발생하였습니다.<br />
+                            자세한 사항은 아래의 링크를 통해 확인하여 주세요.<br /><br />
+
+                            https://Hyundai.com/bluelinkfleet.vin_KMQTEST1111111111
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">고장알림 - 06가2345</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            차량명 : 000가0000<br />
+                            차대번호 : 00000000000000000<br />
+                            고장코드 : P1BBA04<br />
+                            카테코리 : 제어기명(최대10자)<br /><br />
+
+                            해당 차량에서 고장이 발생하였습니다.<br />
+                            자세한 사항은 아래의 링크를 통해 확인하여 주세요.<br /><br />
+
+                            https://Hyundai.com/bluelinkfleet.vin_KMQTEST1111111111
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">고장알림 - 06가2345</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            차량명 : 000가0000<br />
+                            차대번호 : 00000000000000000<br />
+                            고장코드 : P1BBA04<br />
+                            카테코리 : 제어기명(최대10자)<br /><br />
+
+                            해당 차량에서 고장이 발생하였습니다.<br />
+                            자세한 사항은 아래의 링크를 통해 확인하여 주세요.<br /><br />
+
+                            https://Hyundai.com/bluelinkfleet.vin_KMQTEST1111111111
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">고장알림 - 06가2345</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            차량명 : 000가0000<br />
+                            차대번호 : 00000000000000000<br />
+                            고장코드 : P1BBA04<br />
+                            카테코리 : 제어기명(최대10자)<br /><br />
+
+                            해당 차량에서 고장이 발생하였습니다.<br />
+                            자세한 사항은 아래의 링크를 통해 확인하여 주세요.<br /><br />
+
+                            https://Hyundai.com/bluelinkfleet.vin_KMQTEST1111111111
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">고장알림 - 06가2345</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            차량명 : 000가0000<br />
+                            차대번호 : 00000000000000000<br />
+                            고장코드 : P1BBA04<br />
+                            카테코리 : 제어기명(최대10자)<br /><br />
+
+                            해당 차량에서 고장이 발생하였습니다.<br />
+                            자세한 사항은 아래의 링크를 통해 확인하여 주세요.<br /><br />
+
+                            https://Hyundai.com/bluelinkfleet.vin_KMQTEST1111111111
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">고장알림 - 06가2345</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            차량명 : 000가0000<br />
+                            차대번호 : 00000000000000000<br />
+                            고장코드 : P1BBA04<br />
+                            카테코리 : 제어기명(최대10자)<br /><br />
+
+                            해당 차량에서 고장이 발생하였습니다.<br />
+                            자세한 사항은 아래의 링크를 통해 확인하여 주세요.<br /><br />
+
+                            https://Hyundai.com/bluelinkfleet.vin_KMQTEST1111111111
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">고장알림 - 06가2345</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            차량명 : 000가0000<br />
+                            차대번호 : 00000000000000000<br />
+                            고장코드 : P1BBA04<br />
+                            카테코리 : 제어기명(최대10자)<br /><br />
+
+                            해당 차량에서 고장이 발생하였습니다.<br />
+                            자세한 사항은 아래의 링크를 통해 확인하여 주세요.<br /><br />
+
+                            https://Hyundai.com/bluelinkfleet.vin_KMQTEST1111111111
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">고장알림 - 06가2345</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            차량명 : 000가0000<br />
+                            차대번호 : 00000000000000000<br />
+                            고장코드 : P1BBA04<br />
+                            카테코리 : 제어기명(최대10자)<br /><br />
+
+                            해당 차량에서 고장이 발생하였습니다.<br />
+                            자세한 사항은 아래의 링크를 통해 확인하여 주세요.<br /><br />
+
+                            https://Hyundai.com/bluelinkfleet.vin_KMQTEST1111111111
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">고장알림 - 06가2345</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            차량명 : 000가0000<br />
+                            차대번호 : 00000000000000000<br />
+                            고장코드 : P1BBA04<br />
+                            카테코리 : 제어기명(최대10자)<br /><br />
+
+                            해당 차량에서 고장이 발생하였습니다.<br />
+                            자세한 사항은 아래의 링크를 통해 확인하여 주세요.<br /><br />
+
+                            https://Hyundai.com/bluelinkfleet.vin_KMQTEST1111111111
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">고장알림 - 06가2345</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            차량명 : 000가0000<br />
+                            차대번호 : 00000000000000000<br />
+                            고장코드 : P1BBA04<br />
+                            카테코리 : 제어기명(최대10자)<br /><br />
+
+                            해당 차량에서 고장이 발생하였습니다.<br />
+                            자세한 사항은 아래의 링크를 통해 확인하여 주세요.<br /><br />
+
+                            https://Hyundai.com/bluelinkfleet.vin_KMQTEST1111111111
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">고장알림 - 06가2345</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            차량명 : 000가0000<br />
+                            차대번호 : 00000000000000000<br />
+                            고장코드 : P1BBA04<br />
+                            카테코리 : 제어기명(최대10자)<br /><br />
+
+                            해당 차량에서 고장이 발생하였습니다.<br />
+                            자세한 사항은 아래의 링크를 통해 확인하여 주세요.<br /><br />
+
+                            https://Hyundai.com/bluelinkfleet.vin_KMQTEST1111111111
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">고장알림 - 06가2345</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            차량명 : 000가0000<br />
+                            차대번호 : 00000000000000000<br />
+                            고장코드 : P1BBA04<br />
+                            카테코리 : 제어기명(최대10자)<br /><br />
+
+                            해당 차량에서 고장이 발생하였습니다.<br />
+                            자세한 사항은 아래의 링크를 통해 확인하여 주세요.<br /><br />
+
+                            https://Hyundai.com/bluelinkfleet.vin_KMQTEST1111111111
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">고장알림 - 06가2345</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            차량명 : 000가0000<br />
+                            차대번호 : 00000000000000000<br />
+                            고장코드 : P1BBA04<br />
+                            카테코리 : 제어기명(최대10자)<br /><br />
+
+                            해당 차량에서 고장이 발생하였습니다.<br />
+                            자세한 사항은 아래의 링크를 통해 확인하여 주세요.<br /><br />
+
+                            https://Hyundai.com/bluelinkfleet.vin_KMQTEST1111111111
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">고장알림 - 06가2345</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            차량명 : 000가0000<br />
+                            차대번호 : 00000000000000000<br />
+                            고장코드 : P1BBA04<br />
+                            카테코리 : 제어기명(최대10자)<br /><br />
+
+                            해당 차량에서 고장이 발생하였습니다.<br />
+                            자세한 사항은 아래의 링크를 통해 확인하여 주세요.<br /><br />
+
+                            https://Hyundai.com/bluelinkfleet.vin_KMQTEST1111111111
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <button type="button" class="ui-button more-button">
+                  <span class="more-button__text">더보기</span>
+                </button>
+                <!-- //Case : 데이터 있을 때 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //알림 -->
+
+        <!-- 공지사항 -->
+        <div class="notice-layer" data-layer="layer-notice" data-scroll-block="false" data-cycle-focus="false">
+          <div class="notice-layer__block">
+            <div class="notice-layer__head">
+              <h2 class="notice-layer__title">공지사항</h2>
+              <button type="button" class="ui-button notice-layer__close" data-role="layerClose">
+                <span class="for-a11y">공지사항 레이어 닫기</span>
+              </button>
+            </div>
+            <div class="notice-layer__body">
+              <div class="notice-layer__body-scroller ui-scroller">
+                <!-- Case : 데이터 없을 때 -->
+                <div class="notice-empty">
+                  <p class="notice-empty__text">등록된 공지사항이 없습니다.</p>
+                </div>
+                <!-- //Case : 데이터 없을 때 -->
+
+                <!-- Case : 데이터 있을 때 -->
+                <div class="notice-accordion">
+                  <ul class="notice-accordion__list js-ui-accordion">
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">공지사항 타이틀<span class="ui-require" aria-label="(신규)"></span></h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            안녕하세요.<br />
+                            시스템 개선 작업으로 인해 블루링크 일부 서비스가 일시 중지됨을 알려드립니다.<br /><br />
+
+                            ■ 시스템 개선 일시 : 2022년 6월 28일 (화) 02시 00분 ~ 03시 00분<br />
+                            ■ 대상 서비스 : 블루링크 모바일 앱 관련 서비스 전체<br /><br />
+
+                            고객님께 불편을 끼쳐드려 죄송합니다.<br />
+                            서비스 품질 향상을 위한 불가피한 조치이오니 고객님의 너그러운 양해 부탁드립니다.<br /><br />
+
+                            감사합니다.
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">공지사항 타이틀<span class="ui-require" aria-label="(신규)"></span></h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            안녕하세요.<br />
+                            시스템 개선 작업으로 인해 블루링크 일부 서비스가 일시 중지됨을 알려드립니다.<br /><br />
+
+                            ■ 시스템 개선 일시 : 2022년 6월 28일 (화) 02시 00분 ~ 03시 00분<br />
+                            ■ 대상 서비스 : 블루링크 모바일 앱 관련 서비스 전체<br /><br />
+
+                            고객님께 불편을 끼쳐드려 죄송합니다.<br />
+                            서비스 품질 향상을 위한 불가피한 조치이오니 고객님의 너그러운 양해 부탁드립니다.<br /><br />
+
+                            감사합니다.
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">공지사항 타이틀<span class="ui-require" aria-label="(신규)"></span></h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            안녕하세요.<br />
+                            시스템 개선 작업으로 인해 블루링크 일부 서비스가 일시 중지됨을 알려드립니다.<br /><br />
+
+                            ■ 시스템 개선 일시 : 2022년 6월 28일 (화) 02시 00분 ~ 03시 00분<br />
+                            ■ 대상 서비스 : 블루링크 모바일 앱 관련 서비스 전체<br /><br />
+
+                            고객님께 불편을 끼쳐드려 죄송합니다.<br />
+                            서비스 품질 향상을 위한 불가피한 조치이오니 고객님의 너그러운 양해 부탁드립니다.<br /><br />
+
+                            감사합니다.
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">공지사항 타이틀</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            안녕하세요.<br />
+                            시스템 개선 작업으로 인해 블루링크 일부 서비스가 일시 중지됨을 알려드립니다.<br /><br />
+
+                            ■ 시스템 개선 일시 : 2022년 6월 28일 (화) 02시 00분 ~ 03시 00분<br />
+                            ■ 대상 서비스 : 블루링크 모바일 앱 관련 서비스 전체<br /><br />
+
+                            고객님께 불편을 끼쳐드려 죄송합니다.<br />
+                            서비스 품질 향상을 위한 불가피한 조치이오니 고객님의 너그러운 양해 부탁드립니다.<br /><br />
+
+                            감사합니다.
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">공지사항 타이틀</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            안녕하세요.<br />
+                            시스템 개선 작업으로 인해 블루링크 일부 서비스가 일시 중지됨을 알려드립니다.<br /><br />
+
+                            ■ 시스템 개선 일시 : 2022년 6월 28일 (화) 02시 00분 ~ 03시 00분<br />
+                            ■ 대상 서비스 : 블루링크 모바일 앱 관련 서비스 전체<br /><br />
+
+                            고객님께 불편을 끼쳐드려 죄송합니다.<br />
+                            서비스 품질 향상을 위한 불가피한 조치이오니 고객님의 너그러운 양해 부탁드립니다.<br /><br />
+
+                            감사합니다.
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">공지사항 타이틀</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            안녕하세요.<br />
+                            시스템 개선 작업으로 인해 블루링크 일부 서비스가 일시 중지됨을 알려드립니다.<br /><br />
+
+                            ■ 시스템 개선 일시 : 2022년 6월 28일 (화) 02시 00분 ~ 03시 00분<br />
+                            ■ 대상 서비스 : 블루링크 모바일 앱 관련 서비스 전체<br /><br />
+
+                            고객님께 불편을 끼쳐드려 죄송합니다.<br />
+                            서비스 품질 향상을 위한 불가피한 조치이오니 고객님의 너그러운 양해 부탁드립니다.<br /><br />
+
+                            감사합니다.
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">공지사항 타이틀</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            안녕하세요.<br />
+                            시스템 개선 작업으로 인해 블루링크 일부 서비스가 일시 중지됨을 알려드립니다.<br /><br />
+
+                            ■ 시스템 개선 일시 : 2022년 6월 28일 (화) 02시 00분 ~ 03시 00분<br />
+                            ■ 대상 서비스 : 블루링크 모바일 앱 관련 서비스 전체<br /><br />
+
+                            고객님께 불편을 끼쳐드려 죄송합니다.<br />
+                            서비스 품질 향상을 위한 불가피한 조치이오니 고객님의 너그러운 양해 부탁드립니다.<br /><br />
+
+                            감사합니다.
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">공지사항 타이틀</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            안녕하세요.<br />
+                            시스템 개선 작업으로 인해 블루링크 일부 서비스가 일시 중지됨을 알려드립니다.<br /><br />
+
+                            ■ 시스템 개선 일시 : 2022년 6월 28일 (화) 02시 00분 ~ 03시 00분<br />
+                            ■ 대상 서비스 : 블루링크 모바일 앱 관련 서비스 전체<br /><br />
+
+                            고객님께 불편을 끼쳐드려 죄송합니다.<br />
+                            서비스 품질 향상을 위한 불가피한 조치이오니 고객님의 너그러운 양해 부탁드립니다.<br /><br />
+
+                            감사합니다.
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">공지사항 타이틀</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            안녕하세요.<br />
+                            시스템 개선 작업으로 인해 블루링크 일부 서비스가 일시 중지됨을 알려드립니다.<br /><br />
+
+                            ■ 시스템 개선 일시 : 2022년 6월 28일 (화) 02시 00분 ~ 03시 00분<br />
+                            ■ 대상 서비스 : 블루링크 모바일 앱 관련 서비스 전체<br /><br />
+
+                            고객님께 불편을 끼쳐드려 죄송합니다.<br />
+                            서비스 품질 향상을 위한 불가피한 조치이오니 고객님의 너그러운 양해 부탁드립니다.<br /><br />
+
+                            감사합니다.
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">공지사항 타이틀</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            안녕하세요.<br />
+                            시스템 개선 작업으로 인해 블루링크 일부 서비스가 일시 중지됨을 알려드립니다.<br /><br />
+
+                            ■ 시스템 개선 일시 : 2022년 6월 28일 (화) 02시 00분 ~ 03시 00분<br />
+                            ■ 대상 서비스 : 블루링크 모바일 앱 관련 서비스 전체<br /><br />
+
+                            고객님께 불편을 끼쳐드려 죄송합니다.<br />
+                            서비스 품질 향상을 위한 불가피한 조치이오니 고객님의 너그러운 양해 부탁드립니다.<br /><br />
+
+                            감사합니다.
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">공지사항 타이틀</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            안녕하세요.<br />
+                            시스템 개선 작업으로 인해 블루링크 일부 서비스가 일시 중지됨을 알려드립니다.<br /><br />
+
+                            ■ 시스템 개선 일시 : 2022년 6월 28일 (화) 02시 00분 ~ 03시 00분<br />
+                            ■ 대상 서비스 : 블루링크 모바일 앱 관련 서비스 전체<br /><br />
+
+                            고객님께 불편을 끼쳐드려 죄송합니다.<br />
+                            서비스 품질 향상을 위한 불가피한 조치이오니 고객님의 너그러운 양해 부탁드립니다.<br /><br />
+
+                            감사합니다.
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">공지사항 타이틀</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            안녕하세요.<br />
+                            시스템 개선 작업으로 인해 블루링크 일부 서비스가 일시 중지됨을 알려드립니다.<br /><br />
+
+                            ■ 시스템 개선 일시 : 2022년 6월 28일 (화) 02시 00분 ~ 03시 00분<br />
+                            ■ 대상 서비스 : 블루링크 모바일 앱 관련 서비스 전체<br /><br />
+
+                            고객님께 불편을 끼쳐드려 죄송합니다.<br />
+                            서비스 품질 향상을 위한 불가피한 조치이오니 고객님의 너그러운 양해 부탁드립니다.<br /><br />
+
+                            감사합니다.
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">공지사항 타이틀</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            안녕하세요.<br />
+                            시스템 개선 작업으로 인해 블루링크 일부 서비스가 일시 중지됨을 알려드립니다.<br /><br />
+
+                            ■ 시스템 개선 일시 : 2022년 6월 28일 (화) 02시 00분 ~ 03시 00분<br />
+                            ■ 대상 서비스 : 블루링크 모바일 앱 관련 서비스 전체<br /><br />
+
+                            고객님께 불편을 끼쳐드려 죄송합니다.<br />
+                            서비스 품질 향상을 위한 불가피한 조치이오니 고객님의 너그러운 양해 부탁드립니다.<br /><br />
+
+                            감사합니다.
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">공지사항 타이틀</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            안녕하세요.<br />
+                            시스템 개선 작업으로 인해 블루링크 일부 서비스가 일시 중지됨을 알려드립니다.<br /><br />
+
+                            ■ 시스템 개선 일시 : 2022년 6월 28일 (화) 02시 00분 ~ 03시 00분<br />
+                            ■ 대상 서비스 : 블루링크 모바일 앱 관련 서비스 전체<br /><br />
+
+                            고객님께 불편을 끼쳐드려 죄송합니다.<br />
+                            서비스 품질 향상을 위한 불가피한 조치이오니 고객님의 너그러운 양해 부탁드립니다.<br /><br />
+
+                            감사합니다.
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="notice-accordion__item js-ui-accordion__item">
+                      <div class="notice-accordion__head">
+                        <h3 class="notice-accordion__title">공지사항 타이틀</h3>
+                        <p class="notice-accordion__date">22-06-01</p>
+                        <button type="button" class="ui-button notice-accordion__opener js-ui-accordion__opener">
+                          <span class="for-a11y">
+                            상세 내용
+                            <span class="open-text">열기</span>
+                            <span class="close-text">닫기</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="notice-accordion__layer js-ui-accordion__layer">
+                        <div class="notice-accordion__contents">
+                          <section class="notice-data">
+                            안녕하세요.<br />
+                            시스템 개선 작업으로 인해 블루링크 일부 서비스가 일시 중지됨을 알려드립니다.<br /><br />
+
+                            ■ 시스템 개선 일시 : 2022년 6월 28일 (화) 02시 00분 ~ 03시 00분<br />
+                            ■ 대상 서비스 : 블루링크 모바일 앱 관련 서비스 전체<br /><br />
+
+                            고객님께 불편을 끼쳐드려 죄송합니다.<br />
+                            서비스 품질 향상을 위한 불가피한 조치이오니 고객님의 너그러운 양해 부탁드립니다.<br /><br />
+
+                            감사합니다.
+                          </section>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <button type="button" class="ui-button more-button">
+                  <span class="more-button__text">더보기</span>
+                </button>
+                <!-- //Case : 데이터 있을 때 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //공지사항 -->
+        <!-- //2022.07.07 : add : 알림, 공지사항 레이어 추가 -->
+
+        <!-- gnb -->
+        <nav class="gnb" id="gnb">
+          <h2 class="for-a11y">Global navigation bar</h2>
+          <div class="gnb__body">
+            <div class="gnb__scroller ui-scroller">
+              <ul class="gnb__list js-ui-accordion">
+                <li class="gnb__item">
+                  <div class="gnb__item-head">
+                    <a href="" class="gnb__link">
+                      <span class="gnb__icon gnb__icon--type-1"></span>
+                      <span class="gnb__link-text">대시보드</span>
+                    </a>
+                  </div>
+                </li>
+                <!-- DD : 현재 페이지면 is-active 클래스 값 추가 -->
+                <li class="gnb__item js-ui-accordion__item is-active">
+                  <div class="gnb__item-head">
+                    <span class="gnb__link">
+                      <span class="gnb__icon gnb__icon--type-2"></span>
+                      <span class="gnb__link-text">차량현황</span>
+                    </span>
+                    <button type="button" class="ui-button gnb__item-opener js-ui-accordion__opener">
+                      <span class="for-a11y">
+                        하위 메뉴
+                        <span class="open-text">열기</span>
+                        <span class="close-text">닫기</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="gnb__layer js-ui-accordion__layer">
+                    <div class="gnb__depth">
+                      <ul class="gnb__depth-list">
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">차량 고장 진단</span>
+                          </a>
+                        </li>
+                        <!-- DD : 현재 페이지면 is-active 클래스 값 추가 -->
+                        <li class="gnb__depth-item is-active">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">차량 주요 상태 정보</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">차량 관제</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="gnb__item js-ui-accordion__item">
+                  <div class="gnb__item-head">
+                    <span class="gnb__link">
+                      <span class="gnb__icon gnb__icon--type-3"></span>
+                      <span class="gnb__link-text">차량운영분석</span>
+                    </span>
+                    <button type="button" class="ui-button gnb__item-opener js-ui-accordion__opener">
+                      <span class="for-a11y">
+                        하위 메뉴
+                        <span class="open-text">열기</span>
+                        <span class="close-text">닫기</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="gnb__layer js-ui-accordion__layer">
+                    <div class="gnb__depth">
+                      <ul class="gnb__depth-list">
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">충전분석</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">가동률분석</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="gnb__item js-ui-accordion__item">
+                  <div class="gnb__item-head">
+                    <span class="gnb__link">
+                      <span class="gnb__icon gnb__icon--type-4"></span>
+                      <span class="gnb__link-text">주행분석</span>
+                    </span>
+                    <button type="button" class="ui-button gnb__item-opener js-ui-accordion__opener">
+                      <span class="for-a11y">
+                        하위 메뉴
+                        <span class="open-text">열기</span>
+                        <span class="close-text">닫기</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="gnb__layer js-ui-accordion__layer">
+                    <div class="gnb__depth">
+                      <ul class="gnb__depth-list">
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">안전지수</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">승객안전운행지수</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">제한속도초과운행지수</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">심야운행안전지수</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">전비등급</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">전력사용량</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="gnb__item js-ui-accordion__item">
+                  <div class="gnb__item-head">
+                    <span class="gnb__link">
+                      <span class="gnb__icon gnb__icon--type-5"></span>
+                      <span class="gnb__link-text">탄소배출/환경</span>
+                    </span>
+                    <button type="button" class="ui-button gnb__item-opener js-ui-accordion__opener">
+                      <span class="for-a11y">
+                        하위 메뉴
+                        <span class="open-text">열기</span>
+                        <span class="close-text">닫기</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="gnb__layer js-ui-accordion__layer">
+                    <div class="gnb__depth">
+                      <ul class="gnb__depth-list">
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">온실가스 배출 KAU</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">온실가스 감축 KOC</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">탄소나무숲</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">환경을 지키는 버스</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="gnb__item js-ui-accordion__item">
+                  <div class="gnb__item-head">
+                    <span class="gnb__link">
+                      <span class="gnb__icon gnb__icon--type-6"></span>
+                      <span class="gnb__link-text">리포트</span>
+                    </span>
+                    <button type="button" class="ui-button gnb__item-opener js-ui-accordion__opener">
+                      <span class="for-a11y">
+                        하위 메뉴
+                        <span class="open-text">열기</span>
+                        <span class="close-text">닫기</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="gnb__layer js-ui-accordion__layer">
+                    <div class="gnb__depth">
+                      <ul class="gnb__depth-list">
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">월간 리포트</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">정기점검리포트</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="gnb__item js-ui-accordion__item">
+                  <div class="gnb__item-head">
+                    <span class="gnb__link">
+                      <span class="gnb__icon gnb__icon--type-7"></span>
+                      <span class="gnb__link-text">다운로드</span>
+                    </span>
+                    <button type="button" class="ui-button gnb__item-opener js-ui-accordion__opener">
+                      <span class="for-a11y">
+                        하위 메뉴
+                        <span class="open-text">열기</span>
+                        <span class="close-text">닫기</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="gnb__layer js-ui-accordion__layer">
+                    <div class="gnb__depth">
+                      <ul class="gnb__depth-list">
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">DTG 다운로드</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="gnb__item js-ui-accordion__item">
+                  <div class="gnb__item-head">
+                    <span class="gnb__link">
+                      <span class="gnb__icon gnb__icon--type-8"></span>
+                      <span class="gnb__link-text">설정</span>
+                    </span>
+                    <button type="button" class="ui-button gnb__item-opener js-ui-accordion__opener">
+                      <span class="for-a11y">
+                        하위 메뉴
+                        <span class="open-text">열기</span>
+                        <span class="close-text">닫기</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="gnb__layer js-ui-accordion__layer">
+                    <div class="gnb__depth">
+                      <ul class="gnb__depth-list">
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">차량목록</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">노선정보관리</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">알림 연락처관리</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">기준정보관리</span>
+                          </a>
+                        </li>
+                        <li class="gnb__depth-item">
+                          <a href="" class="gnb__depth-link">
+                            <span class="gnb__depth-link-text">대시보드 카드 설정</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="gnb__foot">
+            <button type="button" class="ui-button gnb__opener">
+              <span class="for-a11y">
+                Global navigation bar
+                <span class="open-text">확장</span>
+                <span class="close-text">축소</span>
+              </span>
+            </button>
+          </div>
+        </nav>
+        <!-- //gnb -->
+
+        <!-- contents -->
+        <article class="contents-wrap" id="contents">
+          <div class="page-contents">
+            <div class="page-head">
+              <div class="page-head__left">
+                <h2 class="page-head__title">제한속도초과운행지수 <span class="font-weight-regular color-white">5월</span></h2>
+              </div>
+              <div class="page-head__right">
+                <div class="form-flex">
+                  <div class="form-flex-cell">
+                    <!-- 2022.08.16 : mod : 텍스트 수정 -->
+                    <p class="basic-text color-gray">분석기간 22.05.01 ~ 22.05.14</p>
+                  </div>
+                  <div class="form-flex-cell">
+                    <div class="ui-dropdown js-ui-dropdown input-width-sorting">
+                      <div class="ui-dropdown__head">
+                        <div class="ui-dropdown__text">2022.05</div>
+                        <button type="button" class="ui-button ui-dropdown__opener js-ui-dropdown__opener">
+                          <span class="for-a11y">
+                            분석기간 목록
+                            <span class="open-text">open</span>
+                            <span class="close-text">close</span>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="ui-dropdown__layer js-ui-dropdown__layer">
+                        <div class="ui-dropdown__contents">
+                          <ul class="ui-dropdown__list">
+                            <li class="ui-dropdown__item">
+                              <a href="" class="ui-dropdown__link">2022.05</a>
+                            </li>
+                            <li class="ui-dropdown__item">
+                              <a href="" class="ui-dropdown__link">2022.04 </a>
+                            </li>
+                            <li class="ui-dropdown__item">
+                              <a href="" class="ui-dropdown__link">2022.03 </a>
+                            </li>
+                            <li class="ui-dropdown__item">
+                              <a href="" class="ui-dropdown__link">2022.02 </a>
+                            </li>
+                            <li class="ui-dropdown__item">
+                              <a href="" class="ui-dropdown__link">2022.01 </a>
+                            </li>
+                            <li class="ui-dropdown__item">
+                              <a href="" class="ui-dropdown__link">2021.12 </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2022.09.22 : add : 설명문구 추가 -->
+            <div class="guide-content">
+              <p class="guide-content__text">
+                등록된 차량의 제한속도 초과 운행에 대해 분석하여 안전 지수를 제공합니다. 전국 평균과 우리 회사의 점수를 비교하여 양호,보통,주의 3단계로 운행 지수에 대해 안내합니다. <br />
+                각 운수사 별 관리하는 기준 제한 속도에 대해서는 설정>기준정보관리>제한속도초과운행지수>제한 속도에서 변경 가능합니다.
+              </p>
+              <p class="guide-content__text">※ 양호 : 전국버스평균 대비 상위 30%, 보통 : 전국 평균 대비 중위 40%, 위험 : 전국버스평균 대비 하위 30%</p>
+            </div>
+            <!-- //2022.09.22 : add : 설명문구 추가 -->
+
+            <div class="section">
+              <div class="card-list card-list--split-4">
+                <ul class="card-list__list">
+                  <!-- Case : 주의, 보통, 양호 -->
+                  <li class="card-list__item">
+                    <div class="card">
+                      <h3 class="card-month-title">3월</h3>
+                      <div class="value">
+                        <div class="value__num">76</div>
+                        <div class="value__unit">점</div>
+                      </div>
+                      <div class="info">
+                        <div class="info__title">전국버스평균 76점</div>
+                        <div class="info__text">주의가 필요해요!</div>
+                      </div>
+                      <div class="chart-box chart-box--status row-contents-group" id="chart1_1"></div>
+                    </div>
+                  </li>
+                  <li class="card-list__item">
+                    <div class="card">
+                      <h3 class="card-month-title">4월</h3>
+                      <div class="value">
+                        <div class="value__num">82</div>
+                        <div class="value__unit">점</div>
+                      </div>
+                      <div class="info">
+                        <div class="info__title">전국버스평균 82점</div>
+                        <div class="info__text">보통이에요!</div>
+                      </div>
+                      <div class="chart-box chart-box--status row-contents-group" id="chart1_2"></div>
+                    </div>
+                  </li>
+                  <li class="card-list__item card-list__item--per-500">
+                    <div class="card">
+                      <div class="card-extend">
+                        <div class="card-extend__left">
+                          <h3 class="card-month-title">5월</h3>
+                          <div class="value">
+                            <div class="value__num">88</div>
+                            <div class="value__unit">점</div>
+                          </div>
+                          <div class="info">
+                            <div class="info__title">전국버스평균 88점</div>
+                            <div class="info__text">양호해요!</div>
+                          </div>
+                          <div class="chart-box chart-box--status row-contents-group" id="chart1_3"></div>
+                        </div>
+                        <div class="card-extend__right">
+                          <div class="safe-info card__flexible is-good">
+                            <p class="safe-info__title">
+                              제한속도를<br />
+                              잘 준수하고 있어요.
+                            </p>
+                            <p class="safe-info__text">
+                              이번 달 제한속도초과운행지수는<br />
+                              전국버스업종에서 <span class="color-white">상위권</span>에 있을 것으로 예상됩니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- //Case : 주의, 보통, 양호 -->
+
+                  <!-- Case : 양호, 주의, 보통 -->
+                  <li class="card-list__item">
+                    <div class="card">
+                      <h3 class="card-month-title">3월</h3>
+                      <div class="value">
+                        <div class="value__num">88</div>
+                        <div class="value__unit">점</div>
+                      </div>
+                      <div class="info">
+                        <div class="info__title">전국버스평균 88점</div>
+                        <div class="info__text">양호해요!</div>
+                      </div>
+                      <div class="chart-box chart-box--status row-contents-group" id="chart1_1_a"></div>
+                    </div>
+                  </li>
+                  <li class="card-list__item">
+                    <div class="card">
+                      <h3 class="card-month-title">4월</h3>
+                      <div class="value">
+                        <div class="value__num">76</div>
+                        <div class="value__unit">점</div>
+                      </div>
+                      <div class="info">
+                        <div class="info__title">전국버스평균 76점</div>
+                        <div class="info__text">주의가 필요해요!</div>
+                      </div>
+                      <div class="chart-box chart-box--status row-contents-group" id="chart1_2_a"></div>
+                    </div>
+                  </li>
+                  <li class="card-list__item card-list__item--per-500">
+                    <div class="card">
+                      <div class="card-extend">
+                        <div class="card-extend__left">
+                          <h3 class="card-month-title">5월</h3>
+                          <div class="value">
+                            <div class="value__num">82</div>
+                            <div class="value__unit">점</div>
+                          </div>
+                          <div class="info">
+                            <div class="info__title">전국버스평균 82점</div>
+                            <div class="info__text">보통이에요!</div>
+                          </div>
+                          <div class="chart-box chart-box--status row-contents-group" id="chart1_3_a"></div>
+                        </div>
+                        <div class="card-extend__right">
+                          <div class="safe-info card__flexible is-normal">
+                            <p class="safe-info__title">
+                              제한속도초과운행지수 향상을<br />
+                              위해서 "주의"차량을 확인해주세요.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- //Case : 양호, 주의, 보통 -->
+
+                  <!-- Case : 차량 등록 전, 양호, 주의 -->
+                  <li class="card-list__item">
+                    <div class="ui-empty ui-empty--safe">
+                      <p class="ui-empty__text">차량 등록 전이므로 데이터가 없습니다.</p>
+                    </div>
+                  </li>
+                  <li class="card-list__item">
+                    <div class="card">
+                      <h3 class="card-month-title">4월</h3>
+                      <div class="value">
+                        <div class="value__num">88</div>
+                        <div class="value__unit">점</div>
+                      </div>
+                      <div class="info">
+                        <div class="info__title">전국버스평균 88점</div>
+                        <div class="info__text">양호해요!</div>
+                      </div>
+                      <div class="chart-box chart-box--status row-contents-group" id="chart1_2_b"></div>
+                    </div>
+                  </li>
+                  <li class="card-list__item card-list__item--per-500">
+                    <div class="card">
+                      <div class="card-extend">
+                        <div class="card-extend__left">
+                          <h3 class="card-month-title">5월</h3>
+                          <div class="value">
+                            <div class="value__num">76</div>
+                            <div class="value__unit">점</div>
+                          </div>
+                          <div class="info">
+                            <div class="info__title">전국버스평균 76점</div>
+                            <div class="info__text">주의가 필요해요!</div>
+                          </div>
+                          <div class="chart-box chart-box--status row-contents-group" id="chart1_3_b"></div>
+                        </div>
+                        <div class="card-extend__right">
+                          <div class="safe-info card__flexible is-danger">
+                            <p class="safe-info__title">
+                              제한속도초과운행지수<br />
+                              개선이 필요해요.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- //Case : 차량 등록 전, 양호, 주의 -->
+
+                  <!-- Case : 데이터 세개 모두 없을 때 -->
+                  <li class="card-list__item">
+                    <div class="ui-empty ui-empty--safe">
+                      <p class="ui-empty__text">차량 등록 전이므로 데이터가 없습니다.</p>
+                    </div>
+                  </li>
+                  <li class="card-list__item">
+                    <div class="ui-empty ui-empty--safe">
+                      <p class="ui-empty__text">차량 등록 전이므로 데이터가 없습니다.</p>
+                    </div>
+                  </li>
+                  <li class="card-list__item card-list__item--per-500">
+                    <div class="ui-empty ui-empty--safe ui-empty--no-data">
+                      <p class="ui-empty__text">데이터를 집계 중입니다.</p>
+                      <p class="ui-empty__sub-text">(내일부터 데이터를 확인할 수 있습니다.)</p>
+                    </div>
+                  </li>
+                  <!-- //Case : 데이터 세개 모두 없을 때 -->
+                </ul>
+              </div>
+            </div>
+
+            <section class="section">
+              <div class="section-head">
+                <div class="section-head__left">
+                  <h3 class="section-head__title">차량별 현황</h3>
+                </div>
+                <div class="section-head__right">
+                  <div class="form-flex">
+                    <div class="form-flex-cell">
+                      <form action="">
+                        <div class="ui-search input-width-search">
+                          <div class="ui-search__form">
+                            <div class="ui-input-block ui-search__input">
+                              <!-- 2022.08.19 : mod : js-search-keyword-target 클래스 값 및 id, autocomplete 속성 추가 -->
+                              <input type="search" class="ui-input js-search-keyword-target" title="차량 검색" placeholder="차량명(차량번호), 차종" autocomplete="off" id="carSearch" />
+                            </div>
+                            <button type="submit" class="ui-button ui-search__submit">
+                              <span class="for-a11y">검색</span>
+                            </button>
+                          </div>
+                          <div class="ui-search__layer">
+                            <div class="ui-search__contents ui-scroller">
+                              <ul class="ui-search__list">
+                                <!-- 2022.08.19 : del : 더미 데이터 스크립트로 추가함으로 제거
+                                <li class="ui-search__item">
+                                  <a href="" class="ui-search__link">
+                                    <span class="ui-search__text">76이4443</span>
+                                    <span class="ui-search__sub">일렉시티</span>
+                                  </a>
+                                </li>
+                                <li class="ui-search__item">
+                                  <a href="" class="ui-search__link">
+                                    <span class="ui-search__text">11나7473</span>
+                                    <span class="ui-search__sub">일렉시티2층</span>
+                                  </a>
+                                </li>
+                                <li class="ui-search__item">
+                                  <a href="" class="ui-search__link">
+                                    <span class="ui-search__text">32가0095</span>
+                                    <span class="ui-search__sub">일렉시티</span>
+                                  </a>
+                                </li>
+                                <li class="ui-search__item">
+                                  <a href="" class="ui-search__link">
+                                    <span class="ui-search__text">43가5820</span>
+                                    <span class="ui-search__sub">일렉시티 FCEV</span>
+                                  </a>
+                                </li>
+                                <li class="ui-search__item">
+                                  <a href="" class="ui-search__link">
+                                    <span class="ui-search__text">76이4443</span>
+                                    <span class="ui-search__sub">일렉시티</span>
+                                  </a>
+                                </li>
+                                <li class="ui-search__item">
+                                  <a href="" class="ui-search__link">
+                                    <span class="ui-search__text">11나7473</span>
+                                    <span class="ui-search__sub">일렉시티2층</span>
+                                  </a>
+                                </li>
+                                <li class="ui-search__item">
+                                  <a href="" class="ui-search__link">
+                                    <span class="ui-search__text">32가0095</span>
+                                    <span class="ui-search__sub">일렉시티</span>
+                                  </a>
+                                </li>
+                                <li class="ui-search__item">
+                                  <a href="" class="ui-search__link">
+                                    <span class="ui-search__text">43가5820</span>
+                                    <span class="ui-search__sub">일렉시티 FCEV</span>
+                                  </a>
+                                </li>
+                                -->
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="form-flex-cell">
+                      <div class="ui-dropdown js-ui-dropdown input-width-sorting">
+                        <div class="ui-dropdown__head">
+                          <!-- 2022.08.19 : mod : js-ui-dropdown__watch 클래스 값 추가 -->
+                          <div class="ui-dropdown__text js-ui-dropdown__watch">제한속도초과운행지수 낮은순</div>
+                          <button type="button" class="ui-button ui-dropdown__opener js-ui-dropdown__opener">
+                            <span class="for-a11y">
+                              정렬 메뉴
+                              <span class="open-text">open</span>
+                              <span class="close-text">close</span>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="ui-dropdown__layer js-ui-dropdown__layer">
+                          <div class="ui-dropdown__contents">
+                            <ul class="ui-dropdown__list">
+                              <li class="ui-dropdown__item">
+                                <!-- 2022.08.19 : mod : js-ui-dropdown__closer 클래스 값 및 data-dropdown-option 속성 추가 -->
+                                <a href="" class="ui-dropdown__link js-ui-dropdown__closer" data-dropdown-option="제한속도초과운행지수 낮은순">제한속도초과운행지수 낮은순</a>
+                              </li>
+                              <li class="ui-dropdown__item">
+                                <!-- 2022.08.19 : mod : js-ui-dropdown__closer 클래스 값 및 data-dropdown-option 속성 추가 -->
+                                <a href="" class="ui-dropdown__link js-ui-dropdown__closer" data-dropdown-option="제한속도초과운행지수 높은순">제한속도초과운행지수 높은순</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Case : 차량 없을 때 -->
+              <div class="ui-empty">
+                <p class="ui-empty__text">차량 등록 전이므로 데이터가 없습니다.</p>
+              </div>
+              <!-- //Case : 차량 없을 때 -->
+
+              <!-- Case : 검색 결과 없을 때 -->
+              <div class="ui-empty ui-empty--search-empty">
+                <p class="ui-empty__text">검색 결과가 없습니다.</p>
+              </div>
+              <!-- //Case : 검색 결과 없을 때 -->
+
+              <!-- Case : 집계 데이터 없을 때 -->
+              <div class="ui-empty ui-empty--no-data">
+                <p class="ui-empty__text">데이터를 집계 중입니다.</p>
+                <p class="ui-empty__sub-text">(내일부터 데이터를 확인할 수 있습니다.)</p>
+              </div>
+              <!-- //Case : 집계 데이터 없을 때 -->
+
+              <!-- list -->
+              <div class="card-list card-list--split-4">
+                <ul class="card-list__list">
+                  <li class="card-list__item">
+                    <div class="card">
+                      <!-- 2022.07.07 : del : 해당 컨텐츠는 상세가 없어 a 태그 제거
+                      <a href="" class="link-block">
+                      -->
+                      <div class="card-head row-contents">
+                        <div class="card-head__left">
+                          <h4 class="card-head__title">06가2345</h4>
+                          <div class="card-head__sub">일렉시티</div>
+                        </div>
+                      </div>
+                      <div class="car-status-info">
+                        <span class="face-status is-danger">
+                          <span class="face-status__text">주의</span>
+                        </span>
+                        <div class="car-status-info__contents">
+                          <div class="car-status-info__text">매우위험</div>
+                        </div>
+                      </div>
+                      <!-- 2022.07.07 : del : 해당 컨텐츠는 상세가 없어 a 태그 제거
+                      </a>
+                      -->
+                      <div class="box card__flexible row-contents">
+                        <div class="box__inner">
+                          <div class="chart-box chart-box--speeding" id="chart2_1"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card-list__item">
+                    <div class="card">
+                      <!-- 2022.07.07 : del : 해당 컨텐츠는 상세가 없어 a 태그 제거
+                      <a href="" class="link-block">
+                      -->
+                      <div class="card-head row-contents">
+                        <div class="card-head__left">
+                          <h4 class="card-head__title">07가2345</h4>
+                          <div class="card-head__sub">일렉시티</div>
+                        </div>
+                      </div>
+                      <div class="car-status-info">
+                        <span class="face-status is-danger">
+                          <span class="face-status__text">주의</span>
+                        </span>
+                        <div class="car-status-info__contents">
+                          <div class="value value--large">
+                            <div class="value__num">45</div>
+                            <div class="value__unit">점</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 2022.07.07 : del : 해당 컨텐츠는 상세가 없어 a 태그 제거
+                      </a>
+                      -->
+                      <div class="box card__flexible row-contents">
+                        <div class="box__inner">
+                          <div class="chart-box chart-box--speeding" id="chart2_2"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card-list__item">
+                    <div class="card">
+                      <!-- 2022.07.07 : del : 해당 컨텐츠는 상세가 없어 a 태그 제거
+                      <a href="" class="link-block">
+                      -->
+                      <div class="card-head row-contents">
+                        <div class="card-head__left">
+                          <h4 class="card-head__title">07가2345</h4>
+                          <div class="card-head__sub">일렉시티</div>
+                        </div>
+                      </div>
+                      <div class="car-status-info">
+                        <span class="face-status is-normal">
+                          <span class="face-status__text">보통</span>
+                        </span>
+                        <div class="car-status-info__contents">
+                          <div class="value value--large">
+                            <div class="value__num">75</div>
+                            <div class="value__unit">점</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 2022.07.07 : del : 해당 컨텐츠는 상세가 없어 a 태그 제거
+                      </a>
+                      -->
+                      <div class="box card__flexible row-contents">
+                        <div class="box__inner">
+                          <div class="chart-box chart-box--speeding" id="chart2_3"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card-list__item">
+                    <div class="card">
+                      <!-- 2022.07.07 : del : 해당 컨텐츠는 상세가 없어 a 태그 제거
+                      <a href="" class="link-block">
+                      -->
+                      <div class="card-head row-contents">
+                        <div class="card-head__left">
+                          <h4 class="card-head__title">07가2345</h4>
+                          <div class="card-head__sub">일렉시티</div>
+                        </div>
+                      </div>
+                      <div class="car-status-info">
+                        <span class="face-status is-good">
+                          <span class="face-status__text">양호</span>
+                        </span>
+                        <div class="car-status-info__contents">
+                          <div class="value value--large">
+                            <div class="value__num">89</div>
+                            <div class="value__unit">점</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 2022.07.07 : del : 해당 컨텐츠는 상세가 없어 a 태그 제거
+                      </a>
+                      -->
+                      <div class="box card__flexible row-contents">
+                        <div class="box__inner">
+                          <div class="chart-box chart-box--speeding" id="chart2_4"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card-list__item">
+                    <div class="card">
+                      <!-- 2022.07.07 : del : 해당 컨텐츠는 상세가 없어 a 태그 제거
+                      <a href="" class="link-block">
+                      -->
+                      <div class="card-head row-contents">
+                        <div class="card-head__left">
+                          <h4 class="card-head__title">07가2345</h4>
+                          <div class="card-head__sub">일렉시티</div>
+                        </div>
+                      </div>
+                      <div class="car-status-info">
+                        <span class="face-status is-normal">
+                          <span class="face-status__text">보통</span>
+                        </span>
+                        <div class="car-status-info__contents">
+                          <div class="value value--large">
+                            <div class="value__num">75</div>
+                            <div class="value__unit">점</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 2022.07.07 : del : 해당 컨텐츠는 상세가 없어 a 태그 제거
+                      </a>
+                      -->
+                      <div class="box card__flexible row-contents">
+                        <div class="box__inner">
+                          <div class="chart-box chart-box--speeding" id="chart2_5"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card-list__item">
+                    <div class="card">
+                      <!-- 2022.07.07 : del : 해당 컨텐츠는 상세가 없어 a 태그 제거
+                      <a href="" class="link-block">
+                      -->
+                      <div class="card-head row-contents">
+                        <div class="card-head__left">
+                          <h4 class="card-head__title">07가2345</h4>
+                          <div class="card-head__sub">일렉시티</div>
+                        </div>
+                      </div>
+                      <div class="car-status-info">
+                        <span class="face-status is-good">
+                          <span class="face-status__text">양호</span>
+                        </span>
+                        <div class="car-status-info__contents">
+                          <div class="value value--large">
+                            <div class="value__num">89</div>
+                            <div class="value__unit">점</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 2022.07.07 : del : 해당 컨텐츠는 상세가 없어 a 태그 제거
+                      </a>
+                      -->
+                      <div class="box card__flexible row-contents">
+                        <div class="box__inner">
+                          <div class="chart-box chart-box--speeding" id="chart2_6"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- //list -->
+            </section>
+          </div>
+        </article>
+        <!-- //contents -->
+      </div>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript" src="/desktop/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/simplebar/simplebar.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/sortablejs/sortable.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/desktop/js/ui-script.js"></script>
+    <script type="text/javascript" src="/desktop/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <script>
+      $(function () {
+        // submit 테스트 소스
+        $('form').on('submit', function (e) {
+          alert('submit test');
+
+          e.preventDefault();
+        });
+
+        // 2022.08.19 : add : 차량 검색 더미 데이터 추가 : start
+        // 차량 검색 데이터
+        var searchOptions = {
+          html: function (data) {
+            var html = '';
+            html += '<li class="ui-search__item">';
+            html += '<a href="" class="ui-search__link" data-search-keyword="' + data.keyword + '">';
+            html += '<span class="ui-search__text">' + data.name + '</span>';
+            html += '<span class="ui-search__sub">' + data.model + '</span>';
+            html += '</a>';
+            html += '</li>';
+            return html;
+          },
+          datas: [
+            {
+              keyword: '76다4443 일렉시티',
+              name: '76다4443',
+              model: '일렉시티',
+            },
+            {
+              keyword: '11나7473 일렉시티2층',
+              name: '11나7473',
+              model: '일렉시티2층',
+            },
+            {
+              keyword: '32가0095 일렉시티',
+              name: '32가0095',
+              model: '일렉시티',
+            },
+            {
+              keyword: '43가5820 일렉시티 FCEV',
+              name: '43가5820',
+              model: '일렉시티 FCEV',
+            },
+            {
+              keyword: '345다7632 일렉시티',
+              name: '345다7632',
+              model: '일렉시티',
+            },
+            {
+              keyword: '13나7443 엑시언트 수소트럭 (FCEV)',
+              name: '13나7443',
+              model: '엑시언트 수소트럭 (FCEV)',
+            },
+            {
+              keyword: '032가7431 일렉시티',
+              name: '032가7431',
+              model: '일렉시티',
+            },
+            {
+              keyword: '83가5642 일렉시티 FCEV',
+              name: '83가5642',
+              model: '일렉시티 FCEV',
+            },
+          ],
+        };
+        $('#carSearch').data('searchOptions', searchOptions);
+        // 2022.08.19 : add : 차량 검색 더미 데이터 추가 : end
+      });
+
+      // 지수
+      function chart1(el, data, unit, colorSet) {
+        Highcharts.chart(el, {
+          chart: {
+            type: 'bar',
+            marginTop: 0,
+          },
+          xAxis: {
+            visible: false,
+            height: 8,
+          },
+          yAxis: {
+            visible: false,
+            endOnTick: false,
+            maxPadding: 0,
+            min: 0,
+          },
+          tooltip: {
+            enabled: false,
+          },
+          legend: UI_CHART.LEGEND.TYPE_SAFE(unit),
+          plotOptions: {
+            bar: {
+              stacking: 'normal',
+              pointWidth: null,
+              pointPadding: 0,
+              groupPadding: 0,
+            },
+          },
+          colors: UI_CHART.COLOR_SET[colorSet],
+          series: data,
+        });
+      }
+
+      // 차량별 현황
+      function chart2(el, categories, data) {
+        Highcharts.chart(el, {
+          chart: {
+            type: 'bar',
+          },
+          colors: [UI_CHART.COLORS.STATUS_DANGER, UI_CHART.COLORS.GRAY_600],
+          xAxis: {
+            categories: categories,
+            labels: {
+              formatter: function () {
+                switch (this.value) {
+                  case '60km 이상':
+                    return '60km<br />이상';
+                  default:
+                    return this.value;
+                }
+              },
+            },
+          },
+          yAxis: {
+            gridLineWidth: 0,
+            tickInterval: 5,
+          },
+          tooltip: UI_CHART.TOOLTIP({ val: '{point.y}회' }),
+          legend: {
+            symbolWidth: 8,
+            symbolHeight: 8,
+          },
+          plotOptions: {
+            bar: {
+              groupPadding: 0.3,
+              enableMouseTracking: true,
+            },
+          },
+          series: data,
+        });
+      }
+
+      $(window).on('load', function () {
+        // 지수
+        chart1(
+          'chart1_1',
+          [
+            {
+              name: '주의',
+              data: [98],
+            },
+            {
+              name: '보통',
+              data: [28],
+            },
+            {
+              name: '양호',
+              data: [53],
+            },
+          ],
+          '대',
+          'red'
+        );
+        chart1(
+          'chart1_2',
+          [
+            {
+              name: '주의',
+              data: [53],
+            },
+            {
+              name: '보통',
+              data: [98],
+            },
+            {
+              name: '양호',
+              data: [28],
+            },
+          ],
+          '대',
+          'blue'
+        );
+        chart1(
+          'chart1_3',
+          [
+            {
+              name: '주의',
+              data: [53],
+            },
+            {
+              name: '보통',
+              data: [28],
+            },
+            {
+              name: '양호',
+              data: [98],
+            },
+          ],
+          '대',
+          'green'
+        );
+        chart1(
+          'chart1_1_a',
+          [
+            {
+              name: '주의',
+              data: [53],
+            },
+            {
+              name: '보통',
+              data: [28],
+            },
+            {
+              name: '양호',
+              data: [98],
+            },
+          ],
+          '대',
+          'green'
+        );
+        chart1(
+          'chart1_2_a',
+          [
+            {
+              name: '주의',
+              data: [98],
+            },
+            {
+              name: '보통',
+              data: [28],
+            },
+            {
+              name: '양호',
+              data: [53],
+            },
+          ],
+          '대',
+          'red'
+        );
+        chart1(
+          'chart1_3_a',
+          [
+            {
+              name: '주의',
+              data: [53],
+            },
+            {
+              name: '보통',
+              data: [98],
+            },
+            {
+              name: '양호',
+              data: [28],
+            },
+          ],
+          '대',
+          'blue'
+        );
+        chart1(
+          'chart1_2_b',
+          [
+            {
+              name: '주의',
+              data: [53],
+            },
+            {
+              name: '보통',
+              data: [28],
+            },
+            {
+              name: '양호',
+              data: [98],
+            },
+          ],
+          '대',
+          'green'
+        );
+        chart1(
+          'chart1_3_b',
+          [
+            {
+              name: '주의',
+              data: [98],
+            },
+            {
+              name: '보통',
+              data: [28],
+            },
+            {
+              name: '양호',
+              data: [53],
+            },
+          ],
+          '대',
+          'red'
+        );
+
+        // 차량별 현황
+        chart2(
+          'chart2_1',
+          ['60km 이상'],
+          [
+            {
+              name: '차량',
+              data: [0],
+            },
+            {
+              name: '우리회사',
+              data: [1],
+            },
+          ]
+        );
+        chart2(
+          'chart2_2',
+          ['60km 이상'],
+          [
+            {
+              name: '차량',
+              data: [4],
+            },
+            {
+              name: '우리회사',
+              data: [12],
+            },
+          ]
+        );
+        chart2(
+          'chart2_3',
+          ['60km 이상'],
+          [
+            {
+              name: '차량',
+              data: [21],
+            },
+            {
+              name: '우리회사',
+              data: [4],
+            },
+          ]
+        );
+        chart2(
+          'chart2_4',
+          ['60km 이상'],
+          [
+            {
+              name: '차량',
+              data: [10],
+            },
+            {
+              name: '우리회사',
+              data: [13],
+            },
+          ]
+        );
+        chart2(
+          'chart2_5',
+          ['60km 이상'],
+          [
+            {
+              name: '차량',
+              data: [20],
+            },
+            {
+              name: '우리회사',
+              data: [12],
+            },
+          ]
+        );
+        chart2(
+          'chart2_6',
+          ['60km 이상'],
+          [
+            {
+              name: '차량',
+              data: [8],
+            },
+            {
+              name: '우리회사',
+              data: [19],
+            },
+          ]
+        );
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

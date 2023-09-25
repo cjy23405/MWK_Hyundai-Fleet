@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <g>
+        <rect data-name="사각형 19028" width="48" height="48" rx="8" style="fill:none"/>
+        <g data-name="그룹 16367">
+            <path data-name="사각형 18449" style="fill:transparent" d="M0 0h48v48H0z"/>
+            <g data-name="그룹 16593">
+                <path data-name="사각형 18389" transform="translate(12 12)" style="fill:transparent" d="M0 0h24v24H0z"/>
+                <g data-name="타원 2764" transform="translate(12 12)" style="stroke:#cfd9de;stroke-width:1.5px;fill:none">
+                    <circle cx="12" cy="12" r="12" style="stroke:none"/>
+                    <circle cx="12" cy="12" r="11.25" style="fill:none"/>
+                </g>
+                <path data-name="선 334" transform="translate(13 24)" style="stroke:#cfd9de;stroke-width:1.5px;fill:none" d="M0 0h8"/>
+                <path data-name="선 336" transform="translate(27 24)" style="stroke:#cfd9de;stroke-width:1.5px;fill:none" d="M0 0h8"/>
+                <path data-name="선 335" transform="translate(24 27)" style="stroke:#cfd9de;stroke-width:1.5px;fill:none" d="M0 0v8"/>
+                <g data-name="타원 2765" transform="translate(20 20)" style="stroke:#cfd9de;stroke-width:1.5px;fill:none">
+                    <circle cx="4" cy="4" r="4" style="stroke:none"/>
+                    <circle cx="4" cy="4" r="3.25" style="fill:none"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

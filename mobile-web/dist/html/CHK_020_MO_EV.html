@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/mobile/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/swiper/swiper-bundle.min.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="layout-wrap">
+        <!-- toast-alert -->
+        <div class="ui-toast-alert" id="globalToastAlert"></div>
+        <!-- //toast-alert -->
+
+        <!-- header -->
+        <div class="fix-top-wrap">
+          <header class="header">
+            <div class="header__left">
+              <a href="" class="header__button header__button--back">
+                <span class="for-a11y">뒤로 가기</span>
+              </a>
+            </div>
+            <div class="header__center">
+              <h1 class="header__title">차량주요상태정보 상세</h1>
+            </div>
+          </header>
+        </div>
+        <!-- //header -->
+
+        <!-- contents -->
+        <article class="contents-wrap">
+          <div class="page-contents">
+            <p class="basic-text color-gray row-item-group">조회기간 22.01.01 ~ 22.01.07</p>
+
+            <section class="card">
+              <div class="card-head card-head--top">
+                <div class="card-head__left">
+                  <span class="ui-status is-check">점검</span>
+                </div>
+                <div class="card-head__right">
+                  <span class="car-status display-block">운행중</span>
+                  <span class="car-status is-disabled display-block">운행종료</span>
+                </div>
+              </div>
+              <div class="card-head">
+                <div class="card-head__left">
+                  <h2 class="card-head__title">010가2345</h2>
+                  <div class="card-head__sub">엑시언트 수소트럭 (FCEV)</div>
+                </div>
+              </div>
+              <div class="box row-item-group">
+                <div class="box__inner">
+                  <div class="box-head">
+                    <div class="box-head__left">
+                      <!-- DD : 정상일 때 is-good 클래스 값 추가 -->
+                      <div class="box-head__icon box-head__icon--motor-cooling-water is-good"></div>
+                      <!-- 2022.10.21 : mod : PE냉각수 > 구동냉각수 변경 -->
+                      <h3 class="box-head__title">구동 냉각수</h3>
+                    </div>
+                    <div class="box-head__right">
+                      <span class="round-status display-block">정상</span>
+                    </div>
+                  </div>
+                  <div class="chart-box" id="chart1_1"></div>
+                </div>
+              </div>
+              <div class="box row-item-group">
+                <div class="box__inner">
+                  <div class="box-head">
+                    <div class="box-head__left">
+                      <!-- DD : 비정상일 때 is-danger 클래스 값 추가 -->
+                      <div class="box-head__icon box-head__icon--battery-coolant is-danger"></div>
+                      <h3 class="box-head__title">배터리 냉각수</h3>
+                    </div>
+                    <div class="box-head__right">
+                      <a href="" class="round-status round-status--icon round-status--icon-danger round-status--link display-block">이상횟수 3회</a>
+                    </div>
+                  </div>
+                  <div class="chart-box" id="chart1_2"></div>
+                </div>
+              </div>
+              <div class="box row-item-group">
+                <div class="box__inner">
+                  <div class="box-head">
+                    <div class="box-head__left">
+                      <div class="box-head__icon box-head__icon--starting-battery-voltage is-danger"></div>
+                      <h3 class="box-head__title">시동배터리 전압</h3>
+                    </div>
+                    <div class="box-head__right">
+                      <!-- 2022.08.16 : mod : 단위 텍스트 수정 -->
+                      <a href="" class="round-status round-status--icon round-status--icon-danger round-status--link display-block">이상횟수 3일</a>
+                    </div>
+                  </div>
+                  <div class="chart-box" id="chart1_3"></div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </article>
+        <!-- //contents -->
+      </div>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript" src="/mobile/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/mobile/js/ui-script.js"></script>
+    <script type="text/javascript" src="/mobile/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <script>
+      // 구동 냉각수
+      function chart1(el, categories, data) {
+        Highcharts.chart(el, {
+          chart: {
+            type: 'column',
+          },
+          xAxis: {
+            categories: categories,
+            labels: {
+              formatter: function () {
+                return this.value.replace('.', '.<br />');
+              },
+            },
+          },
+          yAxis: {
+            min: 0,
+            gridLineWidth: 0,
+          },
+          tooltip: UI_CHART.TOOLTIP({ val: '{point.y}분' }),
+          legend: {
+            symbolWidth: 8,
+            symbolHeight: 8,
+            labelFormatter: function () {
+              switch (this.name) {
+                case '지속시간':
+                  // 2022.10.21 : mod : PE냉각수 > 구동냉각수 변경
+                  return '구동 냉각수 온도 이상 지속시간(분)';
+                default:
+                  return this.name;
+              }
+            },
+          },
+          plotOptions: {
+            column: {
+              color: {
+                linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+                stops: [
+                  [0, UI_CHART.COLORS.PRIMARY_GRAD_TO],
+                  [1, UI_CHART.COLORS.PRIMARY_GRAD_FROM],
+                ],
+              },
+            },
+          },
+          series: data,
+        });
+      }
+
+      // 배터리 냉각수
+      function chart2(el, categories, data) {
+        Highcharts.chart(el, {
+          xAxis: {
+            categories: categories,
+            labels: {
+              formatter: function () {
+                return this.value.replace('.', '.<br />');
+              },
+            },
+          },
+          // 2022.10.14 : add : 배터리 냉각수 기준치 표시 추가 : start
+          yAxis: {
+            min: 0, // 2022.10.21 : add : 옵션 값 추가
+            max: 80, // 2022.10.21 : add : 옵션 값 추가
+            plotLines: [
+              {
+                color: UI_CHART.COLORS.PUSH,
+                width: 1,
+                value: 70, // 2022.10.21 : mod : 가이드라인 50도 -> 70도 변경
+              },
+            ],
+          },
+          // 2022.10.14 : add : 배터리 냉각수 기준치 표시 추가 : end
+          tooltip: UI_CHART.TOOLTIP({ val: '{point.y}℃' }),
+          legend: {
+            labelFormatter: function () {
+              switch (this.name) {
+                case '최대온도':
+                  return '일 최대온도(℃)';
+                case '평균온도':
+                  return '일 평균온도(℃)';
+                case '최소온도':
+                  return '일 최소온도(℃)';
+                default:
+                  return this.name;
+              }
+            },
+          },
+          colors: [UI_CHART.COLORS.TERTIARY_LIGHT, UI_CHART.COLORS.PRIMARY_LIGHT, UI_CHART.COLORS.SECONDARY_LIGHT],
+          series: data,
+        });
+      }
+
+      // 시동 배터리 전압
+      function chart3(el, categories, data) {
+        Highcharts.chart(el, {
+          xAxis: {
+            categories: categories,
+            labels: {
+              formatter: function () {
+                return this.value.replace('.', '.<br />');
+              },
+            },
+          },
+          // 2022.10.14 : add : 시동 배터리 전압 기준치 표시 추가 : start
+          yAxis: {
+            min: 0, // 2022.10.21 : add : 옵션 값 추가
+            max: 40, // 2022.10.21 : add : 옵션 값 추가
+            plotLines: [
+              {
+                color: UI_CHART.COLORS.PUSH,
+                width: 1,
+                value: 21,
+              },
+              {
+                color: UI_CHART.COLORS.PUSH,
+                width: 1,
+                value: 27,
+              },
+            ],
+          },
+          // 2022.10.14 : add : 시동 배터리 전압 기준치 표시 추가 : end
+          tooltip: UI_CHART.TOOLTIP({ val: '{point.y}V' }),
+          legend: {
+            labelFormatter: function () {
+              switch (this.name) {
+                case '최대전압':
+                  return '일 최대전압(V)';
+                case '평균전압':
+                  return '일 평균전압(V)';
+                case '최소전압':
+                  return '일 최소전압(V)';
+                default:
+                  return this.name;
+              }
+            },
+          },
+          colors: [UI_CHART.COLORS.TERTIARY_LIGHT, UI_CHART.COLORS.PRIMARY_LIGHT, UI_CHART.COLORS.SECONDARY_LIGHT],
+          series: data,
+        });
+      }
+
+      $(window).on('load', function () {
+        // 구동 냉각수
+        chart1(
+          'chart1_1',
+          ['04.06', '04.07', '04.08', '04.09', '04.10', '04.11', '04.12'],
+          [
+            {
+              name: '지속시간',
+              data: [51, 45, 31, 63, 44, 32, 59],
+            },
+          ]
+        );
+
+        // 배터리 냉각수
+        chart2(
+          'chart1_2',
+          ['04.06', '04.07', '04.08', '04.09', '04.10', '04.11', '04.12'],
+          [
+            {
+              name: '최대온도',
+              data: [51, 80, 37, 68, 56, 60, 12],
+            },
+            {
+              name: '평균온도',
+              data: [48, 69, 36, 59, 23, 57, 10],
+            },
+            {
+              name: '최소온도',
+              data: [21, 19, 10, 27, 10, 19, 10],
+              marker: {
+                radius: 4.2,
+              },
+            },
+          ]
+        );
+
+        // 시동 배터리 전압
+        chart3(
+          'chart1_3',
+          ['04.06', '04.07', '04.08', '04.09', '04.10', '04.11', '04.12'],
+          [
+            {
+              name: '최대전압',
+              data: [40, 13, 26, 39, 14, 36, 16],
+            },
+            {
+              name: '평균전압',
+              data: [40, 12, 17, 20, 13, 23, 11],
+            },
+            {
+              name: '최소전압',
+              data: [19, 12, 10, 18, 13, 11, 8],
+              marker: {
+                radius: 4.2,
+              },
+            },
+          ]
+        );
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

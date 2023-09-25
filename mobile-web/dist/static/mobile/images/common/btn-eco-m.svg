@@ -1,0 +1,33 @@
+<svg id="btn-eco-m" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(255,255,255,0);
+      }
+
+      .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #cfd9de;
+        stroke-width: 1.5px;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <rect id="사각형_18452" data-name="사각형 18452" class="cls-1" width="48" height="48"/>
+  <g id="btn-eco-m-2" data-name="btn-eco-m" transform="translate(14 14)">
+    <rect id="사각형_18378" data-name="사각형 18378" class="cls-1" width="20" height="20"/>
+    <path id="패스_14298" data-name="패스 14298" class="cls-2" d="M0,0H10" transform="translate(5.002 19)"/>
+    <line id="선_206" data-name="선 206" class="cls-2" y2="12" transform="translate(10 7)"/>
+    <path id="패스_3832" data-name="패스 3832" class="cls-2" d="M15875.092,6153.143l4,4,4-4" transform="translate(-15869.092 -6145.143)"/>
+    <g id="타원_2363" data-name="타원 2363" class="cls-2" transform="translate(1.5)">
+      <circle class="cls-3" cx="8.5" cy="8.5" r="8.5"/>
+      <circle class="cls-4" cx="8.5" cy="8.5" r="7.75"/>
+    </g>
+  </g>
+</svg>

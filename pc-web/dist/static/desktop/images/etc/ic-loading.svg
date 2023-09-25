@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <defs>
+        <linearGradient id="ivz6klu31b" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#00bfa5"/>
+            <stop offset="1" stop-color="#80dc84"/>
+        </linearGradient>
+        <filter id="srxrd8v45a" x="10.999" y="6" width="58.001" height="68" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feFlood flood-color="#80dc84" flood-opacity=".2"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <path data-name="사각형 20866" style="fill:none" d="M0 0h80v80H0z"/>
+    <g style="filter:url(#srxrd8v45a)">
+        <path data-name="빼기 62" d="M-8206-1519a1.215 1.215 0 0 1-.7-.22 61.616 61.616 0 0 1-10.974-9.713 39.008 39.008 0 0 1-5.808-8.53 23.277 23.277 0 0 1-2.52-10.189 21.955 21.955 0 0 1 5.858-15.095A19.257 19.257 0 0 1-8206-1569a19.255 19.255 0 0 1 14.142 6.254 21.956 21.956 0 0 1 5.858 15.095 23.277 23.277 0 0 1-2.52 10.189 39.031 39.031 0 0 1-5.808 8.53 61.437 61.437 0 0 1-10.979 9.713 1.215 1.215 0 0 1-.693.219zm0-40a10.012 10.012 0 0 0-10 10 10.011 10.011 0 0 0 10 10 10.011 10.011 0 0 0 10-10 10.012 10.012 0 0 0-10-10z" transform="translate(8246 1584)" style="fill:url(#ivz6klu31b)"/>
+    </g>
+</svg>

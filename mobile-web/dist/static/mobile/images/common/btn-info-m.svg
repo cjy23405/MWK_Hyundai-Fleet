@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <path data-name="사각형 18453" style="fill:transparent" d="M0 0h48v48H0z"/>
+    <g data-name="btn-info-selected-m" transform="translate(14 14)">
+        <path data-name="사각형 18341" style="fill:transparent" d="M0 0h20v20H0z"/>
+        <circle data-name="타원 2572" cx="10" cy="10" r="10" style="fill:none;stroke:#cfd9de;stroke-width:1.5px"/>
+        <path data-name="선 319" transform="translate(10 9)" style="fill:none;stroke:#cfd9de;stroke-width:1.5px" d="M0 0v6"/>
+        <circle data-name="타원 2573" cx="1" cy="1" r="1" transform="translate(9 5)" style="fill:#cfd9de"/>
+    </g>
+</svg>

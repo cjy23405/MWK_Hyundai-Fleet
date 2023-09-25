@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/desktop/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/simplebar/simplebar.min.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <a href="" class="basic-link" data-layer-open="layer-popup-notice">공지사항</a>
+
+    <!-- layer: 공지사항 -->
+    <div class="layer-wrap layer-popup-notice" data-layer="layer-popup-notice">
+      <div class="layer-container">
+        <section class="ui-layer">
+          <div class="ui-layer__head">
+            <div class="ui-layer-header">
+              <div class="ui-layer-header__left">
+                <h2 class="ui-layer-header__title">공지사항 제목 표시</h2>
+              </div>
+              <button type="button" class="ui-button ui-layer-header__close" data-role="layerClose">
+                <span class="for-a11y">레이어 닫기</span>
+              </button>
+            </div>
+          </div>
+          <div class="ui-layer__body">
+            <div class="ui-layer__body-scroller ui-scroller">
+              <div class="ui-layer__body-inner">
+                <!-- Case : 링크 있을 경우 -->
+                <a href="" class="link-block">
+                  <img src="/desktop/images/_dummy/notice.png" alt="" class="notice-image" />
+                </a>
+                <!-- //Case : 링크 있을 경우 -->
+
+                <!-- Case : 이미지만 있을 경우 -->
+                <img src="/desktop/images/_dummy/notice.png" alt="" class="notice-image" />
+                <!-- //Case : 이미지만 있을 경우 -->
+
+                <div class="ui-buttons">
+                  <ul class="ui-buttons__list">
+                    <li class="ui-buttons__item">
+                      <div class="ui-checkbox-block">
+                        <input type="checkbox" class="ui-checkbox" id="layerNotice" />
+                        <label for="layerNotice" class="ui-label">
+                          <span class="ui-checkbox-object"></span>
+                          <span class="ui-label__text color-gray-emphasis">3일간 보지 않기</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="ui-buttons__item ui-buttons__item--flex-none">
+                      <button type="button" class="ui-button ui-basic-button" data-role="layerClose">
+                        <span class="ui-basic-button__text">닫기</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- //layer: 공지사항 -->
+
+    <!-- script -->
+    <script type="text/javascript" src="/desktop/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/simplebar/simplebar.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/sortablejs/sortable.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/desktop/js/ui-script.js"></script>
+    <script type="text/javascript" src="/desktop/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <script>
+      $(function () {
+        uiJSLayer.open('layer-popup-notice');
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

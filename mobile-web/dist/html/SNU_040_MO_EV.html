@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/mobile/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/swiper/swiper-bundle.min.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="layout-wrap">
+        <!-- toast-alert -->
+        <div class="ui-toast-alert" id="globalToastAlert"></div>
+        <!-- //toast-alert -->
+
+        <!-- header -->
+        <div class="fix-top-wrap">
+          <header class="header">
+            <div class="header__left">
+              <a href="" class="header__button header__button--back">
+                <span class="for-a11y">뒤로 가기</span>
+              </a>
+            </div>
+            <div class="header__center">
+              <h1 class="header__title">주재원 등록</h1>
+            </div>
+          </header>
+        </div>
+        <!-- //header -->
+
+        <!-- contents -->
+        <article class="contents-wrap">
+          <div class="page-contents">
+            <p class="basic-text color-gray row-group">
+              고장알림, 긴급상황알림 SMS 알림 메시지를 수신할<br />
+              주재원을 선택하여 주세요.
+            </p>
+
+            <div class="row-contents">
+              <form action="">
+                <div class="ui-search">
+                  <div class="ui-search__form">
+                    <div class="ui-input-block ui-search__input">
+                      <input type="search" class="ui-input" title="주재원 이름 검색" placeholder="주재원 이름을 입력하여 주세요." />
+                    </div>
+                    <button type="submit" class="ui-button ui-search__submit">
+                      <span class="for-a11y">검색</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <form action="">
+              <div class="ui-table">
+                <div class="ui-table__scroller">
+                  <div class="ui-table__doc">
+                    <div class="ui-table__table">
+                      <div class="ui-table__table-inner">
+                        <table>
+                          <colgroup>
+                            <col style="width: 60px" />
+                            <col />
+                            <col />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th>선택</th>
+                              <th>주재원명</th>
+                              <th>권역</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Case : 검색 전 -->
+                            <tr>
+                              <td colspan="3">
+                                <div class="ui-empty ui-empty--search">
+                                  <p class="ui-empty__text">주재원을 검색해주세요.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <!-- //Case : 검색 전 -->
+
+                            <!-- Case : 검색 결과 없을 때 -->
+                            <tr>
+                              <td colspan="3">
+                                <div class="ui-empty ui-empty--search-empty">
+                                  <p class="ui-empty__text">검색 결과가 없습니다.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <!-- //Case : 검색 결과 없을 때 -->
+
+                            <tr>
+                              <td>
+                                <div class="ui-checkbox-block">
+                                  <input type="checkbox" class="ui-checkbox" id="checkbox1" />
+                                  <label for="checkbox1" class="ui-label">
+                                    <span class="ui-checkbox-object"></span>
+                                    <span class="for-a11y">선택</span>
+                                  </label>
+                                </div>
+                              </td>
+                              <td>홍길일</td>
+                              <td>서울,경기</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="ui-checkbox-block">
+                                  <input type="checkbox" class="ui-checkbox" id="checkbox2" />
+                                  <label for="checkbox2" class="ui-label">
+                                    <span class="ui-checkbox-object"></span>
+                                    <span class="for-a11y">선택</span>
+                                  </label>
+                                </div>
+                              </td>
+                              <td>홍길이</td>
+                              <td>서울</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="ui-checkbox-block">
+                                  <input type="checkbox" class="ui-checkbox" id="checkbox3" />
+                                  <label for="checkbox3" class="ui-label">
+                                    <span class="ui-checkbox-object"></span>
+                                    <span class="for-a11y">선택</span>
+                                  </label>
+                                </div>
+                              </td>
+                              <td>홍길삼</td>
+                              <td>전라</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="ui-checkbox-block">
+                                  <input type="checkbox" class="ui-checkbox" id="checkbox4" />
+                                  <label for="checkbox4" class="ui-label">
+                                    <span class="ui-checkbox-object"></span>
+                                    <span class="for-a11y">선택</span>
+                                  </label>
+                                </div>
+                              </td>
+                              <td>홍길사</td>
+                              <td>경상</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="ui-checkbox-block">
+                                  <input type="checkbox" class="ui-checkbox" id="checkbox5" />
+                                  <label for="checkbox5" class="ui-label">
+                                    <span class="ui-checkbox-object"></span>
+                                    <span class="for-a11y">선택</span>
+                                  </label>
+                                </div>
+                              </td>
+                              <td>홍길오</td>
+                              <td>제주</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="ui-checkbox-block">
+                                  <input type="checkbox" class="ui-checkbox" id="checkbox6" />
+                                  <label for="checkbox6" class="ui-label">
+                                    <span class="ui-checkbox-object"></span>
+                                    <span class="for-a11y">선택</span>
+                                  </label>
+                                </div>
+                              </td>
+                              <td>홍길육</td>
+                              <td>서울, 경기</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="ui-checkbox-block">
+                                  <input type="checkbox" class="ui-checkbox" id="checkbox7" />
+                                  <label for="checkbox7" class="ui-label">
+                                    <span class="ui-checkbox-object"></span>
+                                    <span class="for-a11y">선택</span>
+                                  </label>
+                                </div>
+                              </td>
+                              <td>홍길칠</td>
+                              <td>서울</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="ui-checkbox-block">
+                                  <input type="checkbox" class="ui-checkbox" id="checkbox8" />
+                                  <label for="checkbox8" class="ui-label">
+                                    <span class="ui-checkbox-object"></span>
+                                    <span class="for-a11y">선택</span>
+                                  </label>
+                                </div>
+                              </td>
+                              <td>홍길팔</td>
+                              <td>전라</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="ui-checkbox-block">
+                                  <input type="checkbox" class="ui-checkbox" id="checkbox9" />
+                                  <label for="checkbox9" class="ui-label">
+                                    <span class="ui-checkbox-object"></span>
+                                    <span class="for-a11y">선택</span>
+                                  </label>
+                                </div>
+                              </td>
+                              <td>홍길구</td>
+                              <td>경상</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="ui-checkbox-block">
+                                  <input type="checkbox" class="ui-checkbox" id="checkbox10" />
+                                  <label for="checkbox10" class="ui-label">
+                                    <span class="ui-checkbox-object"></span>
+                                    <span class="for-a11y">선택</span>
+                                  </label>
+                                </div>
+                              </td>
+                              <td>홍길십</td>
+                              <td>제주</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- fix buttons -->
+              <div class="fix-bottom-wrap">
+                <div class="fix-bottom-wrap__area">
+                  <div class="ui-buttons ui-buttons--no-margin">
+                    <ul class="ui-buttons__list">
+                      <li class="ui-buttons__item">
+                        <button type="button" class="ui-button ui-basic-button ui-basic-button--tertiary">
+                          <span class="ui-basic-button__text">취소</span>
+                        </button>
+                      </li>
+                      <li class="ui-buttons__item">
+                        <button type="submit" class="ui-button ui-basic-button">
+                          <span class="ui-basic-button__text">등록</span>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- //fix buttons -->
+            </form>
+          </div>
+        </article>
+        <!-- //contents -->
+      </div>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript" src="/mobile/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/mobile/js/ui-script.js"></script>
+    <script type="text/javascript" src="/mobile/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <script>
+      $(function () {
+        // submit 테스트 소스
+        $('form').on('submit', function (e) {
+          alert('submit test');
+
+          e.preventDefault();
+        });
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

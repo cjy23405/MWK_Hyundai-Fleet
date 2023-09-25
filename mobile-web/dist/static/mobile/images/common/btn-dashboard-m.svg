@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <path data-name="사각형 19026" style="fill:transparent" d="M0 0h48v48H0z"/>
+    <g data-name="btn-dashboard-m">
+        <path data-name="사각형 18372" style="fill:transparent" d="M0 0h20v20H0z" transform="translate(14 14)"/>
+        <g data-name="그룹 15176">
+            <g data-name="사각형 64" style="stroke:#cfd9de;stroke-width:1.5px;fill:none">
+                <path style="stroke:none" d="M0 0h8v8H0z" transform="translate(15 15)"/>
+                <path style="fill:none" d="M.75.75h6.5v6.5H.75z" transform="translate(15 15)"/>
+            </g>
+            <g data-name="사각형 67" style="stroke:#cfd9de;stroke-width:1.5px;fill:none">
+                <path style="stroke:none" d="M0 0h8v8H0z" transform="translate(15 25)"/>
+                <path style="fill:none" d="M.75.75h6.5v6.5H.75z" transform="translate(15 25)"/>
+            </g>
+            <g data-name="패스 16235" style="fill:none">
+                <path d="M0 0h8v8H0z" style="stroke:none" transform="translate(25 15)"/>
+                <path d="M1.5 1.5v5h5v-5h-5M0 0h8v8H0V0z" style="fill:#cfd9de;stroke:none" transform="translate(25 15)"/>
+            </g>
+            <g data-name="패스 14320" style="fill:none">
+                <path d="M0 0h8v5.088L5.333 8H0z" style="stroke:none" transform="translate(25 25)"/>
+                <path d="M1.5 1.5v5h3.173L6.5 4.505V1.5h-5M0 0h8v5.088L5.333 8H0V0z" style="fill:#cfd9de;stroke:none" transform="translate(25 25)"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+    <defs>
+        <linearGradient id="7jji3g6krb" x1=".467" y1=".216" x2=".723" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#ff878d"/>
+            <stop offset="1" stop-color="#c12b32"/>
+        </linearGradient>
+        <linearGradient id="9anaz9evlc" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#8b3e42"/>
+            <stop offset="1" stop-color="#720509"/>
+        </linearGradient>
+        <filter id="e1k0klpkpa" x="6.024" y="12.035" width="109.306" height="96.338" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feFlood flood-color="#ff878d" flood-opacity=".2"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <path data-name="사각형 7093" style="fill:none" d="M0 0h120v120H0z"/>
+    <g style="filter:url(#e1k0klpkpa)">
+        <path data-name="패스 32150" d="M87.934 81.339H0L50.431 0l43.875 70.763-6.371 10.575z" transform="translate(13.52 19.54)" style="fill:url(#7jji3g6krb)"/>
+    </g>
+    <path data-name="패스 32149" d="M0 37.567v-6.535h6.011v6.535zm0-11.435V0h6.011v26.132z" transform="translate(60.106 51.09)" style="fill:url(#9anaz9evlc)"/>
+</svg>

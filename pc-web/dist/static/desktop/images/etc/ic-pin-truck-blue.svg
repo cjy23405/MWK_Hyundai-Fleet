@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="121" height="84" viewBox="0 0 121 84">
+    <g data-name="합치기 511" style="fill:#4f8cf6">
+        <path d="M-7756 2937h-59a29.898 29.898 0 0 1-21.213-8.787A29.9 29.9 0 0 1-7845 2907a29.9 29.9 0 0 1 8.787-21.213A29.898 29.898 0 0 1-7815 2877h59a29.898 29.898 0 0 1 21.213 8.787A29.9 29.9 0 0 1-7726 2907a29.9 29.9 0 0 1-8.787 21.213A29.898 29.898 0 0 1-7756 2937z" style="stroke:none" transform="translate(7846 -2876)"/>
+        <path d="M-7815 2878a28.906 28.906 0 0 0-20.506 8.494A28.906 28.906 0 0 0-7844 2907a28.906 28.906 0 0 0 8.494 20.506A28.906 28.906 0 0 0-7815 2936h59a28.906 28.906 0 0 0 20.506-8.494A28.906 28.906 0 0 0-7727 2907a28.906 28.906 0 0 0-8.494-20.506A28.906 28.906 0 0 0-7756 2878h-59m0-2h59c17.12 0 31 13.88 31 31 0 17.12-13.88 31-31 31h-59c-17.12 0-31-13.88-31-31 0-17.12 13.88-31 31-31z" style="fill:#3572db;stroke:none" transform="translate(7846 -2876)"/>
+    </g>
+    <g data-name="그룹 20052" transform="translate(-541 -564.982)">
+        <rect data-name="사각형 21988" width="52" height="52" rx="26" transform="translate(546 569.982)" style="fill:#fff"/>
+        <g data-name="그룹 20184" transform="translate(129 154.982)">
+            <path data-name="사각형 22118" transform="translate(440 432)" style="fill:#4f8cf6" d="M0 0h18v10H0z"/>
+            <path data-name="빼기 122" d="M-6011.874 6367h-7.253a4 4 0 0 0-3.874-3 4 4 0 0 0-3.874 3H-6030v-11a3 3 0 0 1 3-3h7v9h20v5h-4.127a4 4 0 0 0-3.874-3 4 4 0 0 0-3.874 3z" transform="translate(6458 -5918)" style="fill:#4f8cf6"/>
+            <circle data-name="타원 2885" cx="2.5" cy="2.5" r="2.5" transform="translate(432.5 447.5)" style="fill:#4f8cf6"/>
+            <circle data-name="타원 2886" cx="2.5" cy="2.5" r="2.5" transform="translate(447.5 447.5)" style="fill:#4f8cf6"/>
+        </g>
+    </g>
+    <g data-name="그룹 23331" transform="translate(-364 -410)">
+        <path data-name="사각형 22155" transform="translate(424 470)" style="fill:#3572db" d="M0 0h2v20H0z"/>
+        <circle data-name="타원 2902" cx="4" cy="4" r="4" transform="translate(421 486)" style="fill:#3572db"/>
+    </g>
+</svg>

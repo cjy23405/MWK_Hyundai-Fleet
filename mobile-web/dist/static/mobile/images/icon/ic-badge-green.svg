@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <linearGradient id="b0khyrefka" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#00bfa5"/>
+            <stop offset="1" stop-color="#80dc84"/>
+        </linearGradient>
+        <clipPath id="gfdgxsluzb">
+            <path data-name="사각형 20948" style="fill:#fff" d="M0 0h12v11.5H0z"/>
+        </clipPath>
+    </defs>
+    <g transform="translate(-456 -664)">
+        <circle data-name="타원 2575" cx="12" cy="12" r="12" transform="translate(456 664)" style="fill:url(#b0khyrefka)"/>
+        <g data-name="그룹 18738">
+            <g data-name="그룹 18700" transform="translate(462 670.25)" style="clip-path:url(#gfdgxsluzb)">
+                <path data-name="패스 16259" d="M6.553.345 7.929 3.14a.618.618 0 0 0 .465.338l3.076.449a.619.619 0 0 1 .342 1.056L9.586 7.156a.623.623 0 0 0-.178.548l.526 3.071a.617.617 0 0 1-.9.652L6.287 9.978a.616.616 0 0 0-.575 0l-2.752 1.45a.617.617 0 0 1-.9-.652L2.59 7.7a.619.619 0 0 0-.177-.548L.188 4.982A.619.619 0 0 1 .53 3.926l3.07-.448a.616.616 0 0 0 .47-.338L5.447.345a.616.616 0 0 1 1.107 0" style="fill:#fff"/>
+            </g>
+        </g>
+    </g>
+</svg>

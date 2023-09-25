@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/mobile/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/swiper/swiper-bundle.min.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/page-style.css" />
+    <!-- 2022.09.16 : del : 지도 라이브러리 변경으로 제거
+    <link type="text/css" rel="stylesheet" href="https://mlp.hyundai-mnsoft.com:8244/api/map.css" />
+    -->
+    <!-- //style -->
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="layout-wrap">
+        <!-- toast-alert -->
+        <div class="ui-toast-alert" id="globalToastAlert"></div>
+        <!-- //toast-alert -->
+
+        <!-- header -->
+        <div class="fix-top-wrap">
+          <header class="header">
+            <div class="header__left">
+              <h1 class="header__logo">
+                <a href="" class="header__logo-link">
+                  <span class="for-a11y">Bluelink Fleet</span>
+                </a>
+              </h1>
+            </div>
+            <div class="header__right">
+              <a href="" class="header__button header__button--push">
+                <span class="for-a11y">알림</span>
+                <span class="header__nav-count">
+                  <span class="for-a11y">(신규</span>
+                  <span class="header__nav-count-text">99+</span>
+                  <span class="for-a11y">개)</span>
+                </span>
+              </a>
+              <!-- 2022.08.29 : mod : data-layer-open 속성 추가 -->
+              <a href="" class="header__button header__button--menu" data-layer-open="layer-gnb">
+                <span class="for-a11y">메뉴</span>
+              </a>
+            </div>
+          </header>
+          <header class="header">
+            <div class="header__left">
+              <a href="" class="header__button header__button--back">
+                <span class="for-a11y">뒤로 가기</span>
+              </a>
+            </div>
+            <div class="header__center">
+              <h1 class="header__title">타이틀</h1>
+              <p class="header__sub">서브텍스트</p>
+            </div>
+            <div class="header__right">
+              <button class="ui-button header__button header__button--refresh">
+                <span class="for-a11y">초기화</span>
+              </button>
+              <a href="" class="header__button header__button--setting">
+                <span class="for-a11y">설정</span>
+              </a>
+              <a href="" class="header__button header__button--push">
+                <span class="for-a11y">알림</span>
+                <span class="header__nav-count">
+                  <span class="for-a11y">(신규</span>
+                  <span class="header__nav-count-text">99+</span>
+                  <span class="for-a11y">개)</span>
+                </span>
+              </a>
+              <!-- 2022.08.29 : mod : data-layer-open 속성 추가 -->
+              <a href="" class="header__button header__button--menu" data-layer-open="layer-gnb">
+                <span class="for-a11y">메뉴</span>
+              </a>
+            </div>
+          </header>
+          <header class="header">
+            <div class="header__center">
+              <h1 class="header__title">타이틀</h1>
+              <p class="header__sub">서브텍스트</p>
+            </div>
+            <div class="header__right">
+              <a href="" class="header__button header__button--close">
+                <span class="for-a11y">닫기</span>
+              </a>
+            </div>
+          </header>
+          <header class="header">
+            <div class="header__center">
+              <h1 class="for-a11y">타이틀</h1>
+            </div>
+            <div class="header__right">
+              <a href="" class="header__button header__button--close">
+                <span class="for-a11y">닫기</span>
+              </a>
+            </div>
+          </header>
+        </div>
+        <!-- //header -->
+
+        <!-- 2022.08.29 : add : GNB 추가 -->
+        <!-- GNB -->
+        <div class="layer-wrap layer-wrap--full layer-gnb" data-layer="layer-gnb">
+          <div class="layer-container">
+            <nav class="ui-layer ui-layer--full">
+              <div class="ui-layer__head">
+                <header class="header header--popup">
+                  <div class="header__center">
+                    <h2 class="for-a11y">메뉴</h2>
+                  </div>
+                  <div class="header__right">
+                    <a href="" class="header__button header__button--setting">
+                      <span class="for-a11y">설정</span>
+                    </a>
+                    <button type="button" class="ui-button header__button header__button--close" data-role="layerClose">
+                      <span class="for-a11y">레이어 닫기</span>
+                    </button>
+                  </div>
+                </header>
+              </div>
+              <div class="ui-layer__body">
+                <div class="ui-layer__body-inner">
+                  <!-- 2022.09.22 : del : 로그인 전 케이스 삭제
+                  < !-- Case : 로그인 전 -- >
+                  <a href="" class="my-card my-card--link">
+                    <p class="my-card__title">
+                      안녕하세요,<br />
+                      로그인해주세요
+                    </p>
+                  </a>
+                  < !--// Case : 로그인 전 -- >
+                  -->
+
+                  <div class="my-card">
+                    <!-- 2022.09.22 : add : 프로필 이미지 영역 추가 -->
+                    <!-- DD : 이미지 없을 때
+                    <span class="my-card__photo">
+                      <span class="my-card__photo-inner"></span>
+                    </span>
+                    -->
+
+                    <!-- DD : 이미지 에러
+                    <span class="my-card__photo">
+                      <span class="my-card__photo-inner">
+                        <img src="/mobile/images/_dummy/" alt="" onerror="this.parentNode.className += ' is-error';" />
+                      </span>
+                    </span>
+                    -->
+
+                    <!-- DD : 이미지 있을 때 -->
+                    <span class="my-card__photo">
+                      <span class="my-card__photo-inner">
+                        <img src="/mobile/images/_dummy/my-photo.png" alt="" onerror="this.parentNode.className += ' is-error';" />
+                      </span>
+                    </span>
+                    <!-- //DD : 이미지 있을 때 -->
+                    <!-- //2022.09.22 : add : 프로필 이미지 영역 추가 -->
+                    <p class="my-card__title">
+                      안녕하세요,<br />
+                      <strong class="font-weight-medium">현대운수</strong>님
+                    </p>
+                  </div>
+
+                  <div class="etc-menu">
+                    <ul class="etc-menu__list">
+                      <li class="etc-menu__item">
+                        <a href="" class="etc-menu__link etc-menu__link--register">
+                          <span class="etc-menu__link-text">차량등록</span>
+                        </a>
+                      </li>
+                      <li class="etc-menu__item">
+                        <!-- 2022.09.22 : mod : 정기점검리포트 > 차량목록 버튼 변경 -->
+                        <a href="" class="etc-menu__link etc-menu__link--carlist">
+                          <span class="etc-menu__link-text">차량목록</span>
+                        </a>
+                        <!-- //2022.09.22 : mod : 정기점검리포트 > 차량목록 버튼 변경 -->
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="gnb">
+                    <div class="gnb__group">
+                      <ul class="gnb__list js-ui-accordion">
+                        <li class="gnb__item">
+                          <div class="gnb__item-head">
+                            <a href="" class="gnb__link">
+                              <span class="gnb__icon gnb__icon--type-1"></span>
+                              <span class="gnb__link-text">대시보드</span>
+                            </a>
+                          </div>
+                        </li>
+                        <!-- DD : 현재 페이지이면 is-active 클래스 값 및 data-initial-open 속성 추가 -->
+                        <li class="gnb__item js-ui-accordion__item is-active" data-initial-open="true">
+                          <div class="gnb__item-head">
+                            <span class="gnb__link">
+                              <span class="gnb__icon gnb__icon--type-2"></span>
+                              <span class="gnb__link-text">차량현황</span>
+                            </span>
+                            <button type="button" class="ui-button gnb__item-opener js-ui-accordion__opener">
+                              <span class="for-a11y">
+                                하위 메뉴
+                                <span class="open-text">열기</span>
+                                <span class="close-text">닫기</span>
+                              </span>
+                            </button>
+                          </div>
+                          <div class="gnb__layer js-ui-accordion__layer">
+                            <div class="gnb__depth">
+                              <ul class="gnb__depth-list">
+                                <!-- DD : 현재 페이지이면 is-active 클래스 값 추가 -->
+                                <li class="gnb__depth-item is-active">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">차량고장현황</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">차량 주요 상태 정보</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">차량관제</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="gnb__item js-ui-accordion__item">
+                          <div class="gnb__item-head">
+                            <span class="gnb__link">
+                              <span class="gnb__icon gnb__icon--type-3"></span>
+                              <span class="gnb__link-text">차량운영분석</span>
+                            </span>
+                            <button type="button" class="ui-button gnb__item-opener js-ui-accordion__opener">
+                              <span class="for-a11y">
+                                하위 메뉴
+                                <span class="open-text">열기</span>
+                                <span class="close-text">닫기</span>
+                              </span>
+                            </button>
+                          </div>
+                          <div class="gnb__layer js-ui-accordion__layer">
+                            <div class="gnb__depth">
+                              <ul class="gnb__depth-list">
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">1</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">2</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">3</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">4</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">5</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">6</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="gnb__item js-ui-accordion__item">
+                          <div class="gnb__item-head">
+                            <span class="gnb__link">
+                              <span class="gnb__icon gnb__icon--type-4"></span>
+                              <span class="gnb__link-text">주행분석</span>
+                            </span>
+                            <button type="button" class="ui-button gnb__item-opener js-ui-accordion__opener">
+                              <span class="for-a11y">
+                                하위 메뉴
+                                <span class="open-text">열기</span>
+                                <span class="close-text">닫기</span>
+                              </span>
+                            </button>
+                          </div>
+                          <div class="gnb__layer js-ui-accordion__layer">
+                            <div class="gnb__depth">
+                              <ul class="gnb__depth-list">
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">안전지수</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">승객안전운행지수</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">제한속도초과운행지수</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">심야운행안전지수</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">전비등급</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">전력사용량</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">전비지수</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="gnb__item js-ui-accordion__item">
+                          <div class="gnb__item-head">
+                            <span class="gnb__link">
+                              <span class="gnb__icon gnb__icon--type-5"></span>
+                              <span class="gnb__link-text">탄소배출/환경</span>
+                            </span>
+                            <button type="button" class="ui-button gnb__item-opener js-ui-accordion__opener">
+                              <span class="for-a11y">
+                                하위 메뉴
+                                <span class="open-text">열기</span>
+                                <span class="close-text">닫기</span>
+                              </span>
+                            </button>
+                          </div>
+                          <div class="gnb__layer js-ui-accordion__layer">
+                            <div class="gnb__depth">
+                              <ul class="gnb__depth-list">
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">온실가스 배출 KAU</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">온실가스 감축 KOC</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">탄소나무숲</span>
+                                  </a>
+                                </li>
+                                <li class="gnb__depth-item">
+                                  <a href="" class="gnb__depth-link">
+                                    <span class="gnb__depth-link-text">환경을 지키는 버스</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <!-- 2022.09.22 : add : 정기점검리포트 메뉴 추가 -->
+                        <li class="gnb__item">
+                          <div class="gnb__item-head">
+                            <a href="" class="gnb__link">
+                              <span class="gnb__icon gnb__icon--type-9"></span>
+                              <span class="gnb__link-text">정기점검리포트</span>
+                            </a>
+                          </div>
+                        </li>
+                        <!-- //2022.09.22 : add : 정기점검리포트 메뉴 추가 -->
+                      </ul>
+                    </div>
+                    <div class="gnb__group">
+                      <ul class="gnb__list">
+                        <li class="gnb__item">
+                          <div class="gnb__item-head">
+                            <a href="" class="gnb__link">
+                              <span class="gnb__icon gnb__icon--type-6"></span>
+                              <span class="gnb__link-text">알림</span>
+                            </a>
+                          </div>
+                        </li>
+                        <li class="gnb__item">
+                          <div class="gnb__item-head">
+                            <a href="" class="gnb__link">
+                              <span class="gnb__icon gnb__icon--type-7"></span>
+                              <span class="gnb__link-text">공지사항</span>
+                            </a>
+                          </div>
+                        </li>
+                        <!-- 2022.09.22 : add : 서비스 안내 동영상 메뉴 추가 -->
+                        <li class="gnb__item">
+                          <div class="gnb__item-head">
+                            <a href="" class="gnb__link">
+                              <span class="gnb__icon gnb__icon--type-8"></span>
+                              <span class="gnb__link-text">서비스 안내 동영상</span>
+                            </a>
+                          </div>
+                        </li>
+                        <!-- 2022.09.22 : add : 서비스 안내 동영상 메뉴 추가 -->
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- 2022.09.30 : mod : 로그아웃 버튼 html 위치 변경 -->
+                  <div class="row-item-group align-center basic-text">
+                    <a href="" class="basic-link color-gray">로그아웃</a>
+                  </div>
+                  <!-- //2022.09.30 : mod : 로그아웃 버튼 html 위치 변경 -->
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <!-- //GNB -->
+        <!-- //2022.08.29 : add : GNB 추가 -->
+
+        <!-- contents -->
+        <article class="contents-wrap">
+          <div class="page-contents page-contents--페이지이름">
+            컨텐츠 영역<br /><br />
+            필요한 경우 "<strong>.page-contents</strong>" 에 "<strong>page-contents--페이지이름</strong>" 식으로 멀티 클래스 값을 추가하여 페이지별 스타일 제어<br /><br />
+
+            <button
+              type="button"
+              class="ui-button ui-basic-button ui-basic-button--regular ui-basic-button--tertiary"
+              onclick="uiJSToastAlert('#globalToastAlert', '토스트 얼럿 테스트 메세지\n줄바꿈은 \\n 이용');"
+            >
+              <span class="ui-basic-button__text">토스트 얼럿 테스트</span>
+            </button>
+
+            <div style="height: 1500px; border: 10px dotted #666">스크롤 생기게 하기 위한 더미</div>
+
+            <!-- fix buttons -->
+            <div class="fix-bottom-wrap">
+              <div class="fix-bottom-wrap__area">
+                <div class="ui-buttons ui-buttons--no-margin">
+                  <ul class="ui-buttons__list">
+                    <li class="ui-buttons__item">
+                      <a href="" class="ui-basic-button ui-basic-button--secondary">
+                        <span class="ui-basic-button__text">button</span>
+                      </a>
+                    </li>
+                    <li class="ui-buttons__item">
+                      <a href="" class="ui-basic-button">
+                        <span class="ui-basic-button__text">button</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- //fix buttons -->
+
+            <!-- bottom sticky -->
+            <div class="bottom-sticky">
+              <div class="bottom-sticky__area">
+                <div class="bottom-sticky__block">
+                  <div class="ui-buttons ui-buttons--no-margin">
+                    <ul class="ui-buttons__list">
+                      <li class="ui-buttons__item">
+                        <a href="" class="ui-basic-button ui-basic-button--secondary">
+                          <span class="ui-basic-button__text">button</span>
+                        </a>
+                      </li>
+                      <li class="ui-buttons__item">
+                        <a href="" class="ui-basic-button">
+                          <span class="ui-basic-button__text">button</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //bottom sticky -->
+          </div>
+        </article>
+        <!-- //contents -->
+
+        <!-- footer -->
+        <footer class="footer">
+          <div class="footer__top">
+            <h2 class="footer__logo">
+              <a href="" class="footer__logo-link">
+                <span class="for-a11y">Bluelink Fleet</span>
+              </a>
+            </h2>
+            <ul class="footer__sns">
+              <li class="footer__sns-item">
+                <a href="" class="footer__sns-link footer__sns-link--youtube">
+                  <span class="for-a11y">YouTube</span>
+                </a>
+              </li>
+              <li class="footer__sns-item">
+                <a href="" class="footer__sns-link footer__sns-link--naver-post">
+                  <span class="for-a11y">네이버 포스트</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <ul class="footer__tel">
+            <li class="footer__tel-item">
+              <a href="tel:080-200-6000" class="footer__tel-link">
+                <span class="footer__tel-text">고객센터(상용) 080-200-6000</span>
+              </a>
+            </li>
+            <li class="footer__tel-item">
+              <a href="tel:1899-8884" class="footer__tel-link">
+                <span class="footer__tel-text">상용 블루링크 센터 1899-8884</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="footer__nav">
+            <!-- 2022.10.21 : add : href 값 변경 및 target 속성 추가 -->
+            <li class="footer__nav-item">
+              <a href="https://www.hyundai.com/content/hyundai/kr/ko/personal-information.html?sub=005" target="_blank" class="footer__nav-link">개인정보 처리방침</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="https://www.hyundai.com/content/hyundai/kr/ko/agreements.html?sub=005" target="_blank" class="footer__nav-link">이용약관</a>
+            </li>
+            <!-- //2022.10.21 : add : href 값 변경 및 target 속성 추가 -->
+            <li class="footer__nav-item">
+              <a href="" class="footer__nav-link">데이터 분석 기준 안내</a>
+            </li>
+          </ul>
+          <address class="footer__copy">&copy; Hyundai Motor Company. All rights reserved.</address>
+        </footer>
+        <!-- //footer -->
+      </div>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript" src="/mobile/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/mobile/js/ui-script.js"></script>
+    <script type="text/javascript" src="/mobile/js/chart-env.js"></script>
+    <!-- 2022.09.16 : mod : 지도 라이브러리 변경 -->
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <!-- //2022.09.16 : mod : 지도 라이브러리 변경 -->
+    <!-- //script -->
+  </body>
+</html>

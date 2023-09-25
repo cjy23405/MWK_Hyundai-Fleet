@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="57" height="55.527" viewBox="0 0 57 55.527">
+    <defs>
+        <linearGradient id="f4t7gm5j1b" x1=".5" y1="-.104" x2=".5" y2="1.322" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#78909c"/>
+            <stop offset="1" stop-color="#b0bec5"/>
+        </linearGradient>
+        <filter id="jne5kxlcza" x="0" y=".527" width="57" height="55" filterUnits="userSpaceOnUse">
+            <feOffset dx="2" dy="2"/>
+            <feGaussianBlur stdDeviation="1.5" result="blur"/>
+            <feFlood flood-color="#1a252c" flood-opacity=".502"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g style="filter:url(#jne5kxlcza)">
+        <rect data-name="사각형 18016" width="48" height="46" rx="4" transform="translate(2.5 3.03)" style="fill:#fff"/>
+    </g>
+    <path data-name="사각형 18017" d="M4 0h40a4 4 0 0 1 4 4v8H0V4a4 4 0 0 1 4-4z" transform="translate(2.5 3)" style="fill:url(#f4t7gm5j1b)"/>
+    <path data-name="사각형 18019" transform="rotate(90 19.25 19.25)" style="fill:#546e7a" d="M0 0h8v4H0z"/>
+    <path data-name="사각형 19243" transform="rotate(90 9.25 9.25)" style="fill:#546e7a" d="M0 0h8v4H0z"/>
+</svg>

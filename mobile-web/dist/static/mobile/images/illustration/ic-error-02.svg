@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="98" viewBox="0 0 240 98">
+    <g transform="translate(-888 -367)">
+        <path data-name="사각형 25952" transform="translate(888 367)" style="fill:none" d="M0 0h240v98H0z"/>
+        <path data-name="사각형 19261" transform="translate(946 367)" style="fill:transparent" d="M0 0h124v98H0z"/>
+        <rect data-name="사각형 25950" width="87" height="71" rx="4" transform="translate(965 380)" style="fill:#71868f"/>
+        <g data-name="그룹 5884" transform="translate(129 -246)">
+            <circle data-name="타원 964" cx="5" cy="5" r="5" transform="translate(965 657)" style="opacity:.2;fill:#71868f"/>
+            <circle data-name="타원 962" cx="5" cy="5" r="5" transform="translate(941 657)" style="opacity:.4;fill:#71868f"/>
+            <circle data-name="타원 965" cx="5" cy="5" r="5" transform="translate(989 657)" style="opacity:.1;fill:#71868f"/>
+        </g>
+        <g data-name="그룹 5885" transform="translate(888 411)">
+            <circle data-name="타원 964" cx="5" cy="5" r="5" transform="translate(24)" style="opacity:.2;fill:#71868f"/>
+            <circle data-name="타원 962" cx="5" cy="5" r="5" transform="translate(48)" style="opacity:.4;fill:#71868f"/>
+            <circle data-name="타원 965" cx="5" cy="5" r="5" style="opacity:.1;fill:#71868f"/>
+        </g>
+        <g data-name="그룹 23249">
+            <path data-name="다각형 96" d="M20.433 4.24a3 3 0 0 1 5.133 0l17.678 29.207A3 3 0 0 1 40.677 38H5.323a3 3 0 0 1-2.567-4.553z" transform="translate(1023 422)" style="fill:#455a64"/>
+            <path data-name="사각형 25928" transform="translate(1044 437)" style="fill:#71868f" d="M0 0h4v10H0z"/>
+            <path data-name="사각형 25929" transform="translate(1044 450)" style="fill:#71868f" d="M0 0h4v4H0z"/>
+        </g>
+        <path data-name="사각형 25951" d="M4 0h79a4 4 0 0 1 4 4v13H0V4a4 4 0 0 1 4-4z" transform="translate(965 380)" style="fill:#455a64"/>
+        <circle data-name="타원 2763" cx="3" cy="3" r="3" transform="translate(972 386)" style="fill:#71868f"/>
+        <circle data-name="타원 2764" cx="3" cy="3" r="3" transform="translate(982 386)" style="fill:#71868f"/>
+        <circle data-name="타원 2765" cx="3" cy="3" r="3" transform="translate(992 386)" style="fill:#71868f"/>
+        <path data-name="사각형 19254" transform="translate(976 408)" style="fill:#455a64" d="M0 0h24v5H0z"/>
+        <path data-name="사각형 19255" transform="translate(976 420)" style="fill:#455a64" d="M0 0h44v5H0z"/>
+    </g>
+</svg>

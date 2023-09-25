@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <path data-name="사각형 18452" style="fill:transparent" d="M0 0h48v48H0z"/>
+    <g data-name="btn-eco-selected-m" transform="translate(14 14)">
+        <path data-name="사각형 18378" style="fill:transparent" d="M0 0h20v20H0z"/>
+        <path data-name="패스 14298" d="M0 0h10" transform="translate(5.002 19)" style="stroke:#fff;fill:none;stroke-width:1.5px"/>
+        <path data-name="선 376" transform="translate(10 16)" style="stroke:#fff;fill:none;stroke-width:1.5px" d="M0 0v3"/>
+        <circle data-name="타원 2363" cx="8.5" cy="8.5" r="8.5" transform="translate(1.5)" style="fill:#fff"/>
+        <g data-name="그룹 19687">
+            <path data-name="선 206" transform="translate(10 7)" style="stroke:#889095;fill:none;stroke-width:1.5px" d="M0 0v9"/>
+            <path data-name="패스 3832" d="m15875.092 6153.143 4 4 4-4" transform="translate(-15869.094 -6145.143)" style="stroke:#889095;fill:none;stroke-width:1.5px"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/desktop/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/simplebar/simplebar.min.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/desktop/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <a href="" class="basic-link" data-layer-open="layer-register-car-detail">등록차량 상세</a>
+
+    <!-- layer: 등록차량 상세 -->
+    <div class="layer-wrap" data-layer="layer-register-car-detail">
+      <div class="layer-container">
+        <section class="ui-layer">
+          <div class="ui-layer__head">
+            <div class="ui-layer-header">
+              <div class="ui-layer-header__left">
+                <h2 class="ui-layer-header__title">등록차량 상세</h2>
+              </div>
+              <button type="button" class="ui-button ui-layer-header__close" data-role="layerClose">
+                <span class="for-a11y">레이어 닫기</span>
+              </button>
+            </div>
+          </div>
+          <div class="ui-layer__body ui-layer__body--only-table">
+            <div class="ui-layer__body-inner">
+              <!-- table -->
+              <div class="board-table board-table--popup">
+                <div class="board-table__body">
+                  <div class="board-table__table-wrap" role="table">
+                    <div class="board-table__thead">
+                      <table role="rowgroup" class="board-table__table">
+                        <colgroup>
+                          <col />
+                          <col />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">차종</div>
+                              </div>
+                            </th>
+                            <th>
+                              <div class="board-table__colhead">
+                                <div class="board-table__colhead-text">등록대수</div>
+                              </div>
+                            </th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                    <div class="board-table__tbody">
+                      <div class="board-table__tbody-scroller ui-scroller">
+                        <table role="rowgroup" class="board-table__table">
+                          <colgroup>
+                            <col />
+                            <col />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <td>일렉시티 타운</td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td>일렉시티</td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td>일렉시티 이층버스</td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td>일렉시티 수소전기버스</td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td>유니버스 수소전기버스</td>
+                              <td>3</td>
+                            </tr>
+                            <tr>
+                              <td>유니버스</td>
+                              <td>3</td>
+                            </tr>
+                            <tr>
+                              <td>카운티 일렉트릭</td>
+                              <td>3</td>
+                            </tr>
+                            <tr>
+                              <td>파비스</td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td>엑시언트 프로</td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td>엑시언트 수소트럭</td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td>파비스</td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td>엑시언트 프로</td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td>엑시언트 수소트럭</td>
+                              <td>1</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="board-table__top-btn">
+                    <button type="button" class="ui-button ui-basic-button ui-basic-button--small ui-basic-button--quaternary ui-basic-button--icon-only ui-basic-button--icon-only-top js-top-button">
+                      <span class="for-a11y">Top</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- //table -->
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- //layer: 등록차량 상세 -->
+
+    <!-- script -->
+    <script type="text/javascript" src="/desktop/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/simplebar/simplebar.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/sortablejs/sortable.min.js"></script>
+    <script type="text/javascript" src="/desktop/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/desktop/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/desktop/js/ui-script.js"></script>
+    <script type="text/javascript" src="/desktop/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <script>
+      $(function () {
+        uiJSLayer.open('layer-register-car-detail');
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>

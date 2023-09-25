@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="92" height="72" viewBox="0 0 92 72">
+    <g data-name="합치기 511" style="fill:#fff">
+        <path d="M-7777 2923h-46a21.923 21.923 0 0 1-15.556-6.444A21.922 21.922 0 0 1-7845 2901a21.922 21.922 0 0 1 6.444-15.556A21.923 21.923 0 0 1-7823 2879h46a21.923 21.923 0 0 1 15.556 6.444A21.922 21.922 0 0 1-7755 2901a21.922 21.922 0 0 1-6.444 15.556A21.923 21.923 0 0 1-7777 2923z" style="stroke:none" transform="translate(7846 -2878)"/>
+        <path d="M-7823 2880a20.933 20.933 0 0 0-14.85 6.15A20.936 20.936 0 0 0-7844 2901a20.936 20.936 0 0 0 6.15 14.85A20.933 20.933 0 0 0-7823 2922h46a20.933 20.933 0 0 0 14.85-6.15A20.936 20.936 0 0 0-7756 2901a20.936 20.936 0 0 0-6.15-14.85A20.933 20.933 0 0 0-7777 2880h-46m0-2h46c12.703 0 23 10.297 23 23s-10.297 23-23 23h-46c-12.703 0-23-10.297-23-23s10.297-23 23-23z" style="fill:#90a4ae;stroke:none" transform="translate(7846 -2878)"/>
+    </g>
+    <g data-name="그룹 23357" transform="translate(-541 -564.464)">
+        <rect data-name="사각형 21988" width="36" height="36" rx="18" transform="translate(546 569.464)" style="fill:#b0bec5"/>
+        <g data-name="그룹 20185" transform="translate(553.544 577.172)">
+            <path data-name="빼기 111" d="M12.022 12h-4.33a2.858 2.858 0 0 0-5.67 0H0V2a2 2 0 0 1 2-2h18v12h-2.309a2.857 2.857 0 0 0-5.669 0zM2.5 1.714a.847.847 0 0 0-.833.858v4.713H5l1.666-5.571zm6.25 0-.834 2.571h10.276V1.714H8.75z" transform="translate(.456 3.292)" style="fill:#fff"/>
+            <circle data-name="타원 2795" cx="1.886" cy="1.886" r="1.886" transform="translate(3.456 13.792)" style="fill:#fff"/>
+            <circle data-name="타원 2871" cx="1.886" cy="1.886" r="1.886" transform="translate(13.455 13.792)" style="fill:#fff"/>
+        </g>
+    </g>
+    <g data-name="그룹 23365" transform="translate(-378.5 -424)">
+        <path data-name="사각형 22155" transform="translate(424.25 470)" style="fill:#90a4ae" d="M0 0h1.5v18H0z"/>
+        <circle data-name="타원 2902" cx="7.5" cy="7.5" r="7.5" transform="translate(417.5 481)" style="opacity:.3;fill:#90a4ae"/>
+        <circle data-name="타원 2904" cx="2.5" cy="2.5" r="2.5" transform="translate(422.5 486)" style="fill:#90a4ae"/>
+    </g>
+</svg>

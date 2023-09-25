@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>현대차 블루링크 Fleet</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/mobile/images/common/favicon.ico" type="image/x-icon" />
+    <!-- //favicon -->
+
+    <!-- style -->
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/swiper/swiper-bundle.min.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/lib/duet-date-picker/duet-date-picker-default.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/ui-style.css" />
+    <link type="text/css" rel="stylesheet" href="/mobile/css/page-style.css" />
+    <!-- //style -->
+  </head>
+  <body>
+    <a href="" class="basic-link" data-layer-open="layer-charge-analysis-details">충전분석 상세</a>
+
+    <!-- layer: 충전분석 상세 -->
+    <div class="layer-wrap layer-wrap--full" data-layer="layer-charge-analysis-details">
+      <div class="layer-container">
+        <section class="ui-layer ui-layer--full">
+          <div class="ui-layer__head">
+            <header class="header header--popup">
+              <div class="header__center">
+                <h1 class="header__title">06가 2345</h1>
+                <p class="header__sub">일렉시티</p>
+              </div>
+              <div class="header__right">
+                <button type="button" class="ui-button header__button header__button--close" data-role="layerClose">
+                  <span class="for-a11y">레이어 닫기</span>
+                </button>
+              </div>
+            </header>
+          </div>
+          <div class="ui-layer__body">
+            <div class="ui-layer__body-inner">
+              <div class="datas datas--info">
+                <dl class="datas__list">
+                  <div class="datas__item">
+                    <dt class="datas__key">
+                      <div class="regular-text">충전비용효율</div>
+                    </dt>
+                    <dd class="datas__val">
+                      <!-- Case : 개선필요 -->
+                      <div class="car-status-info">
+                        <span class="face-status face-status--icon-only is-danger"></span>
+                        <div class="car-status-info__contents">
+                          <div class="car-status-info__text">개선필요</div>
+                        </div>
+                      </div>
+                      <!-- //Case : 개선필요 -->
+
+                      <!-- Case : 적정 -->
+                      <div class="car-status-info">
+                        <span class="face-status face-status--icon-only is-normal"></span>
+                        <div class="car-status-info__contents">
+                          <div class="car-status-info__text">적정</div>
+                        </div>
+                      </div>
+                      <!-- //Case : 적정 -->
+
+                      <!-- Case : 최적 -->
+                      <div class="car-status-info">
+                        <span class="face-status face-status--icon-only is-good"></span>
+                        <div class="car-status-info__contents">
+                          <div class="car-status-info__text">최적</div>
+                        </div>
+                      </div>
+                      <!-- //Case : 최적 -->
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+              <div class="ui-table row-contents-group">
+                <div class="ui-table__scroller">
+                  <div class="ui-table__doc">
+                    <div class="ui-table__table">
+                      <div class="ui-table__table-inner">
+                        <table>
+                          <colgroup>
+                            <col style="width: 94px" />
+                            <col style="width: 74px" />
+                            <col style="width: 74px" />
+                            <col style="width: 86px" />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th>
+                                충전종료 <br />
+                                일시
+                              </th>
+                              <th>
+                                시간대 <br />
+                                구분
+                              </th>
+                              <th>
+                                충전량 <br />
+                                (%)
+                              </th>
+                              <th>
+                                충전량 <br />
+                                (kWh)
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                2022.04.12 <br />
+                                10:30
+                              </td>
+                              <td>최대부하</td>
+                              <td>24.82</td>
+                              <td>000,000</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                2022.04.12 <br />
+                                05:30
+                              </td>
+                              <td>최대부하</td>
+                              <td>48.71</td>
+                              <td>000,000</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                2022.04.11 <br />
+                                14:18
+                              </td>
+                              <td>경부하</td>
+                              <td>24.85</td>
+                              <td>000,000</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                2022.04.10 <br />
+                                04:48
+                              </td>
+                              <td>최대부하</td>
+                              <td>48.74</td>
+                              <td>000,000</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                2022.04.09 <br />
+                                11:14
+                              </td>
+                              <td>중간부하</td>
+                              <td>24.81</td>
+                              <td>000,000</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                2022.04.07 <br />
+                                18:27
+                              </td>
+                              <td>중간부하</td>
+                              <td>34.92</td>
+                              <td>000,000</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                2022.04.06 <br />
+                                19:27
+                              </td>
+                              <td>중간부하</td>
+                              <td>59.43</td>
+                              <td>000,000</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                2022.04.05 <br />
+                                20:13
+                              </td>
+                              <td>중간부하</td>
+                              <td>48.72</td>
+                              <td>000,000</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2022.09.05 : mod : 페이지네이션 구성 변경 -->
+              <nav class="pagination">
+                <h3 class="for-a11y">Pagination</h3>
+                <ul class="pagination__list">
+                  <li class="pagination__item">
+                    <!-- DD : 첫번째 페이지일 경우 disabled 속성 추가 -->
+                    <button type="button" class="ui-button pagination__link pagination__link--prev">
+                      <span class="for-a11y">이전</span>
+                    </button>
+                  </li>
+                  <li class="pagination__item">
+                    <a href="" class="pagination__link">1</a>
+                  </li>
+                  <li class="pagination__item">
+                    <span class="pagination__ellipsis">...</span>
+                  </li>
+                  <li class="pagination__item">
+                    <a href="" class="pagination__link">22</a>
+                  </li>
+                  <li class="pagination__item">
+                    <!-- DD : 현재 페이지면 is-active 클래스 값 추가 -->
+                    <a href="" class="pagination__link is-active">23</a>
+                  </li>
+                  <li class="pagination__item">
+                    <a href="" class="pagination__link">24</a>
+                  </li>
+                  <li class="pagination__item">
+                    <span class="pagination__ellipsis">...</span>
+                  </li>
+                  <li class="pagination__item">
+                    <a href="" class="pagination__link">999</a>
+                  </li>
+                  <li class="pagination__item">
+                    <!-- DD : 마지막 페이지일 경우 disabled 속성 추가 -->
+                    <button type="button" class="ui-button pagination__link pagination__link--next">
+                      <span class="for-a11y">다음</span>
+                    </button>
+                  </li>
+                </ul>
+              </nav>
+              <!-- //2022.09.05 : mod : 페이지네이션 구성 변경 -->
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- //layer: 충전분석 상세 -->
+
+    <!-- script -->
+    <script type="text/javascript" src="/mobile/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/simplebar/simplebar.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/sortablejs/sortable.min.js"></script>
+    <script type="text/javascript" src="/mobile/lib/duet-date-picker/duet.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/mobile/lib/highcharts/modules/solid-gauge.js"></script>
+    <script type="text/javascript" src="/mobile/js/ui-script.js"></script>
+    <script type="text/javascript" src="/mobile/js/chart-env.js"></script>
+    <script type="text/javascript" src="https://api.routo.com/v2/maps/map?key=298f220f-87a9-43e0-df19-b3c2ec9252b3"></script>
+    <script>
+      $(function () {
+        uiJSLayer.open('layer-charge-analysis-details');
+      });
+    </script>
+    <!-- //script -->
+  </body>
+</html>
